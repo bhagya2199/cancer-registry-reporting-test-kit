@@ -18,6 +18,10 @@
   - :id: Condition.extension:histologyMorphologyBehavior
     :path: extension
     :url: http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-histology-morphology-behavior
+    #Added
+  - :id: Condition.extension:mcode-cancer-disease-type-evidence-type
+    :path: extension
+    :url: http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-disease-type-evidence-type
   - :id: Condition.bodySite.extension:locationQualifier
     :path: bodySite.extension
     :url: http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-body-location-qualifier
@@ -70,6 +74,10 @@
 - Condition.category
 - Condition.code
 - Condition.subject
+#Added
+- Condition.extension:assertedDate
+- Condition.extension:histologyMorphologyBehavior
+- Condition.bodySite
 :tests: []
 :id: ccrr_v100_mcode_primary_cancer_condition
 :file_name: mcode_primary_cancer_condition_group.rb
