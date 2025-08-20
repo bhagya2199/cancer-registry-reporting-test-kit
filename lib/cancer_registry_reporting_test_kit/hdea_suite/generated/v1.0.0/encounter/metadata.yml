@@ -41,6 +41,13 @@
     :target_profiles:
     - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns
     - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis
+  - :path: diagnosis
+  - :path: diagnosis.condition
+    :types:
+    - Reference
+    :target_profiles:
+    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition
+    - :path: diagnosis.use
   - :path: hospitalization
   - :path: hospitalization.dischargeDisposition
   - :path: location

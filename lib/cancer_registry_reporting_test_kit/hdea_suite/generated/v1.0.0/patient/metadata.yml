@@ -37,6 +37,9 @@
 - Patient.identifier.system
 - Patient.identifier.value
 - Patient.name
+- Patient.name.family
+- Patient.name.given
+- patient.address.state
 - Patient.telecom.system
 - Patient.telecom.value
 - Patient.gender
