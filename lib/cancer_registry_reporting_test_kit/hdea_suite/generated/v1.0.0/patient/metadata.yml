@@ -1,15 +1,13 @@
 ---
-:name: us_core_patient
-:class_name: UsCorePatientSequence
-:version: v1.0.0
-:reformatted_version: v100
+:name: ccrr_patient
+:class_name: CCRR PatientSequence
+:version: v2.0.0
 :resource: Patient
-:profile_url: http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient
-:profile_name: US Core Patient Profile
-:profile_version: 5.0.1
-:title: Patient US Core
-:short_description: Verify support for the server capabilities required by the US
-  Core Patient Profile.
+:profile_url: http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/central-cancer-registry-reporting-patient
+:profile_name: CCRR Patient Profile
+:profile_version: 2.0.0
+:title: Patient CCRR
+:short_description: Verify support for the server capabilities required by the CCRR Patient Profile v2.0.0.
 :must_supports:
   :extensions: []
   :slices: []
@@ -33,6 +31,8 @@
   - :path: address.period
   - :path: communication.language
 :mandatory_elements:
+- Patient.extension:race
+- Patient.extension:ethnicity
 - Patient.identifier
 - Patient.identifier.system
 - Patient.identifier.value
@@ -40,12 +40,13 @@
 - Patient.telecom.system
 - Patient.telecom.value
 - Patient.gender
+- Patient.birthDate
 - Patient.communication.language
 - Patient.link.other
 - Patient.link.type
 :tests:
-- :id: ccrr_v100_patient_must_support_test
+- :id: ccrr_v200_patient_must_support_test
   :file_name: patient_must_support_test.rb
-- :id: ccrr_v100_patient_validation_test
+- :id: ccrr_v200_patient_validation_test
   :file_name: patient_validation_test.rb
-:id: ccrr_v100_patient
+:id: ccrr_v200_patient

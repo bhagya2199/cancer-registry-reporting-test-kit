@@ -22,7 +22,7 @@ module CancerRegistryReportingTestKit
     end
 
     def find_a_value_at(element, path, include_dar: false, &block)
-      return nil if element.nil?
+      return nil if element.nil? || path.nil?
 
       elements = Array.wrap(element)
       if path.empty?

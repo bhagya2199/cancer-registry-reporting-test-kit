@@ -7,15 +7,14 @@ module CancerRegistryReportingTestKit
     class PatientValidationTest < Inferno::Test
       include CancerRegistryReportingTestKit::ValidationTest
 
-      id :ccrr_v100_patient_validation_test
-      title 'US Core Patient profile conformance'
+      id :ccrr_v200_patient_validation_test
+      title 'CCRR Patient Profile conformance'
       description %(
         This test verifies that Patient instances
         referenced in the `patient` elements of the provided reports conform to the
-        [US Core Patient profile](http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|5.0.1).
+        [CCRR Patient Profile v2.0.0](http://build.fhir.org/ig/HL7/fhir-central-cancer-registry-reporting-ig/StructureDefinition-central-cancer-registry-reporting-patient.html).
       )
       
-
       def resource_type
         'Patient'
       end

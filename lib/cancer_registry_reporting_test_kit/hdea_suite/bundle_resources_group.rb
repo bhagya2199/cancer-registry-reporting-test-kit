@@ -101,8 +101,8 @@ module CancerRegistryReportingTestKit
 
     group do
       title 'Referenced Patient'
-      test from: :ccrr_v100_patient_validation_test
-      test from: :ccrr_v100_patient_must_support_test
+      test from: :ccrr_v200_patient_validation_test
+      test from: :ccrr_v200_patient_must_support_test
     end
 
     group do

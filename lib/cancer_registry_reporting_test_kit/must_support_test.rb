@@ -147,9 +147,9 @@ module CancerRegistryReportingTestKit
 
     def must_support_slices
       if exclude_uscdi_only_test?
-        metadata.must_supports[:slices].reject { |slice| slice[:uscdi_only] }
+        metadata.must_supports[:slices]&.reject { |slice| slice[:uscdi_only] } || []
       else
-        metadata.must_supports[:slices]
+        metadata.must_supports[:slices] || []
       end
     end
 
