@@ -107,8 +107,8 @@ module CancerRegistryReportingTestKit
 
     group do
       title 'Referenced Encounter'
-      test from: :ccrr_v100_encounter_validation_test
-      test from: :ccrr_v100_encounter_must_support_test
+      test from: :ccrr_v200_encounter_validation_test
+      test from: :ccrr_v200_encounter_must_support_test
     end
 
     group do
@@ -195,14 +195,14 @@ module CancerRegistryReportingTestKit
       test from: :ccrr_v100_service_request_must_support_test
       test from: :ccrr_v100_care_plan_validation_test
       test from: :ccrr_v100_care_plan_must_support_test
-      test from: :ccrr_v100_procedure_validation_test
-      test from: :ccrr_v100_procedure_must_support_test
+      test from: :ccrr_v200_procedure_validation_test
+      test from: :ccrr_v200_procedure_must_support_test
     end
 
     group do
       title 'Vital Signs Section'
-      test from: :ccrr_v100_observation_validation_test
-      test from: :ccrr_v100_observation_must_support_test
+      test from: :ccrr_v200_observation_validation_test
+      test from: :ccrr_v200_observation_must_support_test
     end
     group do
       title 'Social History Section'

@@ -37,7 +37,7 @@ module CancerRegistryReportingTestKit
         * Encounter.type
       )
 
-      id :ccrr_v100_encounter_must_support_test
+      id :ccrr_v200_encounter_must_support_test
 
       def resource_type
         'Encounter'
