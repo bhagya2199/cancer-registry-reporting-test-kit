@@ -26,7 +26,7 @@ module CancerRegistryReportingTestKit
         * Observation.value[x]
       )
 
-      id :ccrr_v100_mcode_tnm_stage_group_must_support_test
+      id :ccrr_v200_mcode_tnm_stage_group_must_support_test
 
       def resource_type
         'Observation'

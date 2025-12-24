@@ -35,12 +35,13 @@
 :mandatory_elements:
 - Observation.status
 - Observation.code
+- Observation.subject
 - Observation.focus
 - Observation.method
 - Observation.component.code
 :tests:
-- :id: ccrr_v100_mcode_tnm_stage_group_must_support_test
+- :id: ccrr_v200_mcode_tnm_stage_group_must_support_test
   :file_name: mcode_tnm_stage_group_must_support_test.rb
-- :id: ccrr_v100_mcode_tnm_stage_group_validation_test
+- :id: ccrr_v200_mcode_tnm_stage_group_validation_test
   :file_name: mcode_tnm_stage_group_validation_test.rb
-:id: ccrr_v100_mcode_tnm_stage_group
+:id: ccrr_v200_mcode_tnm_stage_group

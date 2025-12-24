@@ -49,10 +49,9 @@
 - Observation.subject
 - Observation.effective[x]
 - Observation.value[x]
-- Observation.component.code
 :tests:
-- :id: ccrr_v100_smokingstatus_must_support_test
+- :id: ccrr_v200_smokingstatus_must_support_test
   :file_name: smokingstatus_must_support_test.rb
-- :id: ccrr_v100_smokingstatus_validation_test
+- :id: ccrr_v200_smokingstatus_validation_test
   :file_name: smokingstatus_validation_test.rb
-:id: ccrr_v100_smokingstatus
+:id: ccrr_v200_smokingstatus

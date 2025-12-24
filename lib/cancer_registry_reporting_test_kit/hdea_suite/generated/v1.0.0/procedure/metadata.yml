@@ -21,17 +21,14 @@
     - Reference
     :target_profiles:
     - http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient
-  - :path: performedDateTime
-    :original_path: performed[x]
+  - :path: performed[x]
 :mandatory_elements:
 - Procedure.status
 - Procedure.code
 - Procedure.subject
-- Procedure.performer.actor
-- Procedure.focalDevice.manipulated
 :tests:
-- :id: ccrr_v100_procedure_must_support_test
+- :id: ccrr_v200_procedure_must_support_test
   :file_name: procedure_must_support_test.rb
-- :id: ccrr_v100_procedure_validation_test
+- :id: ccrr_v200_procedure_validation_test
   :file_name: procedure_validation_test.rb
-:id: ccrr_v100_procedure
+:id: ccrr_v200_procedure

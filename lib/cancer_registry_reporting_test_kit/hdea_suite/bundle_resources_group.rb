@@ -107,8 +107,8 @@ module CancerRegistryReportingTestKit
 
     group do
       title 'Referenced Encounter'
-      test from: :ccrr_v100_encounter_validation_test
-      test from: :ccrr_v100_encounter_must_support_test
+      test from: :ccrr_v200_encounter_validation_test
+      test from: :ccrr_v200_encounter_must_support_test
     end
 
     group do
@@ -167,14 +167,14 @@ module CancerRegistryReportingTestKit
 
     group do
       title 'Occupational Data Section'
-      test from: :ccrr_v100_odh_usual_work_validation_test
-      test from: :ccrr_v100_odh_usual_work_must_support_test
+      test from: :ccrr_v200_odh_usual_work_validation_test
+      test from: :ccrr_v200_odh_usual_work_must_support_test
     end
 
     group do
       title 'Results Section'
-      test from: :ccrr_v100_observation_lab_validation_test
-      test from: :ccrr_v100_observation_lab_must_support_test
+      test from: :ccrr_v200_observation_lab_validation_test
+      test from: :ccrr_v200_observation_lab_must_support_test
       test from: :ccrr_v100_diagnostic_report_lab_validation_test
       test from: :ccrr_v100_diagnostic_report_lab_must_support_test
     end
@@ -206,8 +206,8 @@ module CancerRegistryReportingTestKit
     end
     group do
       title 'Social History Section'
-      test from: :ccrr_v100_smokingstatus_validation_test
-      test from: :ccrr_v100_smokingstatus_must_support_test
+      test from: :ccrr_v200_smokingstatus_validation_test
+      test from: :ccrr_v200_smokingstatus_must_support_test
     end
   end
 end

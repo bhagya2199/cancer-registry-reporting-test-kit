@@ -7,7 +7,7 @@ module CancerRegistryReportingTestKit
     class ProcedureValidationTest < Inferno::Test
       include CancerRegistryReportingTestKit::ValidationTest
 
-      id :ccrr_v100_procedure_validation_test
+      id :ccrr_v200_procedure_validation_test
       title 'US Core Procedure profile conformance'
       description %(
         This test verifies that Procedure instances

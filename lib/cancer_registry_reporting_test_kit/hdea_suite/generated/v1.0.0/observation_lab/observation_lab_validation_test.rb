@@ -7,7 +7,7 @@ module CancerRegistryReportingTestKit
     class ObservationLabValidationTest < Inferno::Test
       include CancerRegistryReportingTestKit::ValidationTest
 
-      id :ccrr_v100_observation_lab_validation_test
+      id :ccrr_v200_observation_lab_validation_test
       title 'US Core Laboratory Result Observation profile conformance'
       description %(
         This test verifies that Observation instances

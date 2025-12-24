@@ -7,7 +7,7 @@ module CancerRegistryReportingTestKit
     class OdhUsualWorkValidationTest < Inferno::Test
       include CancerRegistryReportingTestKit::ValidationTest
 
-      id :ccrr_v100_odh_usual_work_validation_test
+      id :ccrr_v200_odh_usual_work_validation_test
       title 'Usual Work profile conformance'
       description %(
         This test verifies that Observation instances
