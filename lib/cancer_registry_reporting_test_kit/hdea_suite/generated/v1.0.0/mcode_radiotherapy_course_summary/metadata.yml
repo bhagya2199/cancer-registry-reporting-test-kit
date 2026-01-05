@@ -1,59 +1,61 @@
 ---
 :name: mcode_radiotherapy_course_summary
 :class_name: McodeRadiotherapyCourseSummarySequence
-:version: v1.0.0
-:reformatted_version: v100
+:version: v2.0.0
+:reformatted_version: v200
 :resource: Procedure
 :profile_url: http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-course-summary
 :profile_name: Radiotherapy Course Summary Profile
-:profile_version: 3.0.0
+:profile_version: 4.0.0
 :title: Procedure Radiotherapy Course Summary
-:short_description: Verify support for the server capabilities required by the Radiotherapy
+:short_description:
+  Verify support for the server capabilities required by the Radiotherapy
   Course Summary Profile.
 :must_supports:
   :extensions:
-  - :id: Procedure.extension:treatmentIntent
-    :path: extension
-    :url: http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-procedure-intent
-  - :id: Procedure.extension:terminationReason
-    :path: extension
-    :url: http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-treatment-termination-reason
-  - :id: Procedure.extension:modalityAndTechnique
-    :path: extension
-    :url: http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-modality-and-technique
-  - :id: Procedure.extension:actualNumberOfSessions
-    :path: extension
-    :url: http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-sessions
-  - :id: Procedure.extension:doseDeliveredToVolume
-    :path: extension
-    :url: http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-dose-delivered-to-volume
+    - :id: Procedure.extension:treatmentIntent
+      :path: extension
+      :url: http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-procedure-intent
+    - :id: Procedure.extension:terminationReason
+      :path: extension
+      :url: http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-treatment-termination-reason
+    - :id: Procedure.extension:modalityAndTechnique
+      :path: extension
+      :url: http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-modality-and-technique
+    - :id: Procedure.extension:actualNumberOfSessions
+      :path: extension
+      :url: http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-sessions
+    - :id: Procedure.extension:doseDeliveredToVolume
+      :path: extension
+      :url: http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-dose-delivered-to-volume
   :slices: []
   :elements:
-  - :path: status
-  - :path: code.coding.code
-    :fixed_value: '1217123003'
-  - :path: subject
-    :types:
-    - Reference
-    :target_profiles:
-    - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-patient
-  - :path: performed[x]
-  - :path: reasonCode
-  - :path: reasonReference
-    :types:
-    - Reference
-    :target_profiles:
-    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns
-  - :path: bodySite
+    - :path: status
+    - :path: code.coding.code
+      :fixed_value: "1217123003"
+    - :path: subject
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-patient
+    - :path: performed[x]
+    - :path: reasonCode
+    - :path: reasonReference
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns
+    - :path: bodySite
 :mandatory_elements:
-- Procedure.status
-- Procedure.code
-- Procedure.subject
-- Procedure.performer.actor
-- Procedure.focalDevice.manipulated
+  - Procedure.status
+  - Procedure.code
+  - Procedure.subject
+  - Procedure.performer.actor
+  - Procedure.focalDevice.manipulated
 :tests:
-- :id: ccrr_v100_mcode_radiotherapy_course_summary_must_support_test
-  :file_name: mcode_radiotherapy_course_summary_must_support_test.rb
-- :id: ccrr_v100_mcode_radiotherapy_course_summary_validation_test
-  :file_name: mcode_radiotherapy_course_summary_validation_test.rb
-:id: ccrr_v100_mcode_radiotherapy_course_summary
+  - :id: ccrr_v200_mcode_radiotherapy_course_summary_must_support_test
+    :file_name: mcode_radiotherapy_course_summary_must_support_test.rb
+  - :id: ccrr_v200_mcode_radiotherapy_course_summary_validation_test
+    :file_name: mcode_radiotherapy_course_summary_validation_test.rb
+:id: ccrr_v200_mcode_radiotherapy_course_summary
+

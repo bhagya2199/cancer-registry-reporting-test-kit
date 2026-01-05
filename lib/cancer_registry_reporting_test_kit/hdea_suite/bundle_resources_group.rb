@@ -86,7 +86,9 @@ module CancerRegistryReportingTestKit
     )
 
     verifies_requirements 'hl7.fhir.us.central-cancer-registry-reporting_1.0.0@68',
-                          'hl7.fhir.us.central-cancer-registry-reporting_1.0.0@102'
+                          'hl7.fhir.us.central-cancer-registry-reporting_1.0.0@102',
+                          'hl7.fhir.us.central-cancer-registry-reporting_2.0.0@68',
+                          'hl7.fhir.us.central-cancer-registry-reporting_2.0.0@102'
 
     id :ccrr_report_resources
     run_as_group
@@ -95,14 +97,14 @@ module CancerRegistryReportingTestKit
       title 'Report'
       test from: :ccrr_v100_ccrr_content_bundle_parse_and_validation_test
       test from: :ccrr_v100_ccrr_content_bundle_must_support_test
-      test from: :ccrr_v100_composition_validation_test
-      test from: :ccrr_v100_composition_must_support_test
+      test from: :ccrr_v200_composition_validation_test
+      test from: :ccrr_v200_composition_must_support_test
     end
 
     group do
       title 'Referenced Patient'
-      test from: :ccrr_v200_patient_validation_test
-      test from: :ccrr_v200_patient_must_support_test
+      test from: :ccrr_v100_patient_validation_test
+      test from: :ccrr_v100_patient_must_support_test
     end
 
     group do
@@ -127,20 +129,20 @@ module CancerRegistryReportingTestKit
 
     group do
       title 'Secondary Cancer Condition Section'
-      test from: :ccrr_v100_mcode_secondary_cancer_condition_validation_test
-      test from: :ccrr_v100_mcode_secondary_cancer_condition_must_support_test
+      test from: :ccrr_v200_mcode_secondary_cancer_condition_validation_test
+      test from: :ccrr_v200_mcode_secondary_cancer_condition_must_support_test
     end
 
     group do
       title 'Cancer Stage Group Section'
-      test from: :ccrr_v100_mcode_tnm_stage_group_validation_test
-      test from: :ccrr_v100_mcode_tnm_stage_group_must_support_test
+      test from: :ccrr_v200_mcode_tnm_stage_group_validation_test
+      test from: :ccrr_v200_mcode_tnm_stage_group_must_support_test
     end
 
     group do
       title 'Radiotherapy Course Summary Section'
-      test from: :ccrr_v100_mcode_radiotherapy_course_summary_validation_test
-      test from: :ccrr_v100_mcode_radiotherapy_course_summary_must_support_test
+      test from: :ccrr_v200_mcode_radiotherapy_course_summary_validation_test
+      test from: :ccrr_v200_mcode_radiotherapy_course_summary_must_support_test
     end
 
     group do

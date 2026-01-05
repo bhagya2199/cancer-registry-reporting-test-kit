@@ -7,12 +7,12 @@ module CancerRegistryReportingTestKit
     class McodeSecondaryCancerConditionValidationTest < Inferno::Test
       include CancerRegistryReportingTestKit::ValidationTest
 
-      id :ccrr_v100_mcode_secondary_cancer_condition_validation_test
+      id :ccrr_v200_mcode_secondary_cancer_condition_validation_test
       title 'Secondary Cancer Condition profile conformance'
       description %(
         This test verifies that Condition instances
         found in the Secondary Cancer Condition sections of the provided reports conform to the
-        [Secondary Cancer Condition profile](http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-secondary-cancer-condition|3.0.0).
+        [Secondary Cancer Condition profile](http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-secondary-cancer-condition|4.0.0).
       )
       
 
@@ -27,7 +27,7 @@ module CancerRegistryReportingTestKit
       run do
         perform_validation_test(scratch_resources[:all] || [],
                                 'http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-secondary-cancer-condition',
-                                '3.0.0',
+                                '4.0.0',
                                 skip_if_empty: true)
       end
     end
