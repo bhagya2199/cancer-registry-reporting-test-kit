@@ -4,54 +4,55 @@
 :version: v1.0.0
 :reformatted_version: v100
 :resource: DiagnosticReport
-:profile_url: http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab
-:profile_name: US Core DiagnosticReport Profile for Laboratory Results Reporting
-:profile_version: 5.0.1
-:title: DiagnosticReport US Core for Laboratory Results Reporting
-:short_description: Verify support for the server capabilities required by the US
+:profile_url: http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/central-cancer-registry-reporting-diagnostic-report
+:profile_name: Central Cancer Registry Reporting DiagnosticReport
+:profile_version: 1.0.0
+:title: Central Cancer Registry Reporting DiagnosticReport
+:short_description:
+  Verify support for the server capabilities required by the US
   Core DiagnosticReport Profile for Laboratory Results Reporting.
 :must_supports:
   :extensions: []
   :slices:
-  - :slice_id: DiagnosticReport.category:LaboratorySlice
-    :slice_name: LaboratorySlice
-    :path: category
-    :discriminator:
-      :type: patternCodeableConcept
-      :path: ''
-      :code: LAB
-      :system: http://terminology.hl7.org/CodeSystem/v2-0074
+    - :slice_id: DiagnosticReport.category:LaboratorySlice
+      :slice_name: LaboratorySlice
+      :path: category
+      :discriminator:
+        :type: patternCodeableConcept
+        :path: ""
+        :code: LAB
+        :system: http://terminology.hl7.org/CodeSystem/v2-0074
   :elements:
-  - :path: status
-  - :path: category
-  - :path: code
-  - :path: subject
-    :types:
-    - Reference
-    :target_profiles:
-    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient
-  - :path: effectiveDateTime
-    :original_path: effective[x]
-  - :path: issued
-  - :path: performer
-    :types:
-    - Reference
-    :target_profiles:
-    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner
-  - :path: result
-    :types:
-    - Reference
-    :target_profiles:
-    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab
+    - :path: status
+    - :path: category
+    - :path: code
+    - :path: subject
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient
+    - :path: effectiveDateTime
+      :original_path: effective[x]
+    - :path: issued
+    - :path: performer
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner
+    - :path: result
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab
 :mandatory_elements:
-- DiagnosticReport.status
-- DiagnosticReport.category
-- DiagnosticReport.code
-- DiagnosticReport.subject
-- DiagnosticReport.media.link
+  - DiagnosticReport.status
+  - DiagnosticReport.category
+  - DiagnosticReport.code
+  - DiagnosticReport.subject
+  - DiagnosticReport.media.link
 :tests:
-- :id: ccrr_v100_diagnostic_report_lab_must_support_test
-  :file_name: diagnostic_report_lab_must_support_test.rb
-- :id: ccrr_v100_diagnostic_report_lab_validation_test
-  :file_name: diagnostic_report_lab_validation_test.rb
+  - :id: ccrr_v100_diagnostic_report_lab_must_support_test
+    :file_name: diagnostic_report_lab_must_support_test.rb
+  - :id: ccrr_v100_diagnostic_report_lab_validation_test
+    :file_name: diagnostic_report_lab_validation_test.rb
 :id: ccrr_v100_diagnostic_report_lab

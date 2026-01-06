@@ -4,72 +4,73 @@
 :version: v1.0.0
 :reformatted_version: v100
 :resource: DiagnosticReport
-:profile_url: http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note
-:profile_name: US Core DiagnosticReport Profile for Report and Note Exchange
-:profile_version: 5.0.1
-:title: DiagnosticReport US Core for Report and Note Exchange
-:short_description: Verify support for the server capabilities required by the US
+:profile_url: http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/central-cancer-registry-reporting-diagnostic-report
+:profile_name: Central Cancer Registry Reporting DiagnosticReport
+:profile_version: 1.0.0
+:title: Central Cancer Registry Reporting DiagnosticReport
+:short_description:
+  Verify support for the server capabilities required by the US
   Core DiagnosticReport Profile for Report and Note Exchange.
 :must_supports:
   :extensions: []
   :slices:
-  - :slice_id: DiagnosticReport.category:us-core
-    :slice_name: us-core
-    :path: category
-    :discriminator:
-      :type: requiredBinding
-      :path: ''
-      :values:
-      - :system: http://loinc.org
-        :code: LP29684-5
-      - :system: http://loinc.org
-        :code: LP29708-2
-      - :system: http://loinc.org
-        :code: LP7839-6
+    - :slice_id: DiagnosticReport.category:us-core
+      :slice_name: us-core
+      :path: category
+      :discriminator:
+        :type: requiredBinding
+        :path: ""
+        :values:
+          - :system: http://loinc.org
+            :code: LP29684-5
+          - :system: http://loinc.org
+            :code: LP29708-2
+          - :system: http://loinc.org
+            :code: LP7839-6
   :elements:
-  - :path: status
-  - :path: category
-  - :path: code
-  - :path: subject
-    :types:
-    - Reference
-    :target_profiles:
-    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient
-  - :path: encounter
-    :types:
-    - Reference
-    :target_profiles:
-    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter
-  - :path: effectiveDateTime
-    :original_path: effective[x]
-  - :path: issued
-  - :path: performer
-    :types:
-    - Reference
-    :target_profiles:
-    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner
-    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization
-  - :path: result
-    :types:
-    - Reference
-    :target_profiles:
-    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab
-    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-clinical-test
-    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-imaging
-  - :path: media
-  - :path: media.link
-    :types:
-    - Reference
-  - :path: presentedForm
+    - :path: status
+    - :path: category
+    - :path: code
+    - :path: subject
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient
+    - :path: encounter
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter
+    - :path: effectiveDateTime
+      :original_path: effective[x]
+    - :path: issued
+    - :path: performer
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization
+    - :path: result
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-clinical-test
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-imaging
+    - :path: media
+    - :path: media.link
+      :types:
+        - Reference
+    - :path: presentedForm
 :mandatory_elements:
-- DiagnosticReport.status
-- DiagnosticReport.category
-- DiagnosticReport.code
-- DiagnosticReport.subject
-- DiagnosticReport.media.link
+  - DiagnosticReport.status
+  - DiagnosticReport.category
+  - DiagnosticReport.code
+  - DiagnosticReport.subject
+  - DiagnosticReport.media.link
 :tests:
-- :id: ccrr_v100_diagnostic_report_note_must_support_test
-  :file_name: diagnostic_report_note_must_support_test.rb
-- :id: ccrr_v100_diagnostic_report_note_validation_test
-  :file_name: diagnostic_report_note_validation_test.rb
+  - :id: ccrr_v100_diagnostic_report_note_must_support_test
+    :file_name: diagnostic_report_note_must_support_test.rb
+  - :id: ccrr_v100_diagnostic_report_note_validation_test
+    :file_name: diagnostic_report_note_validation_test.rb
 :id: ccrr_v100_diagnostic_report_note

@@ -52,7 +52,7 @@ fail if their code/system are not found in the valueset.
             resource_type,
             resources,
             AUTHOR_PROFILES[resource_type],
-            '3.1.1'
+            '5.0.1'
           )
         end
       end
