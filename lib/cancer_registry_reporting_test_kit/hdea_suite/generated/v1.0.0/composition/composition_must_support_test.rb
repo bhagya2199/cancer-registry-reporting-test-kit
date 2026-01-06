@@ -8,10 +8,10 @@ module CancerRegistryReportingTestKit
     class CompositionMustSupportTest < Inferno::Test
       include CancerRegistryReportingTestKit::MustSupportTest
 
-      title 'Central Cancer Registry Report Composition profile must support element coverage'
+      title 'Central Cancer Registry Reporting Composition profile must support element coverage'
       description %(
         This test looks across all instances
-        associated with the [Central Cancer Registry Report Composition profile](http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/ccrr-composition|1.0.0)
+        associated with the [Central Cancer Registry Reporting Composition profile](http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/ccrr-composition|2.0.0-ballot)
         found in the provided report Bundles and verifies that they
         contain populated examples of the following must support elements
         defined in the profile:
@@ -21,14 +21,14 @@ module CancerRegistryReportingTestKit
         * Composition.encounter
         * Composition.identifier
         * Composition.section
-        * Composition.section:sliceAllergiesSection
-        * Composition.section:sliceAllergiesSection.code
-        * Composition.section:sliceAllergiesSection.entry
-        * Composition.section:sliceAllergiesSection.text
-        * Composition.section:sliceCancerStageGroup
-        * Composition.section:sliceCancerStageGroup.code
-        * Composition.section:sliceCancerStageGroup.entry
-        * Composition.section:sliceCancerStageGroup.text
+        * Composition.section:sliceEncounterSection
+        * Composition.section:sliceEncounterSection.code
+        * Composition.section:sliceEncounterSection.entry
+        * Composition.section:sliceEncounterSection.text
+        * Composition.section:sliceTNMStaging
+        * Composition.section:sliceTNMStaging.code
+        * Composition.section:sliceTNMStaging.entry
+        * Composition.section:sliceTNMStaging.text
         * Composition.section:sliceMedicationsAdministeredSection
         * Composition.section:sliceMedicationsAdministeredSection.code
         * Composition.section:sliceMedicationsAdministeredSection.entry
@@ -41,10 +41,10 @@ module CancerRegistryReportingTestKit
         * Composition.section:sliceNotesSection.code
         * Composition.section:sliceNotesSection.entry
         * Composition.section:sliceNotesSection.text
-        * Composition.section:sliceOdhSection
-        * Composition.section:sliceOdhSection.code
-        * Composition.section:sliceOdhSection.entry
-        * Composition.section:sliceOdhSection.text
+        * Composition.section:sliceODHSection
+        * Composition.section:sliceODHSection.code
+        * Composition.section:sliceODHSection.entry
+        * Composition.section:sliceODHSection.text
         * Composition.section:slicePlanOfTreatmentSection
         * Composition.section:slicePlanOfTreatmentSection.code
         * Composition.section:slicePlanOfTreatmentSection.entry
@@ -87,7 +87,7 @@ module CancerRegistryReportingTestKit
         * Composition.type.coding.code
       )
 
-      id :ccrr_v100_composition_must_support_test
+      id :ccrr_v200_composition_must_support_test
 
       def resource_type
         'Composition'

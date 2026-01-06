@@ -7,12 +7,12 @@ module CancerRegistryReportingTestKit
     class CompositionValidationTest < Inferno::Test
       include CancerRegistryReportingTestKit::ValidationTest
 
-      id :ccrr_v100_composition_validation_test
-      title 'Central Cancer Registry Report Composition profile conformance'
+      id :ccrr_v200_composition_validation_test
+      title 'Central Cancer Registry Reporting Composition profile conformance'
       description %(
         This test verifies that Composition instances
          of the provided reports conform to the
-        [Central Cancer Registry Report Composition profile](http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/ccrr-composition|1.0.0).
+        [Central Cancer Registry Reporting Composition profile](http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/ccrr-composition|2.0.0-ballot).
       )
       
 
@@ -27,7 +27,7 @@ module CancerRegistryReportingTestKit
       run do
         perform_validation_test(scratch_resources[:all] || [],
                                 'http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/ccrr-composition',
-                                '1.0.0',
+                                '2.0.0-ballot',
                                 skip_if_empty: true)
       end
     end

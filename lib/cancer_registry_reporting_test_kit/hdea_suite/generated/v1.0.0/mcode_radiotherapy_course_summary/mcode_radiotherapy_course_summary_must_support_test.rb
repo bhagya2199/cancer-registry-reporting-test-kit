@@ -11,7 +11,7 @@ module CancerRegistryReportingTestKit
       title 'Radiotherapy Course Summary profile must support element coverage'
       description %(
         This test looks across all instances
-        associated with the [Radiotherapy Course Summary profile](http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-course-summary|3.0.0)
+        associated with the [Radiotherapy Course Summary profile](http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-course-summary|4.0.0)
         found in the provided report Bundles and verifies that they
         contain populated examples of the following must support elements
         defined in the profile:
@@ -30,7 +30,7 @@ module CancerRegistryReportingTestKit
         * Procedure.subject
       )
 
-      id :ccrr_v100_mcode_radiotherapy_course_summary_must_support_test
+      id :ccrr_v200_mcode_radiotherapy_course_summary_must_support_test
 
       def resource_type
         'Procedure'

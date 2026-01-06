@@ -1,272 +1,301 @@
 ---
 :name: ccrr_composition
 :class_name: CcrrCompositionSequence
-:version: v1.0.0
-:reformatted_version: v100
+:version: v2.0.0
+:reformatted_version: v200
 :resource: Composition
 :profile_url: http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/ccrr-composition
-:profile_name: Central Cancer Registry Report Composition
-:profile_version: 1.0.0
-:title: Central Cancer Registry Report Composition
-:short_description: Verify support for the server capabilities required by the Central
-  Cancer Registry Report Composition.
+:profile_name: Central Cancer Registry Reporting Composition
+:profile_version: 2.0.0-ballot
+:title: Central Cancer Registry Reporting Composition
+:short_description:
+  Verify support for the server capabilities required by the Central
+  Cancer Registry Reporting Composition.
 :must_supports:
   :extensions: []
   :slices:
-  - :slice_id: Composition.section:slicePrimaryCancerCondition
-    :slice_name: slicePrimaryCancerCondition
-    :path: section
-    :discriminator:
-      :type: value
-      :values:
-      - :path: code.coding.code
-        :value: 363346000
-  - :slice_id: Composition.section:sliceSecondaryCancerCondition
-    :slice_name: sliceSecondaryCancerCondition
-    :path: section
-    :discriminator:
-      :type: value
-      :values:
-      - :path: code.coding.code
-        :value: 128462008
-  - :slice_id: Composition.section:sliceCancerStageGroup
-    :slice_name: sliceCancerStageGroup
-    :path: section
-    :discriminator:
-      :type: value
-      :values:
-      - :path: code.coding.code
-        :value: 21908-9
-  - :slice_id: Composition.section:sliceRadioTherapyCourseSummary
-    :slice_name: sliceRadioTherapyCourseSummary
-    :path: section
-    :discriminator:
-      :type: value
-      :values:
-      - :path: code.coding.code
-        :value: 1217123003
-  - :slice_id: Composition.section:sliceProblemSection
-    :slice_name: sliceProblemSection
-    :path: section
-    :discriminator:
-      :type: value
-      :values:
-      - :path: code.coding.code
-        :value: 11450-4
-  - :slice_id: Composition.section:sliceAllergiesSection
-    :slice_name: sliceAllergiesSection
-    :path: section
-    :discriminator:
-      :type: value
-      :values:
-      - :path: code.coding.code
-        :value: 48765-2
-  - :slice_id: Composition.section:sliceMedicationsAdministeredSection
-    :slice_name: sliceMedicationsAdministeredSection
-    :path: section
-    :discriminator:
-      :type: value
-      :values:
-      - :path: code.coding.code
-        :value: 29549-3
-  - :slice_id: Composition.section:sliceMedicationsSection
-    :slice_name: sliceMedicationsSection
-    :path: section
-    :discriminator:
-      :type: value
-      :values:
-      - :path: code.coding.code
-        :value: 10160-0
-  - :slice_id: Composition.section:sliceOdhSection
-    :slice_name: sliceOdhSection
-    :path: section
-    :discriminator:
-      :type: value
-      :values:
-      - :path: code.coding.code
-        :value: 74165-2
-  - :slice_id: Composition.section:sliceResultsSection
-    :slice_name: sliceResultsSection
-    :path: section
-    :discriminator:
-      :type: value
-      :values:
-      - :path: code.coding.code
-        :value: 30954-2
-  - :slice_id: Composition.section:sliceNotesSection
-    :slice_name: sliceNotesSection
-    :path: section
-    :discriminator:
-      :type: value
-      :values:
-      - :path: code.coding.code
-        :value: 28650-0
-  - :slice_id: Composition.section:slicePlanOfTreatmentSection
-    :slice_name: slicePlanOfTreatmentSection
-    :path: section
-    :discriminator:
-      :type: value
-      :values:
-      - :path: code.coding.code
-        :value: 18776-5
-  - :slice_id: Composition.section:sliceProceduresSection
-    :slice_name: sliceProceduresSection
-    :path: section
-    :discriminator:
-      :type: value
-      :values:
-      - :path: code.coding.code
-        :value: 47519-4
-  - :slice_id: Composition.section:sliceVitalSignsSection
-    :slice_name: sliceVitalSignsSection
-    :path: section
-    :discriminator:
-      :type: value
-      :values:
-      - :path: code.coding.code
-        :value: 8716-3
-  - :slice_id: Composition.section:sliceSocialHistorySection
-    :slice_name: sliceSocialHistorySection
-    :path: section
-    :discriminator:
-      :type: value
-      :values:
-      - :path: code.coding.code
-        :value: 29762-2
+    - :slice_id: Composition.section:sliceEncounterSection
+      :slice_name: sliceEncounterSection
+      :path: section
+      :discriminator:
+        :type: value
+        :values:
+          - :path: code.coding.code
+            :value: 77473-7
+    - :slice_id: Composition.section:slicePrimaryCancerCondition
+      :slice_name: slicePrimaryCancerCondition
+      :path: section
+      :discriminator:
+        :type: value
+        :values:
+          - :path: code.coding.code
+            :value: 363346000
+    - :slice_id: Composition.section:sliceSecondaryCancerCondition
+      :slice_name: sliceSecondaryCancerCondition
+      :path: section
+      :discriminator:
+        :type: value
+        :values:
+          - :path: code.coding.code
+            :value: 128462008
+    - :slice_id: Composition.section:sliceTNMStaging
+      :slice_name: sliceTNMStaging
+      :path: section
+      :discriminator:
+        :type: value
+        :values:
+          - :path: code.coding.code
+            :value: 21908-9
+    - :slice_id: Composition.section:sliceRadioTherapyCourseSummary
+      :slice_name: sliceRadioTherapyCourseSummary
+      :path: section
+      :discriminator:
+        :type: value
+        :values:
+          - :path: code.coding.code
+            :value: 1217123003
+    - :slice_id: Composition.section:sliceProblemSection
+      :slice_name: sliceProblemSection
+      :path: section
+      :discriminator:
+        :type: value
+        :values:
+          - :path: code.coding.code
+            :value: 11450-4
+    - :slice_id: Composition.section:sliceMedicationsAdministeredSection
+      :slice_name: sliceMedicationsAdministeredSection
+      :path: section
+      :discriminator:
+        :type: value
+        :values:
+          - :path: code.coding.code
+            :value: 29549-3
+    - :slice_id: Composition.section:sliceMedicationsSection
+      :slice_name: sliceMedicationsSection
+      :path: section
+      :discriminator:
+        :type: value
+        :values:
+          - :path: code.coding.code
+            :value: 10160-0
+    - :slice_id: Composition.section:sliceODHSection
+      :slice_name: sliceODHSection
+      :path: section
+      :discriminator:
+        :type: value
+        :values:
+          - :path: code.coding.code
+            :value: 74165-2
+    - :slice_id: Composition.section:sliceResultsSection
+      :slice_name: sliceResultsSection
+      :path: section
+      :discriminator:
+        :type: value
+        :values:
+          - :path: code.coding.code
+            :value: 30954-2
+    - :slice_id: Composition.section:sliceNotesSection
+      :slice_name: sliceNotesSection
+      :path: section
+      :discriminator:
+        :type: value
+        :values:
+          - :path: code.coding.code
+            :value: 28650-0
+    - :slice_id: Composition.section:slicePlanOfTreatmentSection
+      :slice_name: slicePlanOfTreatmentSection
+      :path: section
+      :discriminator:
+        :type: value
+        :values:
+          - :path: code.coding.code
+            :value: 18776-5
+    - :slice_id: Composition.section:sliceProceduresSection
+      :slice_name: sliceProceduresSection
+      :path: section
+      :discriminator:
+        :type: value
+        :values:
+          - :path: code.coding.code
+            :value: 47519-4
+    - :slice_id: Composition.section:sliceVitalSignsSection
+      :slice_name: sliceVitalSignsSection
+      :path: section
+      :discriminator:
+        :type: value
+        :values:
+          - :path: code.coding.code
+            :value: 8716-3
+    - :slice_id: Composition.section:sliceSocialHistorySection
+      :slice_name: sliceSocialHistorySection
+      :path: section
+      :discriminator:
+        :type: value
+        :values:
+          - :path: code.coding.code
+            :value: 29762-2
   :elements:
-  - :path: identifier
-  - :path: status
-    :fixed_value: final
-  - :path: type.coding.code
-    :fixed_value: 72134-0
-  - :path: subject
-    :types:
-    - Reference
-    :target_profiles:
-    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient
-  - :path: encounter
-    :types:
-    - Reference
-    :target_profiles:
-    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter
-  - :path: date
-  - :path: author
-    :types:
-    - Reference
-  - :path: title
-  - :path: section
-  - :path: section:slicePrimaryCancerCondition.code
-  - :path: section:slicePrimaryCancerCondition.text
-  - :path: section:slicePrimaryCancerCondition.entry
-    :types:
-    - Reference
-    :target_profiles:
-    - http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/central-cancer-registry-primary-cancer-condition
-  - :path: section:sliceSecondaryCancerCondition.code
-  - :path: section:sliceSecondaryCancerCondition.text
-  - :path: section:sliceSecondaryCancerCondition.entry
-    :types:
-    - Reference
-    :target_profiles:
-    - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-secondary-cancer-condition
-  - :path: section:sliceCancerStageGroup.code
-  - :path: section:sliceCancerStageGroup.text
-  - :path: section:sliceCancerStageGroup.entry
-    :types:
-    - Reference
-    :target_profiles:
-    - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-stage-group
-  - :path: section:sliceRadioTherapyCourseSummary.code
-  - :path: section:sliceRadioTherapyCourseSummary.text
-  - :path: section:sliceRadioTherapyCourseSummary.entry
-    :types:
-    - Reference
-    :target_profiles:
-    - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-course-summary
-  - :path: section:sliceProblemSection.code
-  - :path: section:sliceProblemSection.text
-  - :path: section:sliceProblemSection.entry
-    :types:
-    - Reference
-    :target_profiles:
-    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition
-  - :path: section:sliceAllergiesSection.code
-  - :path: section:sliceAllergiesSection.text
-  - :path: section:sliceAllergiesSection.entry
-    :types:
-    - Reference
-    :target_profiles:
-    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-allergyintolerance
-  - :path: section:sliceMedicationsAdministeredSection.code
-  - :path: section:sliceMedicationsAdministeredSection.text
-  - :path: section:sliceMedicationsAdministeredSection.entry
-    :types:
-    - Reference
-  - :path: section:sliceMedicationsSection.code
-  - :path: section:sliceMedicationsSection.text
-  - :path: section:sliceMedicationsSection.entry
-    :types:
-    - Reference
-  - :path: section:sliceOdhSection.code
-  - :path: section:sliceOdhSection.text
-  - :path: section:sliceOdhSection.entry
-    :types:
-    - Reference
-    :target_profiles:
-    - http://hl7.org/fhir/us/odh/StructureDefinition/odh-UsualWork
-  - :path: section:sliceResultsSection.code
-  - :path: section:sliceResultsSection.text
-  - :path: section:sliceResultsSection.entry
-    :types:
-    - Reference
-  - :path: section:sliceNotesSection.code
-  - :path: section:sliceNotesSection.text
-  - :path: section:sliceNotesSection.entry
-    :types:
-    - Reference
-  - :path: section:slicePlanOfTreatmentSection.code
-  - :path: section:slicePlanOfTreatmentSection.text
-  - :path: section:slicePlanOfTreatmentSection.entry
-    :types:
-    - Reference
-  - :path: section:sliceProceduresSection.code
-  - :path: section:sliceProceduresSection.text
-  - :path: section:sliceProceduresSection.entry
-    :types:
-    - Reference
-    :target_profiles:
-    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure
-  - :path: section:sliceVitalSignsSection.code
-  - :path: section:sliceVitalSignsSection.text
-  - :path: section:sliceVitalSignsSection.entry
-    :types:
-    - Reference
-  - :path: section:sliceSocialHistorySection.code
-  - :path: section:sliceSocialHistorySection.text
-  - :path: section:sliceSocialHistorySection.entry
-    :types:
-    - Reference
-    :target_profiles:
-    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus
+    - :path: identifier
+    - :path: status
+      :fixed_value: final
+    - :path: type.coding.code
+      :fixed_value: 72134-0
+    - :path: subject
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/central-cancer-registry-reporting-patient
+    - :path: encounter
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/central-cancer-registry-reporting-encounter
+    - :path: date
+    - :path: author
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/central-cancer-registry-reporting-organization
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole
+    - :path: title
+    - :path: section
+    - :path: section:sliceEncounterSection.code
+    - :path: section:sliceEncounterSection.text
+    - :path: section:sliceEncounterSection.entry
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/central-cancer-registry-reporting-encounter
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis
+    - :path: section:slicePrimaryCancerCondition.code
+    - :path: section:slicePrimaryCancerCondition.text
+    - :path: section:slicePrimaryCancerCondition.entry
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/central-cancer-registry-primary-cancer-condition
+    - :path: section:sliceSecondaryCancerCondition.code
+    - :path: section:sliceSecondaryCancerCondition.text
+    - :path: section:sliceSecondaryCancerCondition.entry
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-secondary-cancer-condition
+    - :path: section:sliceTNMStaging.code
+    - :path: section:sliceTNMStaging.text
+    - :path: section:sliceTNMStaging.entry
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-stage-group
+        - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-distant-metastases-category
+        - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-primary-tumor-category
+        - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-regional-nodes-category
+    - :path: section:sliceRadioTherapyCourseSummary.code
+    - :path: section:sliceRadioTherapyCourseSummary.text
+    - :path: section:sliceRadioTherapyCourseSummary.entry
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-course-summary
+    - :path: section:sliceProblemSection.code
+    - :path: section:sliceProblemSection.text
+    - :path: section:sliceProblemSection.entry
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns
+    - :path: section:sliceMedicationsAdministeredSection.code
+    - :path: section:sliceMedicationsAdministeredSection.text
+    - :path: section:sliceMedicationsAdministeredSection.entry
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-administration
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-medication
+    - :path: section:sliceMedicationsSection.code
+    - :path: section:sliceMedicationsSection.text
+    - :path: section:sliceMedicationsSection.entry
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-administration
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-medication
+    - :path: section:sliceODHSection.code
+    - :path: section:sliceODHSection.text
+    - :path: section:sliceODHSection.entry
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/odh/StructureDefinition/odh-UsualWork
+    - :path: section:sliceResultsSection.code
+    - :path: section:sliceResultsSection.text
+    - :path: section:sliceResultsSection.entry
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab
+    - :path: section:sliceNotesSection.code
+    - :path: section:sliceNotesSection.text
+    - :path: section:sliceNotesSection.entry
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note
+    - :path: section:slicePlanOfTreatmentSection.code
+    - :path: section:slicePlanOfTreatmentSection.text
+    - :path: section:slicePlanOfTreatmentSection.entry
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-request
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-medication
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-servicerequest
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-careplan
+    - :path: section:sliceProceduresSection.code
+    - :path: section:sliceProceduresSection.text
+    - :path: section:sliceProceduresSection.entry
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure
+    - :path: section:sliceVitalSignsSection.code
+    - :path: section:sliceVitalSignsSection.text
+    - :path: section:sliceVitalSignsSection.entry
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs
+    - :path: section:sliceSocialHistorySection.code
+    - :path: section:sliceSocialHistorySection.text
+    - :path: section:sliceSocialHistorySection.entry
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus
 :mandatory_elements:
-- Composition.identifier
-- Composition.status
-- Composition.type
-- Composition.subject
-- Composition.encounter
-- Composition.date
-- Composition.author
-- Composition.title
-- Composition.attester.mode
-- Composition.relatesTo.code
-- Composition.relatesTo.target[x]
-- Composition.section
-- Composition.section.code
-- Composition.section.text
-- Composition.section.entry
+  - Composition.identifier
+  - Composition.status
+  - Composition.type
+  - Composition.subject
+  - Composition.encounter
+  - Composition.date
+  - Composition.author
+  - Composition.title
+  - Composition.attester.mode
+  - Composition.relatesTo.code
+  - Composition.relatesTo.target[x]
+  - Composition.section
+  - Composition.section.code
+  - Composition.section.text
+  - Composition.section.entry
 :tests:
-- :id: ccrr_v100_composition_must_support_test
-  :file_name: composition_must_support_test.rb
-- :id: ccrr_v100_composition_validation_test
-  :file_name: composition_validation_test.rb
-:id: ccrr_v100_composition
+  - :id: ccrr_v200_composition_must_support_test
+    :file_name: composition_must_support_test.rb
+  - :id: ccrr_v200_composition_validation_test
+    :file_name: composition_validation_test.rb
+:id: ccrr_v200_composition
+

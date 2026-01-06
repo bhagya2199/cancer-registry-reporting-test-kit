@@ -11,7 +11,7 @@ module CancerRegistryReportingTestKit
       title 'Secondary Cancer Condition profile must support element coverage'
       description %(
         This test looks across all instances
-        associated with the [Secondary Cancer Condition profile](http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-secondary-cancer-condition|3.0.0)
+        associated with the [Secondary Cancer Condition profile](http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-secondary-cancer-condition|4.0.0)
         found in the provided report Bundles and verifies that they
         contain populated examples of the following must support elements
         defined in the profile:
@@ -34,7 +34,7 @@ module CancerRegistryReportingTestKit
         * Condition.verificationStatus
       )
 
-      id :ccrr_v100_mcode_secondary_cancer_condition_must_support_test
+      id :ccrr_v200_mcode_secondary_cancer_condition_must_support_test
 
       def resource_type
         'Condition'

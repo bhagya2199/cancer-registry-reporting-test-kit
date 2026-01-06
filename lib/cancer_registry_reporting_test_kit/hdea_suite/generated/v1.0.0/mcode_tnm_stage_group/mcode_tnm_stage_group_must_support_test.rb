@@ -11,7 +11,7 @@ module CancerRegistryReportingTestKit
       title 'TNM Stage Group profile must support element coverage'
       description %(
         This test looks across all instances
-        associated with the [TNM Stage Group profile](http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-stage-group|3.0.0)
+        associated with the [TNM Stage Group profile](http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-stage-group|4.0.0)
         found in the provided report Bundles and verifies that they
         contain populated examples of the following must support elements
         defined in the profile:
