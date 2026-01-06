@@ -7,7 +7,7 @@ module CancerRegistryReportingTestKit
     class SmokingstatusValidationTest < Inferno::Test
       include CancerRegistryReportingTestKit::ValidationTest
 
-      id :ccrr_v100_smokingstatus_validation_test
+      id :ccrr_v200_smokingstatus_validation_test
       title 'US Core Smoking Status Observation profile conformance'
       description %(
         This test verifies that Observation instances

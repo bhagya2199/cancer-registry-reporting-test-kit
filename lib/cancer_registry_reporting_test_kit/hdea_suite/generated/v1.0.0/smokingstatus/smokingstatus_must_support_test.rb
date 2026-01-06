@@ -25,7 +25,7 @@ module CancerRegistryReportingTestKit
         * Observation.value[x]:valueCodeableConcept
       )
 
-      id :ccrr_v100_smokingstatus_must_support_test
+      id :ccrr_v200_smokingstatus_must_support_test
 
       def resource_type
         'Observation'

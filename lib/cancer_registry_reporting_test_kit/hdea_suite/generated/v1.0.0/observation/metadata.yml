@@ -13,14 +13,16 @@
 :must_supports:
   :extensions: []
   :slices: []
-  :elements: []
+  :elements:
+  - :path: effective[x]
 :mandatory_elements:
 - Observation.status
 - Observation.code
-- Observation.component.code
+- Observation.subject
+- Observation.value[x]
 :tests:
-- :id: ccrr_v100_observation_must_support_test
+- :id: ccrr_v200_observation_must_support_test
   :file_name: observation_must_support_test.rb
-- :id: ccrr_v100_observation_validation_test
+- :id: ccrr_v200_observation_validation_test
   :file_name: observation_validation_test.rb
-:id: ccrr_v100_observation
+:id: ccrr_v200_observation

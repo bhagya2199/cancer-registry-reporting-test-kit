@@ -28,7 +28,7 @@ module CancerRegistryReportingTestKit
         * Observation.valueString
       )
 
-      id :ccrr_v100_observation_lab_must_support_test
+      id :ccrr_v200_observation_lab_must_support_test
 
       def resource_type
         'Observation'

@@ -7,7 +7,7 @@ module CancerRegistryReportingTestKit
     class McodeTnmStageGroupValidationTest < Inferno::Test
       include CancerRegistryReportingTestKit::ValidationTest
 
-      id :ccrr_v100_mcode_tnm_stage_group_validation_test
+      id :ccrr_v200_mcode_tnm_stage_group_validation_test
       title 'TNM Stage Group profile conformance'
       description %(
         This test verifies that Observation instances

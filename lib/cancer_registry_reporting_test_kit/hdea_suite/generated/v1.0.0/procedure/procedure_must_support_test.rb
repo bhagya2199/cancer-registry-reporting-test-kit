@@ -17,12 +17,12 @@ module CancerRegistryReportingTestKit
         defined in the profile:
 
         * Procedure.code
-        * Procedure.performedDateTime
+        * Procedure.performed[x]
         * Procedure.status
         * Procedure.subject
       )
 
-      id :ccrr_v100_procedure_must_support_test
+      id :ccrr_v200_procedure_must_support_test
 
       def resource_type
         'Procedure'
