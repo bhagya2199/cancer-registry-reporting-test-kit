@@ -27,7 +27,7 @@ module CancerRegistryReportingTestKit
         Note: MS slices were identified by only the codesystem, not the specific codes used, due to the large number of codes included in the codesystem.
       )
 
-      id :ccrr_v200_odh_usual_work_must_support_test
+      id :ccrr_v100_odh_usual_work_must_support_test
 
       def resource_type
         'Observation'

@@ -169,8 +169,8 @@ module CancerRegistryReportingTestKit
 
     group do
       title 'Occupational Data Section'
-      test from: :ccrr_v200_odh_usual_work_validation_test
-      test from: :ccrr_v200_odh_usual_work_must_support_test
+      test from: :ccrr_v100_odh_usual_work_validation_test
+      test from: :ccrr_v100_odh_usual_work_must_support_test
     end
 
     group do
