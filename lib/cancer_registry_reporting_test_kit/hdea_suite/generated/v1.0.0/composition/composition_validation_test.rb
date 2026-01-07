@@ -27,7 +27,7 @@ module CancerRegistryReportingTestKit
       run do
         perform_validation_test(scratch_resources[:all] || [],
                                 'http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/ccrr-composition',
-                                '2.0.0-ballot',
+                                '1.0.0',
                                 skip_if_empty: true)
       end
     end

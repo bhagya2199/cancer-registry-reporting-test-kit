@@ -17,7 +17,7 @@ module CancerRegistryReportingTestKit
         defined in the profile:
 
         * Procedure.code
-        * Procedure.performed[x]
+        * Procedure.performedDateTime
         * Procedure.status
         * Procedure.subject
       )

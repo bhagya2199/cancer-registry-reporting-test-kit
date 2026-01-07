@@ -1,4 +1,127 @@
 {
   "index-version" : 2,
-  "files" : []
+  "files" : [
+    {
+      "filename" : "ImplementationGuide-hl7.fhir.us.central-cancer-registry-reporting.json",
+      "resourceType" : "ImplementationGuide",
+      "id" : "hl7.fhir.us.central-cancer-registry-reporting",
+      "url" : "http://hl7.org/fhir/us/central-cancer-registry-reporting/ImplementationGuide/hl7.fhir.us.central-cancer-registry-reporting",
+      "version" : "2.0.0-ballot"
+    },
+    {
+      "filename" : "StructureDefinition-ccrr-content-bundle.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ccrr-content-bundle",
+      "url" : "http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/ccrr-content-bundle",
+      "version" : "2.0.0-ballot",
+      "kind" : "resource",
+      "type" : "Bundle",
+      "derivation" : "constraint"
+    },
+    {
+      "filename" : "StructureDefinition-ccrr-reporting-bundle.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ccrr-reporting-bundle",
+      "url" : "http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/ccrr-reporting-bundle",
+      "version" : "2.0.0-ballot",
+      "kind" : "resource",
+      "type" : "Bundle",
+      "derivation" : "constraint"
+    },
+    {
+      "filename" : "CapabilityStatement-central-cancer-registry-reporting-ehr.json",
+      "resourceType" : "CapabilityStatement",
+      "id" : "central-cancer-registry-reporting-ehr",
+      "url" : "http://hl7.org/fhir/us/central-cancer-registry-reporting/CapabilityStatement/central-cancer-registry-reporting-ehr",
+      "version" : "2.0.0-ballot",
+      "kind" : "requirements"
+    },
+    {
+      "filename" : "StructureDefinition-ccrr-composition.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ccrr-composition",
+      "url" : "http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/ccrr-composition",
+      "version" : "2.0.0-ballot",
+      "kind" : "resource",
+      "type" : "Composition",
+      "derivation" : "constraint"
+    },
+    {
+      "filename" : "StructureDefinition-central-cancer-registry-reporting-messageheader.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "central-cancer-registry-reporting-messageheader",
+      "url" : "http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/central-cancer-registry-reporting-messageheader",
+      "version" : "2.0.0-ballot",
+      "kind" : "resource",
+      "type" : "MessageHeader",
+      "derivation" : "constraint"
+    },
+    {
+      "filename" : "StructureDefinition-central-cancer-registry-primary-cancer-condition.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "central-cancer-registry-primary-cancer-condition",
+      "url" : "http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/central-cancer-registry-primary-cancer-condition",
+      "version" : "2.0.0-ballot",
+      "kind" : "resource",
+      "type" : "Condition",
+      "derivation" : "constraint"
+    },
+    {
+      "filename" : "StructureDefinition-central-cancer-registry-reporting-encounter.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "central-cancer-registry-reporting-encounter",
+      "url" : "http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/central-cancer-registry-reporting-encounter",
+      "version" : "2.0.0-ballot",
+      "kind" : "resource",
+      "type" : "Encounter",
+      "derivation" : "constraint"
+    },
+    {
+      "filename" : "StructureDefinition-central-cancer-registry-reporting-organization.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "central-cancer-registry-reporting-organization",
+      "url" : "http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/central-cancer-registry-reporting-organization",
+      "version" : "2.0.0-ballot",
+      "kind" : "resource",
+      "type" : "Organization",
+      "derivation" : "constraint"
+    },
+    {
+      "filename" : "StructureDefinition-central-cancer-registry-reporting-patient.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "central-cancer-registry-reporting-patient",
+      "url" : "http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/central-cancer-registry-reporting-patient",
+      "version" : "2.0.0-ballot",
+      "kind" : "resource",
+      "type" : "Patient",
+      "derivation" : "constraint"
+    },
+    {
+      "filename" : "StructureDefinition-cancer-status-evidence-type.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "cancer-status-evidence-type",
+      "url" : "http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/cancer-status-evidence-type",
+      "version" : "2.0.0-ballot",
+      "kind" : "complex-type",
+      "type" : "Extension",
+      "derivation" : "constraint"
+    },
+    {
+      "filename" : "StructureDefinition-ccrr-plandefinition.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ccrr-plandefinition",
+      "url" : "http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/ccrr-plandefinition",
+      "version" : "2.0.0-ballot",
+      "kind" : "resource",
+      "type" : "PlanDefinition",
+      "derivation" : "constraint"
+    },
+    {
+      "filename" : "ValueSet-cancer-core-reportability-codes.json",
+      "resourceType" : "ValueSet",
+      "id" : "cancer-core-reportability-codes",
+      "url" : "http://hl7.org/fhir/us/central-cancer-registry-reporting/ValueSet/cancer-core-reportability-codes",
+      "version" : "2.0.0-ballot"
+    }
+  ]
 }

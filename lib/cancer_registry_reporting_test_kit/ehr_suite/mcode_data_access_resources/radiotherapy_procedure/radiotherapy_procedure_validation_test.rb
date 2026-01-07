@@ -30,7 +30,7 @@ module CancerRegistryReportingTestKit
     run do
       perform_validation_test(scratch_resources[:all] || [],
                               'http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-course-summary',
-                              '3.0.0',
+                              '4.0.0',
                               skip_if_empty: true)
     end
   end

@@ -47,3 +47,5 @@
     :file_name: mcode_tnm_stage_group_validation_test.rb
   - :id: ccrr_v200_mcode_tnm_stage_group
     :file_name: mcode_tnm_stage_group_test.rb
+  - :id: ccrr_v200_mcode_tnm_stage_group_retrieval_test
+    :file_name: mcode_tnm_stage_group_retrieval_test.rb 

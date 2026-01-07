@@ -8,74 +8,75 @@
 :profile_name: Usual Work
 :profile_version: 1.1.0
 :title: Observation Usual Work
-:short_description: Verify support for the server capabilities required by the Usual
+:short_description:
+  Verify support for the server capabilities required by the Usual
   Work.
 :must_supports:
   :extensions: []
   :slices:
-  - :slice_id: Observation.value[x]:valueCodeableConcept.coding:occupationCDCCensus2010
-    :slice_name: occupationCDCCensus2010
-    :path: value[x].coding
-    :discriminator:
-      :type: requiredBinding
-      :path: ''
-      :values:
-      - :system: 2.16.840.1.114222.4.11.7186
-        :code: ''
-  - :slice_id: Observation.value[x]:valueCodeableConcept.coding:occupationONETSOCDetailODH
-    :slice_name: occupationONETSOCDetailODH
-    :path: value[x].coding
-    :discriminator:
-      :type: requiredBinding
-      :path: ''
-      :values: 
-      - :system: 2.16.840.1.114222.4.11.7901
-        :code: ''
-  - :slice_id: Observation.component:odh-UsualIndustry.value[x].coding:industryCDCCensus2010
-    :slice_name: industryCDCCensus2010
-    :path: component.value[x].coding
-    :discriminator:
-      :type: requiredBinding
-      :path: component.value[x]
-      :values: 
-      - :system: 2.16.840.1.114222.4.11.7187
-        :code: ''
-  - :slice_id: Observation.component:odh-UsualIndustry.value[x].coding:industryONETSOCDetailODH
-    :slice_name: industryONETSOCDetailODH
-    :path: component.value[x].coding
-    :discriminator:
-      :type: requiredBinding
-      :path: ''
-      :values: 
-      - :system: 2.16.840.1.114222.4.11.7900
-        :code: ''
-  - :slice_id: Observation.value[x]:valueCodeableConcept
-    :slice_name: valueCodeableConcept
-    :path: value[x]
-    :discriminator:
-      :type: type
-      :code: CodeableConcept
+    - :slice_id: Observation.value[x]:valueCodeableConcept.coding:occupationCDCCensus2010
+      :slice_name: occupationCDCCensus2010
+      :path: value[x].coding
+      :discriminator:
+        :type: requiredBinding
+        :path: ""
+        :values:
+          - :system: 2.16.840.1.114222.4.11.7186
+            :code: ""
+    - :slice_id: Observation.value[x]:valueCodeableConcept.coding:occupationONETSOCDetailODH
+      :slice_name: occupationONETSOCDetailODH
+      :path: value[x].coding
+      :discriminator:
+        :type: requiredBinding
+        :path: ""
+        :values:
+          - :system: 2.16.840.1.114222.4.11.7901
+            :code: ""
+    - :slice_id: Observation.component:odh-UsualIndustry.value[x].coding:industryCDCCensus2010
+      :slice_name: industryCDCCensus2010
+      :path: component.value[x].coding
+      :discriminator:
+        :type: requiredBinding
+        :path: component.value[x]
+        :values:
+          - :system: 2.16.840.1.114222.4.11.7187
+            :code: ""
+    - :slice_id: Observation.component:odh-UsualIndustry.value[x].coding:industryONETSOCDetailODH
+      :slice_name: industryONETSOCDetailODH
+      :path: component.value[x].coding
+      :discriminator:
+        :type: requiredBinding
+        :path: ""
+        :values:
+          - :system: 2.16.840.1.114222.4.11.7900
+            :code: ""
+    - :slice_id: Observation.value[x]:valueCodeableConcept
+      :slice_name: valueCodeableConcept
+      :path: value[x]
+      :discriminator:
+        :type: type
+        :code: CodeableConcept
   :elements:
-  - :path: component:odh-UsualIndustry.value[x].coding
-  - :path: value[x]:valueCodeableConcept.coding
+    - :path: component:odh-UsualIndustry.value[x].coding
+    - :path: value[x]:valueCodeableConcept.coding
 :mandatory_elements:
-- Observation.status
-- Observation.category.coding
-- Observation.category.coding.system
-- Observation.category.coding.code
-- Observation.code
-- Observation.code.coding
-- Observation.code.coding.system
-- Observation.code.coding.code
-- Observation.subject
-- Observation.effective[x]
-- Observation.value[x].coding
-- Observation.component
-- Observation.component.code
-- Observation.component.value[x].coding
+  - Observation.status
+  - Observation.category.coding
+  - Observation.category.coding.system
+  - Observation.category.coding.code
+  - Observation.code
+  - Observation.code.coding
+  - Observation.code.coding.system
+  - Observation.code.coding.code
+  - Observation.subject
+  - Observation.effective[x]
+  - Observation.value[x].coding
+  - Observation.component
+  - Observation.component.code
+  - Observation.component.value[x].coding
 :tests:
-- :id: ccrr_v200_odh_usual_work_must_support_test
-  :file_name: odh_usual_work_must_support_test.rb
-- :id: ccrr_v200_odh_usual_work_validation_test
-  :file_name: odh_usual_work_validation_test.rb
-:id: ccrr_v200_odh_usual_work
+  - :id: ccrr_v100_odh_usual_work_must_support_test
+    :file_name: odh_usual_work_must_support_test.rb
+  - :id: ccrr_v100_odh_usual_work_validation_test
+    :file_name: odh_usual_work_validation_test.rb
+:id: ccrr_v100_odh_usual_work
