@@ -277,18 +277,14 @@
       :target_profiles:
         - http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus
 :mandatory_elements:
-  - Composition.identifier
   - Composition.status
   - Composition.type
   - Composition.subject
-  - Composition.encounter
   - Composition.date
   - Composition.author
   - Composition.title
-  - Composition.attester.mode
-  - Composition.relatesTo.code
-  - Composition.relatesTo.target[x]
   - Composition.section
+  - Composition.section:slicePrimaryCancerCondition
   - Composition.section.code
   - Composition.section.text
   - Composition.section.entry

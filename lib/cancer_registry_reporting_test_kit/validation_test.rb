@@ -5,34 +5,48 @@ module CancerRegistryReportingTestKit
     DAR_CODE_SYSTEM_URL = 'http://terminology.hl7.org/CodeSystem/data-absent-reason'
     DAR_EXTENSION_URL = 'http://hl7.org/fhir/StructureDefinition/data-absent-reason'
 
-    def perform_validation_test(resourceType = resource_type,
-                                resources,
-                                profile_url,
-                                profile_version,
-                                skip_if_empty: true)
-      find_validation_errors(resourceType, resources, profile_url, profile_version, skip_if_empty: )
+    def perform_validation_test(arg1, arg2, arg3, arg4 = nil, resource_type_name: nil, skip_if_empty: true)
+      if arg4
+        actual_resource_type = arg1
+        resources = arg2
+        profile_url = arg3
+        profile_version = arg4
+      else
+        actual_resource_type = resource_type_name || resource_type
+        resources = arg1
+        profile_url = arg2
+        profile_version = arg3
+      end
+
+      find_validation_errors(resources, profile_url, profile_version, resource_type_name: actual_resource_type, skip_if_empty: skip_if_empty)
       errors_found = messages.any? { |message| message[:type] == 'error' }
 
       profile_with_version = "#{profile_url}|#{profile_version}"
       assert !errors_found, "Resource does not conform to the profile #{profile_with_version}"
     end
 
-    def find_validation_errors(resourceType = resource_type,
-                          resources,
-                          profile_url,
-                          profile_version,
-                          skip_if_empty: true)
+    def find_validation_errors(arg1, arg2, arg3, arg4 = nil, resource_type_name: nil, skip_if_empty: true)
+      if arg4
+        actual_resource_type = arg1
+        resources = arg2
+        profile_url = arg3
+        profile_version = arg4
+      else
+        actual_resource_type = resource_type_name || resource_type
+        resources = arg1
+        profile_url = arg2
+        profile_version = arg3
+      end
+
       skip_if skip_if_empty && resources.blank?,
-              "No #{resourceType} resources conforming to the #{profile_url} profile were returned"
+              "No #{actual_resource_type} resources conforming to the #{profile_url} profile were returned"
 
       omit_if resources.blank?,
-              "No #{resourceType} resources provided so the #{profile_url} profile does not apply"
+              "No #{actual_resource_type} resources provided so the #{profile_url} profile does not apply"
 
       profile_with_version = "#{profile_url}|#{profile_version}"
       resources.each do |resource|
         resource_is_valid?(resource: resource, profile_url: profile_with_version)
-        # DAR checks are a SHOULD requirement in CCRR 1.0.1
-        # check_for_dar(resource)
       end
     end
 

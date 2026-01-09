@@ -22,13 +22,11 @@ module CancerRegistryReportingTestKit
         * Condition.bodySite.extension:lateralityQualifier
         * Condition.bodySite.extension:locationQualifier
         * Condition.category
-        * Condition.category:sdoh
         * Condition.category:us-core
         * Condition.clinicalStatus
         * Condition.code
         * Condition.extension:assertedDate
         * Condition.extension:histologyMorphologyBehavior
-        * Condition.extension:mcode-cancer-disease-type-evidence-type
         * Condition.onsetDateTime
         * Condition.recordedDate
         * Condition.stage

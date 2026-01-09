@@ -21,8 +21,8 @@ module CancerRegistryReportingTestKit
         * Condition.bodySite.extension:lateralityQualifier
         * Condition.bodySite.extension:locationQualifier
         * Condition.category
-        * Condition.category:sdoh
         * Condition.category:us-core
+        * Condition.category:screening-assessment
         * Condition.clinicalStatus
         * Condition.code
         * Condition.extension:assertedDate
