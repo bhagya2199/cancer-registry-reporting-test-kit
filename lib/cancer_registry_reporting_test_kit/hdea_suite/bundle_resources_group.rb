@@ -123,8 +123,8 @@ module CancerRegistryReportingTestKit
 
     group do
       title 'Primary Cancer Condition Section'
-      test from: :ccrr_v100_central_cancer_registry_primary_cancer_condition_validation_test
-      test from: :ccrr_v100_central_cancer_registry_primary_cancer_condition_must_support_test
+      test from: :ccrr_v200_central_cancer_registry_primary_cancer_condition_validation_test
+      test from: :ccrr_v200_central_cancer_registry_primary_cancer_condition_must_support_test
     end
 
     group do

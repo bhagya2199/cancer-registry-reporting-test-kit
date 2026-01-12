@@ -8,8 +8,7 @@
 :profile_name: Usual Work
 :profile_version: 1.1.0
 :title: Observation Usual Work
-:short_description:
-  Verify support for the server capabilities required by the Usual
+:short_description: Verify support for the server capabilities required by the Usual
   Work.
 :must_supports:
   :extensions: []
@@ -19,19 +18,19 @@
       :path: value[x].coding
       :discriminator:
         :type: requiredBinding
-        :path: ""
+        :path: ''
         :values:
           - :system: 2.16.840.1.114222.4.11.7186
-            :code: ""
+            :code: ''
     - :slice_id: Observation.value[x]:valueCodeableConcept.coding:occupationONETSOCDetailODH
       :slice_name: occupationONETSOCDetailODH
       :path: value[x].coding
       :discriminator:
         :type: requiredBinding
-        :path: ""
+        :path: ''
         :values:
           - :system: 2.16.840.1.114222.4.11.7901
-            :code: ""
+            :code: ''
     - :slice_id: Observation.component:odh-UsualIndustry.value[x].coding:industryCDCCensus2010
       :slice_name: industryCDCCensus2010
       :path: component.value[x].coding
@@ -40,16 +39,16 @@
         :path: component.value[x]
         :values:
           - :system: 2.16.840.1.114222.4.11.7187
-            :code: ""
+            :code: ''
     - :slice_id: Observation.component:odh-UsualIndustry.value[x].coding:industryONETSOCDetailODH
       :slice_name: industryONETSOCDetailODH
       :path: component.value[x].coding
       :discriminator:
         :type: requiredBinding
-        :path: ""
+        :path: ''
         :values:
           - :system: 2.16.840.1.114222.4.11.7900
-            :code: ""
+            :code: ''
     - :slice_id: Observation.value[x]:valueCodeableConcept
       :slice_name: valueCodeableConcept
       :path: value[x]
