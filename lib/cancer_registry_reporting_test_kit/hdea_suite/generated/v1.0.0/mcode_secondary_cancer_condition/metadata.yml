@@ -47,7 +47,7 @@
         :path: ""
         :values:
           - :system: http://hl7.org/fhir/us/core/ValueSet/us-core-screening-assessment-condition-category
-            :code: ""  # optional slice; include only if your suite expects it
+            :code: ""  # required binding slice (Inferno checks presence + binding)
 
   :elements:
     - :path: clinicalStatus

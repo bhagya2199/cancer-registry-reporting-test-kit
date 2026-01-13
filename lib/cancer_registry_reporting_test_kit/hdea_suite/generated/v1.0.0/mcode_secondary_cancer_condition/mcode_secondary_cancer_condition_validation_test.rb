@@ -27,7 +27,7 @@ module CancerRegistryReportingTestKit
       run do
         perform_validation_test(scratch_resources[:all] || [],
                                 'http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-secondary-cancer-condition',
-                                '3.0.0',
+                                '4.0.0',
                                 skip_if_empty: true)
       end
     end

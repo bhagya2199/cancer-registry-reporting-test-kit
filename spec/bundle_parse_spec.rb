@@ -51,7 +51,7 @@ RSpec.describe CancerRegistryReportingTestKit::MustSupportTest, :runnable do
             disableDefaultResourceFetcher true
           end
   
-          igs 'hl7.fhir.us.central-cancer-registry-reporting#1.0.0'
+          igs 'hl7.fhir.us.central-cancer-registry-reporting#2.0.0-ballot'
         end
       end
     end 
