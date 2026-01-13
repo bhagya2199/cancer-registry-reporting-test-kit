@@ -7,7 +7,7 @@ module CancerRegistryReportingTestKit
     class PractitionerValidationTest < Inferno::Test
       include CancerRegistryReportingTestKit::ValidationTest
 
-      id :ccrr_v100_practitioner_validation_test
+      id :ccrr_v200_practitioner_validation_test
       title 'US Core Practitioner profile conformance'
       description %(
         This test verifies that Practitioner instances

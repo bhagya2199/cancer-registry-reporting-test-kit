@@ -7,7 +7,7 @@ module CancerRegistryReportingTestKit
     class ConditionValidationTest < Inferno::Test
       include CancerRegistryReportingTestKit::ValidationTest
 
-      id :ccrr_v100_condition_validation_test
+      id :ccrr_v200_condition_validation_test
       title 'US Core Condition profile conformance'
       description %(
         This test verifies that Condition instances

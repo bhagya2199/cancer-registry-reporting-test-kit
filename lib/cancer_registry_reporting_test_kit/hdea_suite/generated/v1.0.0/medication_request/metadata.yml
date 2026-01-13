@@ -1,15 +1,14 @@
 ---
 :name: mcode_cancer_related_medication_request
 :class_name: McodeCancerRelatedMedicationRequestSequence
-:version: v1.0.0
-:reformatted_version: v100
+:version: v2.0.0-ballot
+:reformatted_version: v200
 :resource: MedicationRequest
 :profile_url: http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-request
 :profile_name: Cancer-Related Medication Request Profile
-:profile_version: 3.0.0
+:profile_version: 4.0.0
 :title: Cancer-Related Medication Request
-:short_description: Verify support for the server capabilities required by the Cancer-Related
-  Medication Request Profile.
+:short_description: Verify support for the server capabilities required by the Cancer-Related Medication Request Profile.
 :must_supports:
   :extensions:
   - :id: MedicationRequest.extension:treatmentIntent
@@ -79,8 +78,8 @@
 - MedicationRequest.requester
 - MedicationRequest.substitution.allowed[x]
 :tests:
-- :id: ccrr_v100_medication_request_must_support_test
+- :id: ccrr_v200_medication_request_must_support_test
   :file_name: medication_request_must_support_test.rb
-- :id: ccrr_v100_medication_request_validation_test
+- :id: ccrr_v200_medication_request_validation_test
   :file_name: medication_request_validation_test.rb
-:id: ccrr_v100_medication_request
+:id: ccrr_v200_medication_request

@@ -19,7 +19,7 @@ module CancerRegistryReportingTestKit
 
       )
 
-      id :ccrr_v100_medication_statement_must_support_test
+      id :ccrr_v200_medication_statement_must_support_test
 
       def resource_type
         'MedicationStatement'

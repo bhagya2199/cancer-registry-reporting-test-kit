@@ -7,7 +7,7 @@ module CancerRegistryReportingTestKit
     class MedicationAdministrationValidationTest < Inferno::Test
       include CancerRegistryReportingTestKit::ValidationTest
 
-      id :ccrr_v100_medication_administration_validation_test
+      id :ccrr_v200_medication_administration_validation_test
       title 'Cancer-Related Medication Administration profile conformance'
       description %(
         This test verifies that MedicationAdministration instances

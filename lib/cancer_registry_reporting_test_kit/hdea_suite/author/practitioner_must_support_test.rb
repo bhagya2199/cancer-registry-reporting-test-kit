@@ -32,7 +32,7 @@ module CancerRegistryReportingTestKit
         * Practitioner.telecom.value
       )
 
-      id :ccrr_v100_practitioner_must_support_test
+      id :ccrr_v200_practitioner_must_support_test
 
       def resource_type
         'Practitioner'

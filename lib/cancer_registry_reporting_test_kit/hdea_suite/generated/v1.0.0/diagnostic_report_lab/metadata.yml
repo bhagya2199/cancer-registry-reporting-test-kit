@@ -1,16 +1,15 @@
 ---
 :name: us_core_diagnosticreport_lab
 :class_name: UsCoreDiagnosticreportLabSequence
-:version: v1.0.0
-:reformatted_version: v100
+:version: v2.0.0-ballot
+:reformatted_version: v200
 :resource: DiagnosticReport
 :profile_url: http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/central-cancer-registry-reporting-diagnostic-report
 :profile_name: Central Cancer Registry Reporting DiagnosticReport
-:profile_version: 1.0.0
+:profile_version: 2.0.0-ballot
 :title: Central Cancer Registry Reporting DiagnosticReport
-:short_description:
-  Verify support for the server capabilities required by the US
-  Core DiagnosticReport Profile for Laboratory Results Reporting.
+:short_description: Verify support for the server capabilities required by the US Core DiagnosticReport Profile for Laboratory
+  Results Reporting.
 :must_supports:
   :extensions: []
   :slices:
@@ -51,8 +50,8 @@
   - DiagnosticReport.subject
   - DiagnosticReport.media.link
 :tests:
-  - :id: ccrr_v100_diagnostic_report_lab_must_support_test
+  - :id: ccrr_v200_diagnostic_report_lab_must_support_test
     :file_name: diagnostic_report_lab_must_support_test.rb
-  - :id: ccrr_v100_diagnostic_report_lab_validation_test
+  - :id: ccrr_v200_diagnostic_report_lab_validation_test
     :file_name: diagnostic_report_lab_validation_test.rb
-:id: ccrr_v100_diagnostic_report_lab
+:id: ccrr_v200_diagnostic_report_lab

@@ -23,7 +23,7 @@ module CancerRegistryReportingTestKit
         * Condition.verificationStatus
       )
 
-      id :ccrr_v100_condition_must_support_test
+      id :ccrr_v200_condition_must_support_test
 
       def resource_type
         'Condition'

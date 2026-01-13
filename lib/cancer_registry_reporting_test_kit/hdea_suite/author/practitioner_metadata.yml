@@ -1,16 +1,14 @@
 ---
 :name: us_core_practitioner
 :class_name: UsCorePractitionerSequence
-:version: v1.0.0
-:reformatted_version: v100
+:version: v2.0.0-ballot
+:reformatted_version: v200
 :resource: Practitioner
 :profile_url: http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner
 :profile_name: US Core Practitioner Profile
-:profile_version: 5.0.1
+:profile_version: 6.1.0
 :title: US Core Practitioner
-:short_description:
-  Verify support for the server capabilities required by the US
-  Core Practitioner Profile.
+:short_description: Verify support for the server capabilities required by the US Core Practitioner Profile.
 :must_supports:
   :extensions: []
   :slices:
@@ -44,9 +42,9 @@
   - Practitioner.name.family
   - Practitioner.qualification.code
 :tests:
-  - :id: ccrr_v100_practitioner_must_support_test
+  - :id: ccrr_v200_practitioner_must_support_test
     :file_name: practitioner_must_support_test.rb
-  - :id: ccrr_v100_practitioner_validation_test
+  - :id: ccrr_v200_practitioner_validation_test
     :file_name: practitioner_validation_test.rb
-:id: ccrr_v100_practitioner
+:id: ccrr_v200_practitioner
 :file_name: practitioner_group.rb

@@ -7,7 +7,7 @@ module CancerRegistryReportingTestKit
     class DiagnosticReportNoteValidationTest < Inferno::Test
       include CancerRegistryReportingTestKit::ValidationTest
 
-      id :ccrr_v100_diagnostic_report_note_validation_test
+      id :ccrr_v200_diagnostic_report_note_validation_test
       title 'US Core DiagnosticReport Profile for Report and Note Exchange profile conformance'
       description %(
         This test verifies that DiagnosticReport instances

@@ -1,15 +1,14 @@
 ---
 :name: us_core_medication
 :class_name: UsCoreMedicationSequence
-:version: v1.0.0
-:reformatted_version: v100
+:version: v2.0.0-ballot
+:reformatted_version: v200
 :resource: Medication
 :profile_url: http://hl7.org/fhir/us/core/StructureDefinition/us-core-medication
 :profile_name: US Core Medication Profile
-:profile_version: 5.0.1
+:profile_version: 6.1.0
 :title: US Core Medication
-:short_description: Verify support for the server capabilities required by the US
-  Core Medication Profile.
+:short_description: Verify support for the server capabilities required by the US Core Medication Profile.
 :must_supports:
   :extensions: []
   :slices: []
@@ -19,8 +18,8 @@
 - Medication.code
 - Medication.ingredient.item[x]
 :tests:
-- :id: ccrr_v100_medication_must_support_test
+- :id: ccrr_v200_medication_must_support_test
   :file_name: medication_must_support_test.rb
-- :id: ccrr_v100_medication_validation_test
+- :id: ccrr_v200_medication_validation_test
   :file_name: medication_validation_test.rb
-:id: ccrr_v100_medication
+:id: ccrr_v200_medication

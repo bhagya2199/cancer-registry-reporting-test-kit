@@ -1,15 +1,16 @@
 ---
-:name: us_core_organization
-:class_name: UsCoreOrganizationSequence
-:version: v1.0.0
-:reformatted_version: v100
+:name: central_cancer_registry_reporting_organization
+:class_name: CentralCancerRegistryReportingOrganizationSequence
+:version: v2.0.0-ballot
+:reformatted_version: v200
 :resource: Organization
-:profile_url: http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization
-:profile_name: US Core Organization Profile
-:profile_version: 5.0.1
-:title: US Core Organization
-:short_description: Verify support for the server capabilities required by the US
-  Core Organization Profile.
+:profile_url: http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/central-cancer-registry-reporting-organization
+:profile_name: Central Cancer Registry Reporting Organization
+:profile_version: 2.0.0-ballot
+:title: Central Cancer Registry Reporting Organization
+:short_description:
+  Verify support for the server capabilities required by the Central
+  Cancer Registry Reporting Organization.
 :must_supports:
   :extensions: []
   :slices:
@@ -17,13 +18,13 @@
     :slice_name: NPI
     :path: identifier
     :discriminator:
-      :type: patternIdentifier
-      :path: ''
-      :system: http://hl7.org/fhir/sid/us-npi
+      :type: value
+      :values:
+        - :path: system
+          :value: http://hl7.org/fhir/sid/us-npi
   :elements:
   - :path: identifier
-  - :path: identifier.system
-  - :path: identifier.value
+  - :path: identifier:NPI
   - :path: active
   - :path: name
   - :path: telecom
@@ -36,11 +37,13 @@
   - :path: address.postalCode
   - :path: address.country
 :mandatory_elements:
+- Organization.identifier
+- Organization.identifier:NPI
 - Organization.active
 - Organization.name
 :tests:
-- :id: ccrr_v100_organization_must_support_test
-  :file_name: organization_must_support_test.rb
-- :id: ccrr_v100_organization_validation_test
-  :file_name: organization_validation_test.rb
-:id: ccrr_v100_organization
+- :id: ccrr_v200_central_cancer_registry_reporting_organization_must_support_test
+  :file_name: central_cancer_registry_reporting_organization_must_support_test.rb
+- :id: ccrr_v200_central_cancer_registry_reporting_organization_validation_test
+  :file_name: central_cancer_registry_reporting_organization_validation_test.rb
+:id: ccrr_v200_central_cancer_registry_reporting_organization

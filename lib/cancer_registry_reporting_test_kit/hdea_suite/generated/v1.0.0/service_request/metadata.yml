@@ -1,15 +1,14 @@
 ---
 :name: ServiceRequest
 :class_name: ServicerequestSequence
-:version: v1.0.0
-:reformatted_version: v100
+:version: v2.0.0-ballot
+:reformatted_version: v200
 :resource: ServiceRequest
 :profile_url: http://hl7.org/fhir/StructureDefinition/ServiceRequest
 :profile_name: Base ServiceRequest
 :profile_version: 4.0.1
 :title: Base ServiceRequest
-:short_description: Verify support for the server capabilities required by the Base
-  ServiceRequest.
+:short_description: Verify support for the server capabilities required by the Base ServiceRequest.
 :must_supports:
   :extensions: []
   :slices: []
@@ -19,8 +18,8 @@
 - ServiceRequest.intent
 - ServiceRequest.subject
 :tests:
-- :id: ccrr_v100_service_request_must_support_test
+- :id: ccrr_v200_service_request_must_support_test
   :file_name: service_request_must_support_test.rb
-- :id: ccrr_v100_service_request_validation_test
+- :id: ccrr_v200_service_request_validation_test
   :file_name: service_request_validation_test.rb
-:id: ccrr_v100_service_request
+:id: ccrr_v200_service_request

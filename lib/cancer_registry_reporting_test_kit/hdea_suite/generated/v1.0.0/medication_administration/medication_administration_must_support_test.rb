@@ -26,7 +26,7 @@ module CancerRegistryReportingTestKit
         * MedicationAdministration.subject
       )
 
-      id :ccrr_v100_medication_administration_must_support_test
+      id :ccrr_v200_medication_administration_must_support_test
 
       def resource_type
         'MedicationAdministration'

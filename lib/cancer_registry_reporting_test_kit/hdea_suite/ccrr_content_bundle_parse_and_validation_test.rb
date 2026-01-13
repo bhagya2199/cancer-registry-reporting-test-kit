@@ -5,23 +5,21 @@ require_relative '../hdea_generator/naming'
 require_relative '../bundle_parse'
 
 module CancerRegistryReportingTestKit
-  module HDEAV100
+  module HDEAV200
     class CcrrContentBundleParseAndValidationTest < Inferno::Test
       include CancerRegistryReportingTestKit::ValidationTest
       include CancerRegistryReportingTestKit::HDEABundleParse
 
-      id :ccrr_v100_ccrr_content_bundle_parse_and_validation_test
+      id :ccrr_v200_ccrr_content_bundle_parse_and_validation_test
       title 'Central Cancer Registry Content Bundle profile conformance'
       description %(
-        This test confirms that the tester provided one or more Bundles in the **Cancer Reports** input
-        and that they each follow the sturcture of and conform to the
-        [Central Cancer Registry Content Bundle profile](https://hl7.org/fhir/us/central-cancer-registry-reporting/STU1/StructureDefinition-ccrr-content-bundle.html).
-        Note that this test does not include conformance checks for the entries within the Bundle, which
-        are handled by subsequent tests.
+        This test confirms that the tester provided one or more Bundles in the **Cancer Reports** input.
+        It also validates that the Bundle(s) conform to the CCRR Content Bundle profile.
+        Entry resources are validated by subsequent resource-specific tests.
       )
 
-      def add_ms_resources_to_scratch(reports)
-        reports.each_with_index do |bundle, index|
+      def add_ms_resources_to_scratch(reports_list)
+        reports_list.each_with_index do |bundle, index|
           parsed_bundle = parse_bundle(FHIR.from_contents(bundle.to_json), index).first
           next unless parsed_bundle.present?
 
@@ -49,18 +47,20 @@ module CancerRegistryReportingTestKit
       end
 
       run do
+        # "reports" is the Inferno input that contains one or more Bundles (JSON strings)
         add_ms_resources_to_scratch(JSON.parse("[#{reports}]").flatten.compact)
-        find_validation_errors(scratch_resources[:all] || [],
-                               'http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/ccrr-content-bundle',
-                               '1.0.0',
-                               skip_if_empty: true)
+
+        messages = find_validation_errors(scratch_resources[:all] || [],
+                                          'http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/ccrr-content-bundle',
+                                          '2.0.0-ballot',
+                                          skip_if_empty: true) || []
 
         # filter errors related to entry resources - these are handled elsewhere
         messages.reject! { |message| /Bundle\.entry\[\d+\]\.resource/.match(message[:message]) }
 
         errors_found = messages.any? { |message| message[:type] == 'error' }
 
-        assert !errors_found, 'Resource(s) do not conform to the profile http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/ccrr-content-bundle|1.0.0'
+        assert !errors_found, 'Resource(s) do not conform to the profile http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/ccrr-content-bundle|2.0.0-ballot'
       end
     end
   end

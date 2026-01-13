@@ -26,7 +26,7 @@ module CancerRegistryReportingTestKit
         * CarePlan.text.status
       )
 
-      id :ccrr_v100_care_plan_must_support_test
+      id :ccrr_v200_care_plan_must_support_test
 
       def resource_type
         'CarePlan'

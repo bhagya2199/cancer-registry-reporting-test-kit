@@ -21,7 +21,7 @@ module CancerRegistryReportingTestKit
         * Bundle.entry:composition.resource
       )
 
-      id :ccrr_v100_ccrr_content_bundle_must_support_test
+      id :ccrr_v200_ccrr_content_bundle_must_support_test
 
       def resource_type
         'Bundle'

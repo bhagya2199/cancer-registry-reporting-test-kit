@@ -7,7 +7,7 @@ module CancerRegistryReportingTestKit
     class ServiceRequestValidationTest < Inferno::Test
       include CancerRegistryReportingTestKit::ValidationTest
 
-      id :ccrr_v100_service_request_validation_test
+      id :ccrr_v200_service_request_validation_test
       title 'Base ServiceRequest profile conformance'
       description %(
         This test verifies that ServiceRequest instances

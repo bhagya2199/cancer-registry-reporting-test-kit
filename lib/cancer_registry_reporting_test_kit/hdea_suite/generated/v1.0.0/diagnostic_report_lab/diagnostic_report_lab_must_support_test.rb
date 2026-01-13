@@ -27,7 +27,7 @@ module CancerRegistryReportingTestKit
         * DiagnosticReport.subject
       )
 
-      id :ccrr_v100_diagnostic_report_lab_must_support_test
+      id :ccrr_v200_diagnostic_report_lab_must_support_test
 
       def resource_type
         'DiagnosticReport'

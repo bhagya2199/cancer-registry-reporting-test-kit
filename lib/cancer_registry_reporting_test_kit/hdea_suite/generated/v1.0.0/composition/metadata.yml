@@ -1,7 +1,7 @@
 ---
 :name: ccrr_composition
 :class_name: CcrrCompositionSequence
-:version: v2.0.0
+:version: v2.0.0-ballot
 :reformatted_version: v200
 :resource: Composition
 :profile_url: http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/ccrr-composition
@@ -21,7 +21,7 @@
         :type: value
         :values:
           - :path: code.coding.code
-            :value: 77473-7
+            :value: 67781-5
     - :slice_id: Composition.section:slicePrimaryCancerCondition
       :slice_name: slicePrimaryCancerCondition
       :path: section
@@ -159,6 +159,7 @@
         - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner
         - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole
     - :path: title
+      :fixed_value: Central Cancer Registry Report
     - :path: section
     - :path: section:sliceEncounterSection.code
     - :path: section:sliceEncounterSection.text
@@ -166,7 +167,7 @@
       :types:
         - Reference
       :target_profiles:
-        - http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/central-cancer-registry-reporting-encounter
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter
         - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis
     - :path: section:slicePrimaryCancerCondition.code
     - :path: section:slicePrimaryCancerCondition.text
@@ -277,17 +278,17 @@
       :target_profiles:
         - http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus
 :mandatory_elements:
+  - Composition.identifier
   - Composition.status
   - Composition.type
   - Composition.subject
   - Composition.date
-  - Composition.author
   - Composition.title
   - Composition.section
   - Composition.section:slicePrimaryCancerCondition
-  - Composition.section.code
-  - Composition.section.text
-  - Composition.section.entry
+  - Composition.section:slicePrimaryCancerCondition.code
+  - Composition.section:slicePrimaryCancerCondition.text
+  - Composition.section:slicePrimaryCancerCondition.entry
 :tests:
   - :id: ccrr_v200_composition_must_support_test
     :file_name: composition_must_support_test.rb

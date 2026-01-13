@@ -7,7 +7,7 @@ module CancerRegistryReportingTestKit
     class CarePlanValidationTest < Inferno::Test
       include CancerRegistryReportingTestKit::ValidationTest
 
-      id :ccrr_v100_care_plan_validation_test
+      id :ccrr_v200_care_plan_validation_test
       title 'US Core CarePlan profile conformance'
       description %(
         This test verifies that CarePlan instances

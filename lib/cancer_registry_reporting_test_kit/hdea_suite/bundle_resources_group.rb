@@ -95,8 +95,8 @@ module CancerRegistryReportingTestKit
 
     group do
       title 'Report'
-      test from: :ccrr_v100_ccrr_content_bundle_parse_and_validation_test
-      test from: :ccrr_v100_ccrr_content_bundle_must_support_test
+      test from: :ccrr_v200_ccrr_content_bundle_parse_and_validation_test
+      test from: :ccrr_v200_ccrr_content_bundle_must_support_test
       test from: :ccrr_v200_composition_validation_test
       test from: :ccrr_v200_composition_must_support_test
     end
@@ -117,8 +117,8 @@ module CancerRegistryReportingTestKit
       title 'Referenced Author'
       test from: :ccrr_v100_author_validation_test
       test from: :ccrr_v100_organization_must_support_test
-      test from: :ccrr_v100_practitioner_must_support_test
-      test from: :ccrr_v100_practitioner_role_must_support_test
+      test from: :ccrr_v200_practitioner_must_support_test
+      test from: :ccrr_v200_practitioner_role_must_support_test
     end
 
     group do
@@ -147,8 +147,8 @@ module CancerRegistryReportingTestKit
 
     group do
       title 'Problems Section'
-      test from: :ccrr_v100_condition_validation_test
-      test from: :ccrr_v100_condition_must_support_test
+      test from: :ccrr_v200_condition_validation_test
+      test from: :ccrr_v200_condition_must_support_test
     end
 
     group do
@@ -159,44 +159,44 @@ module CancerRegistryReportingTestKit
 
     group do
       title 'Medications Administered and Medications Sections'
-      test from: :ccrr_v100_medication_administration_validation_test
-      test from: :ccrr_v100_medication_administration_must_support_test
-      test from: :ccrr_v100_medication_statement_validation_test
-      test from: :ccrr_v100_medication_statement_must_support_test
-      test from: :ccrr_v100_medication_validation_test
-      test from: :ccrr_v100_medication_must_support_test
+      test from: :ccrr_v200_medication_administration_validation_test
+      test from: :ccrr_v200_medication_administration_must_support_test
+      test from: :ccrr_v200_medication_statement_validation_test
+      test from: :ccrr_v200_medication_statement_must_support_test
+      test from: :ccrr_v200_medication_validation_test
+      test from: :ccrr_v200_medication_must_support_test
     end
 
     group do
       title 'Occupational Data Section'
-      test from: :ccrr_v100_odh_usual_work_validation_test
-      test from: :ccrr_v100_odh_usual_work_must_support_test
+      test from: :ccrr_v200_odh_usual_work_validation_test
+      test from: :ccrr_v200_odh_usual_work_must_support_test
     end
 
     group do
       title 'Results Section'
       test from: :ccrr_v200_observation_lab_validation_test
       test from: :ccrr_v200_observation_lab_must_support_test
-      test from: :ccrr_v100_diagnostic_report_lab_validation_test
-      test from: :ccrr_v100_diagnostic_report_lab_must_support_test
+      test from: :ccrr_v200_diagnostic_report_lab_validation_test
+      test from: :ccrr_v200_diagnostic_report_lab_must_support_test
     end
 
     group do
       title 'Notes Section'
       test from: :ccrr_v100_document_reference_validation_test
       test from: :ccrr_v100_document_reference_must_support_test
-      test from: :ccrr_v100_diagnostic_report_note_validation_test
-      test from: :ccrr_v100_diagnostic_report_note_must_support_test
+      test from: :ccrr_v200_diagnostic_report_note_validation_test
+      test from: :ccrr_v200_diagnostic_report_note_must_support_test
     end
 
     group do
       title 'Plan of Treatment Section'
-      test from: :ccrr_v100_medication_request_validation_test
-      test from: :ccrr_v100_medication_request_must_support_test
-      test from: :ccrr_v100_service_request_validation_test
-      test from: :ccrr_v100_service_request_must_support_test
-      test from: :ccrr_v100_care_plan_validation_test
-      test from: :ccrr_v100_care_plan_must_support_test
+      test from: :ccrr_v200_medication_request_validation_test
+      test from: :ccrr_v200_medication_request_must_support_test
+      test from: :ccrr_v200_service_request_validation_test
+      test from: :ccrr_v200_service_request_must_support_test
+      test from: :ccrr_v200_care_plan_validation_test
+      test from: :ccrr_v200_care_plan_must_support_test
       test from: :ccrr_v200_procedure_validation_test
       test from: :ccrr_v200_procedure_must_support_test
     end
