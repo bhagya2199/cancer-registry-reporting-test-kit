@@ -27,7 +27,7 @@ module CancerRegistryReportingTestKit
       run do
         perform_validation_test(scratch_resources[:all] || [],
                                 'http://hl7.org/fhir/us/odh/StructureDefinition/odh-UsualWork',
-                                '1.1.0',
+                                '1.3.0',
                                 skip_if_empty: true)
       end
     end

@@ -26,7 +26,7 @@ module CancerRegistryReportingTestKit
 
       run do
         perform_validation_test(scratch_resources[:all] || [],
-                                'http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition',
+                                'http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-condition',
                                 '3.1.1',
                                 skip_if_empty: true)
       end

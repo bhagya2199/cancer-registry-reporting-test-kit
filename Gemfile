@@ -13,6 +13,7 @@ group :development, :test do
   gem 'factory_bot', '~> 6.1'
   gem 'rspec', '~> 3.10'
   gem 'webmock', '~> 3.11'
+  gem 'fhir_models', '~> 4.0'
 end
 
 group :test do
