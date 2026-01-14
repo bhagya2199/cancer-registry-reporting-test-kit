@@ -17,7 +17,11 @@
       :path: hasMember
       :discriminator:
         :type: profile
-        :path: $this.resolve()
+        :values:
+          - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-primary-tumor-category
+          - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-regional-nodes-category
+          - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-distant-metastases-category
+
   :elements:
     - :path: status
     - :path: code
@@ -25,12 +29,12 @@
       :types:
         - Reference
       :target_profiles:
-        - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-patient
+        - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-patient|8.0.1
     - :path: focus
       :types:
         - Reference
       :target_profiles:
-        - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-primary-cancer-condition
+        - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-primary-cancer-condition|8.0.1
     - :path: effective[x]
     - :path: value[x]
     - :path: method
@@ -38,9 +42,9 @@
       :types:
         - Reference
       :target_profiles:
-        - http://hl7.org/fhir/StructureDefinition/Observation
-        - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
-        - http://hl7.org/fhir/StructureDefinition/MolecularSequence
+        - http://hl7.org/fhir/StructureDefinition/Observation|8.0.1
+        - http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse|8.0.1
+        - http://hl7.org/fhir/StructureDefinition/MolecularSequence|8.0.1
 :mandatory_elements:
   - Observation.status
   - Observation.code

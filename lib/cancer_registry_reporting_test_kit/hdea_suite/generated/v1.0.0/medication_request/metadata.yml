@@ -42,7 +42,7 @@
     :types:
     - Reference
     :target_profiles:
-    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner
+    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|8.0.1
   - :path: medication[x]
     :types:
     - Reference
@@ -50,24 +50,24 @@
     :types:
     - Reference
     :target_profiles:
-    - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-patient
+    - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-patient|8.0.1
   - :path: encounter
     :types:
     - Reference
     :target_profiles:
-    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter
+    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|8.0.1
   - :path: authoredOn
   - :path: requester
     :types:
     - Reference
     :target_profiles:
-    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner
+    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|8.0.1
   - :path: reasonCode
   - :path: reasonReference
     :types:
     - Reference
     :target_profiles:
-    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns
+    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|8.0.1
   - :path: dosageInstruction
   - :path: dosageInstruction.text
 :mandatory_elements:

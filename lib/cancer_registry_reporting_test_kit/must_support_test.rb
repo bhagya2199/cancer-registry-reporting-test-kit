@@ -61,7 +61,7 @@ module CancerRegistryReportingTestKit
 
     def missing_must_support_strings
       missing_elements.map { |element_definition| missing_element_string(element_definition) } +
-        missing_slices.map { |slice_definition| slice_definition[:slice_id] } +
+        missing_slices.map { |slice_definition| sym_key(slice_definition, :slice_id) } +
         missing_extensions.map { |extension_definition| extension_definition[:id] }
     end
 
@@ -145,25 +145,67 @@ module CancerRegistryReportingTestKit
       end
     end
 
+    def normalize_hashish(obj)
+      return obj if obj.is_a?(Hash)
+      return obj unless obj.is_a?(Array)
+
+      # array-of-pairs: [[:a,1], [:b,2]]
+      if obj.all? { |e| e.is_a?(Array) && e.length == 2 }
+        return obj.to_h
+      end
+
+      # flat: [:a,1,:b,2]
+      if obj.length.even?
+        pairs = obj.each_slice(2).to_a
+        return pairs.to_h
+      end
+
+      obj
+    end
+
+    def sym_key(hash, key)
+      return nil unless hash.is_a?(Hash)
+      hash[key] || hash[key.to_s]
+    end
+
+    def symbolize_keys(hash)
+      return hash unless hash.is_a?(Hash)
+      hash.transform_keys { |k| k.is_a?(String) ? k.to_sym : k }
+    end
+
     def must_support_slices
+      slices = metadata.must_supports[:slices] || []
+
+      slices = slices.map do |s|
+        s = normalize_hashish(s)
+        symbolize_keys(s)
+      end
+
       if exclude_uscdi_only_test?
-        metadata.must_supports[:slices]&.reject { |slice| slice[:uscdi_only] } || []
+        slices.reject { |slice| sym_key(slice, :uscdi_only) }
       else
-        metadata.must_supports[:slices] || []
+        slices
       end
     end
 
     def missing_slices(resources = [])
       @missing_slices ||=
         must_support_slices.select do |slice|
+          slice = normalize_hashish(slice)
+          slice = symbolize_keys(slice)
+
           resources.none? do |resource|
-            path = slice[:path] # .delete_suffix('[x]')
-            find_slice(resource, path, slice[:discriminator]).present?
+            path = sym_key(slice, :path)
+            discriminator = sym_key(slice, :discriminator)
+            discriminator = symbolize_keys(normalize_hashish(discriminator))
+
+            find_slice(resource, path, discriminator).present?
           end
         end
     end
 
     def find_slice(resource, path, discriminator)
+      discriminator = normalize_hashish(discriminator)
       find_a_value_at(resource, path) do |element|
         case discriminator[:type]
         when 'patternCodeableConcept'
@@ -216,6 +258,34 @@ module CancerRegistryReportingTestKit
               discriminator[:values].any? { |value| value[:system] == coding.system && value[:code] == coding.code }
             end
           end
+        when 'profile'
+          ref = element.respond_to?(:reference) ? element.reference.to_s : nil
+          next false if ref.nil? || ref.empty?
+
+          if ref.include?('://')
+            parts = ref.split('/')
+            ref_type = parts[-2]
+            ref_id   = parts[-1]
+          else
+            ref_type, ref_id = ref.split('/', 2)
+          end
+
+          resolved =
+            all_scratch_resources.find do |res|
+              r = res.is_a?(FHIR::Bundle::Entry) ? res.resource : res
+              r.respond_to?(:resourceType) && r.respond_to?(:id) &&
+                r.resourceType.to_s == ref_type.to_s &&
+                r.id.to_s == ref_id.to_s
+            end
+
+          r = resolved.is_a?(FHIR::Bundle::Entry) ? resolved.resource : resolved
+          next false if r.nil?
+
+          profiles = Array(r.meta&.profile).map(&:to_s)
+          allowed  = Array(discriminator[:values]).map(&:to_s)
+
+          allowed.any? { |p| profiles.any? { |rp| rp.start_with?(p) } }
+
         end
       end
     end

@@ -19,7 +19,7 @@
         :type: requiredBinding
         :path: ''
         :values:
-          - :system: 2.16.840.1.114222.4.11.7186
+          - :system: urn:oid:2.16.840.1.114222.4.11.7186
             :code: ''
     - :slice_id: Observation.value[x]:valueCodeableConcept.coding:occupationONETSOCDetailODH
       :slice_name: occupationONETSOCDetailODH
@@ -28,7 +28,7 @@
         :type: requiredBinding
         :path: ''
         :values:
-          - :system: 2.16.840.1.114222.4.11.7901
+          - :system: urn:oid:2.16.840.1.114222.4.11.7901
             :code: ''
     - :slice_id: Observation.component:odh-UsualIndustry.value[x].coding:industryCDCCensus2010
       :slice_name: industryCDCCensus2010
@@ -37,7 +37,7 @@
         :type: requiredBinding
         :path: component.value[x]
         :values:
-          - :system: 2.16.840.1.114222.4.11.7187
+          - :system: urn:oid:2.16.840.1.114222.4.11.7187
             :code: ''
     - :slice_id: Observation.component:odh-UsualIndustry.value[x].coding:industryONETSOCDetailODH
       :slice_name: industryONETSOCDetailODH
@@ -46,7 +46,7 @@
         :type: requiredBinding
         :path: ''
         :values:
-          - :system: 2.16.840.1.114222.4.11.7900
+          - :system: urn:oid:2.16.840.1.114222.4.11.7900
             :code: ''
     - :slice_id: Observation.value[x]:valueCodeableConcept
       :slice_name: valueCodeableConcept

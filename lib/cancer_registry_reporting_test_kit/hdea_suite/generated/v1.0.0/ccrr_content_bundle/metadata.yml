@@ -20,7 +20,6 @@
       :path: resource
       :code: Composition
   :elements:
-  - :path: type
   - :path: entry
   - :path: entry:composition.resource
 :mandatory_elements:

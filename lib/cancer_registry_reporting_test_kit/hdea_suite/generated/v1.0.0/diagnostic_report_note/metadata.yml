@@ -34,12 +34,12 @@
       :types:
         - Reference
       :target_profiles:
-        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|8.0.1
     - :path: encounter
       :types:
         - Reference
       :target_profiles:
-        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|8.0.1
     - :path: effectiveDateTime
       :original_path: effective[x]
     - :path: issued
@@ -47,15 +47,15 @@
       :types:
         - Reference
       :target_profiles:
-        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner
-        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|8.0.1
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|8.0.1
     - :path: result
       :types:
         - Reference
       :target_profiles:
-        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab
-        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-clinical-test
-        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-imaging
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|8.0.1
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-clinical-test|8.0.1
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-imaging|8.0.1
     - :path: media
     - :path: media.link
       :types:

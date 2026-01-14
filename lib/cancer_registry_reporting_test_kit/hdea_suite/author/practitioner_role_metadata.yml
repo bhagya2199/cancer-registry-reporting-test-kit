@@ -17,12 +17,12 @@
       :types:
         - Reference
       :target_profiles:
-        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|8.0.1
     - :path: organization
       :types:
         - Reference
       :target_profiles:
-        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|8.0.1
     - :path: code
     - :path: specialty
     - :path: location

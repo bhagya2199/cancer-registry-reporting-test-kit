@@ -47,12 +47,12 @@
     :types:
     - Reference
     :target_profiles:
-    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient
+    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|8.0.1
   - :path: encounter
     :types:
       - Reference
     :target_profiles:
-      - http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter
+      - http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|8.0.1
   - :path: onsetDateTime
     :original_path: onset[x]
   - :path: recordedDate
@@ -62,8 +62,8 @@
     :types:
     - Reference
     :target_profiles:
-    - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-stage
-    - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-stage-group
+    - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-stage|4.0.0
+    - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-stage-group|4.0.0
 :mandatory_elements:
 - Condition.extension
 - Condition.extension:assertedDate
