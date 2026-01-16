@@ -260,32 +260,15 @@ module CancerRegistryReportingTestKit
           end
         when 'profile'
           ref = element.respond_to?(:reference) ? element.reference.to_s : nil
-          next false if ref.nil? || ref.empty?
+          next false if ref.blank?
 
-          if ref.include?('://')
-            parts = ref.split('/')
-            ref_type = parts[-2]
-            ref_id   = parts[-1]
-          else
-            ref_type, ref_id = ref.split('/', 2)
-          end
+          resolved = resolve_reference_from_scratch(ref)
+          next false if resolved.nil?
 
-          resolved =
-            all_scratch_resources.find do |res|
-              r = res.is_a?(FHIR::Bundle::Entry) ? res.resource : res
-              r.respond_to?(:resourceType) && r.respond_to?(:id) &&
-                r.resourceType.to_s == ref_type.to_s &&
-                r.id.to_s == ref_id.to_s
-            end
-
-          r = resolved.is_a?(FHIR::Bundle::Entry) ? resolved.resource : resolved
-          next false if r.nil?
-
-          profiles = Array(r.meta&.profile).map(&:to_s)
+          profiles = Array(resolved.meta&.profile).map(&:to_s)
           allowed  = Array(discriminator[:values]).map(&:to_s)
 
           allowed.any? { |p| profiles.any? { |rp| rp.start_with?(p) } }
-
         end
       end
     end
@@ -328,6 +311,39 @@ module CancerRegistryReportingTestKit
           end
         end
       end
+    end
+
+    def collect_fhir_models(obj, acc = [])
+      case obj
+      when FHIR::Model
+        acc << obj
+      when FHIR::Bundle::Entry
+        acc << obj.resource
+      when Array
+        obj.each { |v| collect_fhir_models(v, acc) }
+      when Hash
+        obj.each_value { |v| collect_fhir_models(v, acc) }
+      end
+      acc
+    end
+
+    def resolve_reference_from_scratch(reference)
+      return nil if reference.blank?
+
+      ref_type, ref_id =
+        if reference.include?('://')
+          parts = reference.split('/')
+          [parts[-2], parts[-1]]
+        else
+          reference.split('/', 2)
+        end
+
+      pool = []
+      pool.concat(all_scratch_resources) if respond_to?(:all_scratch_resources)
+      pool.concat(collect_fhir_models(scratch))
+
+      pool.map { |r| r.is_a?(FHIR::Bundle::Entry) ? r.resource : r }
+          .find { |r| r.respond_to?(:resourceType) && r.respond_to?(:id) && r.resourceType.to_s == ref_type.to_s && r.id.to_s == ref_id.to_s }
     end
   end
 end
