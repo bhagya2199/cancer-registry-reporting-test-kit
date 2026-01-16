@@ -19,6 +19,9 @@
 - Observation.code
 - Observation.subject
 - Observation.value[x]
+- Observation.triggeredBy.observation
+- Observation.triggeredBy.type
+- Observation.component.code
 :tests:
 - :id: ccrr_v200_observation_must_support_test
   :file_name: observation_must_support_test.rb

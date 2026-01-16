@@ -14,7 +14,7 @@
   :extensions:
   - :id: Condition.extension:assertedDate
     :path: extension
-    :url: http://hl7.org/fhir/StructureDefinition/condition-assertedDate
+    :url: http://hl7.org/fhir/StructureDefinition/condition-assertedDate|5.2.0
   - :id: Condition.extension:histologyMorphologyBehavior
     :path: extension
     :url: http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-histology-morphology-behavior
@@ -27,6 +27,9 @@
   - :id: Condition.bodySite.extension:lateralityQualifier
     :path: bodySite.extension
     :url: http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-laterality-qualifier
+  - :id: Condition.bodySite.extension:data-absent-reason
+    :path: bodySite.extension
+    :url: http://hl7.org/fhir/StructureDefinition/data-absent-reason|5.2.0
   :slices:
   - :slice_id: Condition.category:us-core
     :slice_name: us-core
@@ -43,16 +46,18 @@
   - :path: category
   - :path: code
   - :path: bodySite
+  - :path: extension
+  - :path: bodySite.extension
   - :path: subject
     :types:
     - Reference
     :target_profiles:
-    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|8.0.1
+    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0
   - :path: encounter
     :types:
       - Reference
     :target_profiles:
-      - http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|8.0.1
+      - http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|6.1.0
   - :path: onsetDateTime
     :original_path: onset[x]
   - :path: recordedDate
@@ -69,6 +74,7 @@
 - Condition.extension:assertedDate
 - Condition.extension:histologyMorphologyBehavior
 - Condition.category
+- Condition.category:us-core
 - Condition.code
 - Condition.bodySite
 - Condition.subject

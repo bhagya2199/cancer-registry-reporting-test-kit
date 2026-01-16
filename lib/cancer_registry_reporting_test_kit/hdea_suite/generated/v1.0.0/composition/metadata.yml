@@ -134,6 +134,178 @@
         :values:
           - :path: code.coding.code
             :value: 29762-2
+    - :slice_id: Composition.section.entry:sliceEncounter
+      :slice_name: sliceEncounter
+      :path: section.entry
+      :discriminator:
+        :type: profile
+        :values:
+          - :path: resolve()
+            :value: http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|6.1.0
+      :type:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|6.1.0
+
+    - :slice_id: Composition.section.entry:sliceEncounterDiagnosis
+      :slice_name: sliceEncounterDiagnosis
+      :path: section.entry
+      :discriminator:
+        :type: profile
+        :values:
+          - :path: resolve()
+            :value: http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis|6.1.0
+      :type:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis|6.1.0
+
+    - :slice_id: Composition.section.entry:sliceTNMStageGroup
+      :slice_name: sliceTNMStageGroup
+      :path: section.entry
+      :discriminator:
+        :type: profile
+        :values:
+          - :path: resolve()
+            :value: http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-stage-group|4.0.0
+      :type:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-stage-group|4.0.0
+        - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-distant-metastases-category|4.0.0
+        - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-primary-tumor-category|4.0.0
+        - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-regional-nodes-category|4.0.0
+
+    - :slice_id: Composition.section.entry:sliceMedicationAdministration
+      :slice_name: sliceMedicationAdministration
+      :path: section.entry
+      :discriminator:
+        :type: profile
+        :values:
+          - :path: resolve()
+            :value: http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-administration|4.0.0
+      :type:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-administration|4.0.0
+
+    - :slice_id: Composition.section.entry:sliceMedicationStatement
+      :slice_name: sliceMedicationStatement
+      :path: section.entry
+      :discriminator:
+        :type: profile
+        :values:
+          - :path: resolve()
+            :value: http://hl7.org/fhir/StructureDefinition/MedicationStatement
+      :type:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/StructureDefinition/MedicationStatement
+
+    - :slice_id: Composition.section.entry:sliceMedicationRequest
+      :slice_name: sliceMedicationRequest
+      :path: section.entry
+      :discriminator:
+        :type: profile
+        :values:
+          - :path: resolve()
+            :value: http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-request|4.0.0
+      :type:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-request|4.0.0
+
+    - :slice_id: Composition.section.entry:sliceMedicationReferences
+      :slice_name: sliceMedicationReferences
+      :path: section.entry
+      :discriminator:
+        :type: profile
+        :values:
+          - :path: resolve()
+            :value: http://hl7.org/fhir/us/core/StructureDefinition/us-core-medication|6.1.0
+      :type:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-medication|6.1.0
+
+    - :slice_id: Composition.section.entry:sliceLabResultEntry
+      :slice_name: sliceLabResultEntry
+      :path: section.entry
+      :discriminator:
+        :type: profile
+        :values:
+          - :path: resolve()
+            :value: http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|6.1.0
+      :type:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|6.1.0
+
+    - :slice_id: Composition.section.entry:sliceDiagnosticResultEntry
+      :slice_name: sliceDiagnosticResultEntry
+      :path: section.entry
+      :discriminator:
+        :type: profile
+        :values:
+          - :path: resolve()
+            :value: http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab|6.1.0
+      :type:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab|6.1.0
+
+    - :slice_id: Composition.section.entry:sliceDocumentReferenceEntry
+      :slice_name: sliceDocumentReferenceEntry
+      :path: section.entry
+      :discriminator:
+        :type: profile
+        :values:
+          - :path: resolve()
+            :value: http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|6.1.0
+      :type:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|6.1.0
+
+    - :slice_id: Composition.section.entry:sliceDiagnosticReportEntry
+      :slice_name: sliceDiagnosticReportEntry
+      :path: section.entry
+      :discriminator:
+        :type: profile
+        :values:
+          - :path: resolve()
+            :value: http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note|6.1.0
+      :type:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note|6.1.0
+
+    - :slice_id: Composition.section.entry:sliceProcedureOrders
+      :slice_name: sliceProcedureOrders
+      :path: section.entry
+      :discriminator:
+        :type: profile
+        :values:
+          - :path: resolve()
+            :value: http://hl7.org/fhir/us/core/StructureDefinition/us-core-servicerequest|6.1.0
+      :type:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-servicerequest|6.1.0
+
+    - :slice_id: Composition.section.entry:sliceCarePlanEntries
+      :slice_name: sliceCarePlanEntries
+      :path: section.entry
+      :discriminator:
+        :type: profile
+        :values:
+          - :path: resolve()
+            :value: http://hl7.org/fhir/us/core/StructureDefinition/us-core-careplan|6.1.0
+      :type:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-careplan|6.1.0
+
   :elements:
     - :path: identifier
     - :path: status
@@ -170,8 +342,8 @@
       :types:
         - Reference
       :target_profiles:
-        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|8.0.1
-        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis|8.0.1
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|6.0.1
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis|6.1.0
     - :path: section:slicePrimaryCancerCondition
     - :path: section:slicePrimaryCancerCondition.code
     - :path: section:slicePrimaryCancerCondition.text
@@ -214,7 +386,7 @@
       :types:
         - Reference
       :target_profiles:
-        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|8.0.1
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|6.1.0
     - :path: section:sliceMedicationsAdministeredSection
     - :path: section:sliceMedicationsAdministeredSection.code
     - :path: section:sliceMedicationsAdministeredSection.text
@@ -223,7 +395,7 @@
         - Reference
       :target_profiles:
         - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-administration|4.0.0
-        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-medication|8.0.1
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-medication|6.1.0
     - :path: section:sliceMedicationsSection
     - :path: section:sliceMedicationsSection.code
     - :path: section:sliceMedicationsSection.text
@@ -232,7 +404,7 @@
         - Reference
       :target_profiles:
         - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-administration|4.0.0
-        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-medication|8.0.1
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-medication|6.1.0
     - :path: section:sliceODHSection
     - :path: section:sliceODHSection.code
     - :path: section:sliceODHSection.text
@@ -240,7 +412,7 @@
       :types:
         - Reference
       :target_profiles:
-        - http://hl7.org/fhir/us/odh/StructureDefinition/odh-UsualWork|8.0.1
+        - http://hl7.org/fhir/us/odh/StructureDefinition/odh-UsualWork|6.1.0
     - :path: section:sliceResultsSection
     - :path: section:sliceResultsSection.code
     - :path: section:sliceResultsSection.text
@@ -248,8 +420,8 @@
       :types:
         - Reference
       :target_profiles:
-        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|8.0.1
-        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab|8.0.1
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|6.1.0
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab|6.1.0
     - :path: section:sliceNotesSection
     - :path: section:sliceNotesSection.code
     - :path: section:sliceNotesSection.text
@@ -257,8 +429,8 @@
       :types:
         - Reference
       :target_profiles:
-        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|8.0.1
-        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note|8.0.1
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|6.1.0
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note|6.1.0
     - :path: section:slicePlanOfTreatmentSection
     - :path: section:slicePlanOfTreatmentSection.code
     - :path: section:slicePlanOfTreatmentSection.text
@@ -267,9 +439,9 @@
         - Reference
       :target_profiles:
         - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-request|4.0.0
-        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-medication|8.0.1
-        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-servicerequest|8.0.1
-        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-careplan|8.0.1
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-medication|6.1.0
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-servicerequest|6.1.0
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-careplan|6.1.0
     - :path: section:sliceProceduresSection
     - :path: section:sliceProceduresSection.code
     - :path: section:sliceProceduresSection.text
@@ -277,7 +449,7 @@
       :types:
         - Reference
       :target_profiles:
-        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure|8.0.1
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure|6.1.0
     - :path: section:sliceVitalSignsSection
     - :path: section:sliceVitalSignsSection.code
     - :path: section:sliceVitalSignsSection.text
@@ -285,7 +457,7 @@
       :types:
         - Reference
       :target_profiles:
-        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs|8.0.1
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs|6.1.0
     - :path: section:sliceSocialHistorySection
     - :path: section:sliceSocialHistorySection.code
     - :path: section:sliceSocialHistorySection.text
@@ -293,19 +465,142 @@
       :types:
         - Reference
       :target_profiles:
-        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus|8.0.1
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus|6.1.0
+
+    - :path: type
+      :types:
+        - CodeableConcept
+
+    - :path: section:sliceEncounterSection.entry:sliceEncounter
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|6.1.0
+
+    - :path: section:sliceEncounterSection.entry:sliceEncounterDiagnosis
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis|6.1.0
+
+    - :path: section:sliceTNMStaging.entry:sliceTNMStageGroup
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-stage-group|4.0.0
+        - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-distant-metastases-category|4.0.0
+        - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-primary-tumor-category|4.0.0
+        - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-regional-nodes-category|4.0.0
+
+    - :path: section:sliceMedicationsAdministeredSection.entry:sliceMedicationAdministration
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-administration|4.0.0
+
+    - :path: section:sliceMedicationsAdministeredSection.entry:sliceMedicationReferences
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-medication|6.1.0
+
+    - :path: section:sliceMedicationsSection.entry:sliceMedicationAdministration
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-administration|4.0.0
+
+    - :path: section:sliceMedicationsSection.entry:sliceMedicationStatement
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/StructureDefinition/MedicationStatement
+
+    - :path: section:sliceMedicationsSection.entry:sliceMedicationReferences
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-medication|6.1.0
+
+    - :path: section:sliceResultsSection.entry:sliceLabResultEntry
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|6.1.0
+
+    - :path: section:sliceResultsSection.entry:sliceDiagnosticResultEntry
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab|6.1.0
+
+    - :path: section:sliceNotesSection.entry:sliceDiagnosticReportEntry
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note|6.1.0
+
+    - :path: section:sliceNotesSection.entry:sliceDocumentReferenceEntry
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|6.1.0
+
+    - :path: section:slicePlanOfTreatmentSection.entry:sliceCarePlanEntries
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-careplan|6.1.0
+
+    - :path: section:slicePlanOfTreatmentSection.entry:sliceMedicationRequest
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-request|4.0.0
+
+    - :path: section:slicePlanOfTreatmentSection.entry:sliceMedicationReferences
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-medication|6.1.0
+
+    - :path: section:slicePlanOfTreatmentSection.entry:sliceProcedureOrders
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-servicerequest|6.1.0
+
 :mandatory_elements:
-  - Composition.identifier
-  - Composition.status
-  - Composition.type
-  - Composition.subject
-  - Composition.date
-  - Composition.title
-  - Composition.section
-  - Composition.section:slicePrimaryCancerCondition
-  - Composition.section:slicePrimaryCancerCondition.code
-  - Composition.section:slicePrimaryCancerCondition.text
-  - Composition.section:slicePrimaryCancerCondition.entry
+- Composition.relatesTo.target[x]
+- Composition.section:sliceEncounterSection.code
+- Composition.section:sliceEncounterSection.text
+- Composition.section:sliceMedicationsAdministeredSection.code
+- Composition.section:sliceMedicationsAdministeredSection.text
+- Composition.section:sliceMedicationsSection.code
+- Composition.section:sliceMedicationsSection.text
+- Composition.section:sliceNotesSection.code
+- Composition.section:sliceNotesSection.text
+- Composition.section:sliceODHSection.code
+- Composition.section:sliceODHSection.text
+- Composition.section:slicePlanOfTreatmentSection.code
+- Composition.section:slicePlanOfTreatmentSection.text
+- Composition.section:sliceProblemSection.code
+- Composition.section:sliceProblemSection.text
+- Composition.section:sliceProceduresSection.code
+- Composition.section:sliceProceduresSection.text
+- Composition.section:sliceRadioTherapyCourseSummary.code
+- Composition.section:sliceRadioTherapyCourseSummary.text
+- Composition.section:sliceResultsSection.code
+- Composition.section:sliceResultsSection.text
+- Composition.section:sliceSecondaryCancerCondition.code
+- Composition.section:sliceSecondaryCancerCondition.text
+- Composition.section:sliceSocialHistorySection.code
+- Composition.section:sliceSocialHistorySection.text
+- Composition.section:sliceTNMStaging.code
+- Composition.section:sliceTNMStaging.text
+- Composition.section:sliceVitalSignsSection.code
+- Composition.section:sliceVitalSignsSection.text
+
 :tests:
   - :id: ccrr_v200_composition_must_support_test
     :file_name: composition_must_support_test.rb

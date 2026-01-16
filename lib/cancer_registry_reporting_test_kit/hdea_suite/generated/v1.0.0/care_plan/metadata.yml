@@ -31,7 +31,7 @@
     :types:
     - Reference
     :target_profiles:
-    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|8.0.1
+    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0
 :mandatory_elements:
 - CarePlan.text
 - CarePlan.text.status
@@ -41,6 +41,7 @@
 - CarePlan.category
 - CarePlan.subject
 - CarePlan.activity.detail.status
+- CarePlan.activity.detail.code
 :tests:
 - :id: ccrr_v200_care_plan_must_support_test
   :file_name: care_plan_must_support_test.rb

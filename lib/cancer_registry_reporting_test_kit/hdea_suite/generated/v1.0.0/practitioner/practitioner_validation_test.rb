@@ -12,7 +12,7 @@ module CancerRegistryReportingTestKit
       description %(
         This test verifies that Practitioner instances
         referenced in the `author` elements of the provided reports conform to the
-        [US Core Practitioner profile](http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|5.0.1).
+        [US Core Practitioner profile](http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0).
       )
       
 

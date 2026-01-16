@@ -17,6 +17,8 @@
 - ServiceRequest.status
 - ServiceRequest.intent
 - ServiceRequest.subject
+- ServiceRequest.parameter.code
+- ServiceRequest.parameter.value[x]
 :tests:
 - :id: ccrr_v200_service_request_must_support_test
   :file_name: service_request_must_support_test.rb

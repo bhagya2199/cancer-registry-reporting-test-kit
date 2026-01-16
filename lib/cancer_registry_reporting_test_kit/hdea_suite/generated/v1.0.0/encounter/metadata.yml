@@ -11,7 +11,17 @@
 :short_description: Verify support for the server capabilities required by the Central Cancer Registry Reporting Encounter.
 :must_supports:
   :extensions: []
-  :slices: []
+  :slices:
+    - :slice_id: Encounter.participant:sliceResponsibleProvider
+      :slice_name: sliceResponsibleProvider
+      :path: participant
+      :discriminator:
+        :type: type
+        :values:
+          - :path: type.coding.system
+            :value: http://terminology.hl7.org/CodeSystem/v3-ParticipationType
+          - :path: type.coding.code
+            :value: ATND
   :elements:
     - :path: identifier
     - :path: identifier.system
@@ -23,7 +33,7 @@
       :types:
         - Reference
       :target_profiles:
-        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|8.0.1
+        - http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/central-cancer-registry-reporting-patient
     - :path: participant
     - :path: participant.type
     - :path: participant.period
@@ -31,26 +41,48 @@
       :types:
         - Reference
       :target_profiles:
-        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|8.0.1
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0
     - :path: period
     - :path: reasonCode
     - :path: reasonReference
       :types:
         - Reference
       :target_profiles:
-        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|8.0.1
-        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis|8.0.1
+        - http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/central-cancer-registry-primary-cancer-condition
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|6.1.0
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis|6.1.0
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure|6.1.0
+        - http://hl7.org/fhir/StructureDefinition/Observation
+        - http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation
     - :path: hospitalization
     - :path: hospitalization.dischargeDisposition
     - :path: location
     - :path: location.location
       :types:
         - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-location|6.1.0
     - :path: serviceProvider
       :types:
         - Reference
       :target_profiles:
-        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|8.0.1
+        - http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/central-cancer-registry-reporting-organization
+    - :path: participant:sliceResponsibleProvider
+    - :path: participant:sliceResponsibleProvider.type
+    - :path: participant:sliceResponsibleProvider.period
+    - :path: participant:sliceResponsibleProvider.individual
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0
+    - :path: diagnosis
+    - :path: diagnosis.condition
+      :types:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis|6.1.0
+        - http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/central-cancer-registry-primary-cancer-condition
+    - :path: diagnosis.use
 :mandatory_elements:
   - Encounter.identifier.system
   - Encounter.identifier.value
@@ -65,6 +97,7 @@
   - Encounter.subject
   - Encounter.diagnosis.condition
   - Encounter.location.location
+  - Encounter.participant:sliceResponsibleProvider.type
 :tests:
   - :id: ccrr_v200_encounter_must_support_test
     :file_name: encounter_must_support_test.rb

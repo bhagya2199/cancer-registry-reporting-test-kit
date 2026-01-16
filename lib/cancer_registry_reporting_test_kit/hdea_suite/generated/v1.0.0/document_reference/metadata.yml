@@ -30,13 +30,13 @@
     :types:
     - Reference
     :target_profiles:
-    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|8.0.1
+    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0
   - :path: date
   - :path: author
     :types:
     - Reference
     :target_profiles:
-    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|8.0.1
+    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0
   - :path: content
   - :path: content.attachment
   - :path: content.attachment.contentType
@@ -48,7 +48,7 @@
     :types:
     - Reference
     :target_profiles:
-    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|8.0.1
+    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|6.1.0
   - :path: context.period
 :mandatory_elements:
 - DocumentReference.status
