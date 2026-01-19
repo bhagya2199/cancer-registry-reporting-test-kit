@@ -62,16 +62,35 @@
   - Observation.category.coding
   - Observation.category.coding.system
   - Observation.category.coding.code
+  - Observation.category.coding:Fixed_social-history
+  - Observation.category.coding:Fixed_social-history.coding
+  - Observation.category.coding:Fixed_social-history.coding.system
+  - Observation.category.coding:Fixed_social-history.coding.code
   - Observation.code
   - Observation.code.coding
   - Observation.code.coding.system
   - Observation.code.coding.code
+  - Observation.code.coding:Fixed_21843-8
+  - Observation.code.coding:Fixed_21843-8.coding
+  - Observation.code.coding:Fixed_21843-8.coding.system
+  - Observation.code.coding:Fixed_21843-8.coding.code
+  - Observation.code.text
   - Observation.subject
   - Observation.effective[x]
+  - Observation.effectivePeriod
   - Observation.value[x].coding
   - Observation.component
   - Observation.component.code
   - Observation.component.value[x].coding
+  - Observation.component:odh-UsualIndustry
+  - Observation.component:odh-UsualIndustry.code
+  - Observation.component:odh-UsualIndustry.code.coding
+  - Observation.component:odh-UsualIndustry.code.coding.system
+  - Observation.component:odh-UsualIndustry.code.coding.code
+  - Observation.component:odh-UsualOccupationDuration.code
+  - Observation.component:odh-UsualOccupationDuration.code.coding
+  - Observation.component:odh-UsualOccupationDuration.code.coding.system
+  - Observation.component:odh-UsualOccupationDuration.code.coding.code
 :tests:
   - :id: ccrr_v200_odh_usual_work_must_support_test
     :file_name: odh_usual_work_must_support_test.rb

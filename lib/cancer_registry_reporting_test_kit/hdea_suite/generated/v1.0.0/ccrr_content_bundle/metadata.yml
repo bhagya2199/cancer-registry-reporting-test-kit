@@ -27,6 +27,9 @@
 - Bundle.type
 - Bundle.entry
 - Bundle.entry:composition
+- Bundle.entry:composition.request.method
+- Bundle.entry:composition.request.url
+- Bundle.entry:composition.response.status
 - Bundle.link.relation
 - Bundle.link.url
 - Bundle.entry.request.method

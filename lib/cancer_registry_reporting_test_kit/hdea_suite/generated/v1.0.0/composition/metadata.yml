@@ -310,8 +310,7 @@
     - :path: identifier
     - :path: status
       :fixed_value: final
-    - :path: type.coding.code
-      :fixed_value: 72134-0
+    - :path: type
     - :path: subject
       :types:
         - Reference
@@ -571,35 +570,96 @@
         - http://hl7.org/fhir/us/core/StructureDefinition/us-core-servicerequest|6.1.0
 
 :mandatory_elements:
+- Composition.identifier
+- Composition.status
+- Composition.type
+- Composition.type.coding
+- Composition.type.coding.system
+- Composition.type.coding.code
+- Composition.subject
+- Composition.date
+- Composition.title
 - Composition.relatesTo.target[x]
 - Composition.section:sliceEncounterSection.code
+- Composition.section:sliceEncounterSection.code.coding
+- Composition.section:sliceEncounterSection.code.coding.system
+- Composition.section:sliceEncounterSection.code.coding.code
 - Composition.section:sliceEncounterSection.text
+- Composition.section:slicePrimaryCancerCondition
+- Composition.section:slicePrimaryCancerCondition.code
+- Composition.section:slicePrimaryCancerCondition.code.coding
+- Composition.section:slicePrimaryCancerCondition.code.coding.system
+- Composition.section:slicePrimaryCancerCondition.code.coding.code
+- Composition.section:slicePrimaryCancerCondition.text
+- Composition.section:slicePrimaryCancerCondition.entry
 - Composition.section:sliceMedicationsAdministeredSection.code
+- Composition.section:sliceMedicationsAdministeredSection.code.coding
+- Composition.section:sliceMedicationsAdministeredSection.code.coding.system
+- Composition.section:sliceMedicationsAdministeredSection.code.coding.code
 - Composition.section:sliceMedicationsAdministeredSection.text
 - Composition.section:sliceMedicationsSection.code
+- Composition.section:sliceMedicationsSection.code.coding
+- Composition.section:sliceMedicationsSection.code.coding.system
+- Composition.section:sliceMedicationsSection.code.coding.code
 - Composition.section:sliceMedicationsSection.text
 - Composition.section:sliceNotesSection.code
+- Composition.section:sliceNotesSection.code.coding
+- Composition.section:sliceNotesSection.code.coding.system
+- Composition.section:sliceNotesSection.code.coding.code
 - Composition.section:sliceNotesSection.text
 - Composition.section:sliceODHSection.code
+- Composition.section:sliceODHSection.code.coding
+- Composition.section:sliceODHSection.code.coding.system
+- Composition.section:sliceODHSection.code.coding.code
 - Composition.section:sliceODHSection.text
 - Composition.section:slicePlanOfTreatmentSection.code
+- Composition.section:slicePlanOfTreatmentSection.code.coding
+- Composition.section:slicePlanOfTreatmentSection.code.coding.system
+- Composition.section:slicePlanOfTreatmentSection.code.coding.code
 - Composition.section:slicePlanOfTreatmentSection.text
 - Composition.section:sliceProblemSection.code
+- Composition.section:sliceProblemSection.code.coding
+- Composition.section:sliceProblemSection.code.coding.system
+- Composition.section:sliceProblemSection.code.coding.code
 - Composition.section:sliceProblemSection.text
 - Composition.section:sliceProceduresSection.code
+- Composition.section:sliceProceduresSection.code.coding
+- Composition.section:sliceProceduresSection.code.coding.system
+- Composition.section:sliceProceduresSection.code.coding.code
 - Composition.section:sliceProceduresSection.text
 - Composition.section:sliceRadioTherapyCourseSummary.code
+- Composition.section:sliceRadioTherapyCourseSummary.code.coding
+- Composition.section:sliceRadioTherapyCourseSummary.code.coding.system
+- Composition.section:sliceRadioTherapyCourseSummary.code.coding.code
 - Composition.section:sliceRadioTherapyCourseSummary.text
 - Composition.section:sliceResultsSection.code
+- Composition.section:sliceResultsSection.code.coding
+- Composition.section:sliceResultsSection.code.coding.system
+- Composition.section:sliceResultsSection.code.coding.code
 - Composition.section:sliceResultsSection.text
 - Composition.section:sliceSecondaryCancerCondition.code
+- Composition.section:sliceSecondaryCancerCondition.code.coding
+- Composition.section:sliceSecondaryCancerCondition.code.coding.system
+- Composition.section:sliceSecondaryCancerCondition.code.coding.code
 - Composition.section:sliceSecondaryCancerCondition.text
 - Composition.section:sliceSocialHistorySection.code
+- Composition.section:sliceSocialHistorySection.code.coding
+- Composition.section:sliceSocialHistorySection.code.coding.system
+- Composition.section:sliceSocialHistorySection.code.coding.code
 - Composition.section:sliceSocialHistorySection.text
 - Composition.section:sliceTNMStaging.code
+- Composition.section:sliceTNMStaging.code.coding
+- Composition.section:sliceTNMStaging.code.coding.system
+- Composition.section:sliceTNMStaging.code.coding.code
 - Composition.section:sliceTNMStaging.text
 - Composition.section:sliceVitalSignsSection.code
+- Composition.section:sliceVitalSignsSection.code.coding
+- Composition.section:sliceVitalSignsSection.code.coding.system
+- Composition.section:sliceVitalSignsSection.code.coding.code
 - Composition.section:sliceVitalSignsSection.text
+- Composition.author
+- Composition.attester.mode
+- Composition.relatesTo.code
 
 :tests:
   - :id: ccrr_v200_composition_must_support_test

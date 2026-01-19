@@ -4,9 +4,9 @@
 :version: v2.0.0-ballot
 :reformatted_version: v200
 :resource: Observation
-:profile_url: http://hl7.org/fhir/StructureDefinition/Observation
+:profile_url: http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs
 :profile_name: Base Observation
-:profile_version: 4.0.1
+:profile_version: 6.1.0
 :title: Observation Base
 :short_description: Verify support for the server capabilities required by the Base Observation.
 :must_supports:
@@ -14,14 +14,38 @@
   :slices: []
   :elements:
   - :path: effective[x]
+  - :path: effectiveDateTime
+    :original_path: effective[x]
+  - :path: status
+  - :path: category
+  - :path: category:VSCat
+  - :path: category:VSCat.coding
+  - :path: category:VSCat.coding.system
+  - :path: category:VSCat.coding.code
+  - :path: code
+  - :path: subject
+  - :path: performer
+  - :path: value[x]
+  - :path: valueQuantity
+    :original_path: value[x]
+  - :path: dataAbsentReason
+  - :path: component
+  - :path: component.code
+  - :path: valueQuantity
+    :original_path: component.value[x]
+  - :path: component.dataAbsentReason
+ 
 :mandatory_elements:
 - Observation.status
 - Observation.code
 - Observation.subject
 - Observation.value[x]
-- Observation.triggeredBy.observation
-- Observation.triggeredBy.type
 - Observation.component.code
+- Observation.category:VSCat
+- Observation.category:VSCat.coding
+- Observation.category:VSCat.coding.system
+- Observation.category:VSCat.coding.code
+- Observation.effective[x]
 :tests:
 - :id: ccrr_v200_observation_must_support_test
   :file_name: observation_must_support_test.rb

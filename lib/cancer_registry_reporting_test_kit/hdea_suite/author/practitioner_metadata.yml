@@ -12,35 +12,38 @@
 :must_supports:
   :extensions: []
   :slices:
-    - :slice_id: Practitioner.identifier:NPI
-      :slice_name: NPI
-      :path: identifier
-      :discriminator:
-        :type: patternIdentifier
-        :path: ""
-        :system: http://hl7.org/fhir/sid/us-npi
+  - :slice_id: Practitioner.identifier:NPI
+    :slice_name: NPI
+    :path: identifier
+    :discriminator:
+      :type: patternIdentifier
+      :path: ''
+      :system: http://hl7.org/fhir/sid/us-npi
   :elements:
-    - :path: identifier
-    - :path: identifier.system
-    - :path: identifier.value
-    - :path: name
-    - :path: name.family
-    - :path: telecom
-    - :path: telecom.system
-    - :path: telecom.value
-    - :path: address
-    - :path: address.line
-    - :path: address.city
-    - :path: address.state
-    - :path: address.postalCode
-    - :path: address.country
+  - :path: identifier
+  - :path: identifier.system
+  - :path: identifier.value
+  - :path: identifier:NPI
+  - :path: identifier:NPI.system
+  - :path: name
+  - :path: name.family
+  - :path: telecom
+  - :path: telecom.system
+  - :path: telecom.value
+  - :path: address
+  - :path: address.line
+  - :path: address.city
+  - :path: address.state
+  - :path: address.postalCode
+  - :path: address.country
 :mandatory_elements:
-  - Practitioner.identifier
-  - Practitioner.identifier.system
-  - Practitioner.identifier.value
-  - Practitioner.name
-  - Practitioner.name.family
-  - Practitioner.qualification.code
+- Practitioner.identifier
+- Practitioner.identifier.system
+- Practitioner.identifier.value
+- Practitioner.identifier:NPI.system
+- Practitioner.name
+- Practitioner.name.family
+- Practitioner.qualification.code
 :tests:
   - :id: ccrr_v200_practitioner_must_support_test
     :file_name: practitioner_must_support_test.rb

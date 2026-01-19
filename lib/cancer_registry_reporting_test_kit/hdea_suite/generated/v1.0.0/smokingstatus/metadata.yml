@@ -36,6 +36,10 @@
   - :path: status
   - :path: category
   - :path: code
+  - :path: effectiveDateTime
+  - :path: value[x]
+  - :path: valueCodeableConcept
+    :original_path: value[x]
   - :path: subject
     :types:
     - Reference
@@ -43,10 +47,13 @@
     - http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0
 :mandatory_elements:
 - Observation.status
-- Observation.category
+- Observation.category:SocialHistory
+- Observation.category:SocialHistory.coding
+- Observation.category:SocialHistory.coding.system
+- Observation.category:SocialHistory.coding.code
 - Observation.code
 - Observation.subject
-- Observation.effective[x]
+- Observation.effectiveDateTime
 - Observation.value[x]
 - Observation.component.code
 :tests:

@@ -10,8 +10,21 @@
 :title: Condition US Core
 :short_description: Verify support for the server capabilities required by the US Core Condition Profile.
 :must_supports:
-  :extensions: []
-  :slices: []
+  :extensions: 
+  - :id: Condition.extension:assertedDate
+    :path: extension
+    :url: http://hl7.org/fhir/StructureDefinition/condition-assertedDate
+  :slices:
+  - :slice_id: Condition.category:screening-assessment
+    :slice_name: screening-assessment
+    :path: category
+    :discriminator:
+      :type: value
+      :values:
+        - :path: coding.code
+          :value: sdoh
+  - :slice_id: Condition.category:us-core
+    :slice_name: us-core
   :elements:
   - :path: clinicalStatus
   - :path: verificationStatus
@@ -20,8 +33,17 @@
   - :path: subject
     :types:
     - Reference
+  - :path: extension:assertedDate
+  - :path: category:screening-assessment
+  - :path: onsetDateTime
+    :original_path: onset[x]
+  - :path: abatementDateTime
+    :original_path: abatement[x]
+  - :path: recordedDate
+
 :mandatory_elements:
 - Condition.category
+- Condition.category:us-core
 - Condition.code
 - Condition.subject
 :tests:

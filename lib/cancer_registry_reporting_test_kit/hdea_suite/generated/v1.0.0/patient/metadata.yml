@@ -151,6 +151,26 @@
 - Patient.extension:ethnicity.extension
 - Patient.extension:ethnicity.extension.url
 - Patient.extension:ethnicity.extension.value[x]
+- Patient.extension:race.extension:ombCategory.url
+- Patient.extension:race.extension:ombCategory.value[x]
+- Patient.extension:race.extension:detailed.url
+- Patient.extension:race.extension:detailed.value[x]
+- Patient.extension:race.extension:text
+- Patient.extension:race.extension:text.url
+- Patient.extension:race.extension:text.value[x]
+- Patient.extension:race.extension:dataAbsentReason.url
+- Patient.extension:race.extension:dataAbsentReason.value[x]
+- Patient.extension:race.url
+- Patient.extension:ethnicity.extension:ombCategory.url
+- Patient.extension:ethnicity.extension:ombCategory.value[x]
+- Patient.extension:ethnicity.extension:detailed.url
+- Patient.extension:ethnicity.extension:detailed.value[x]
+- Patient.extension:ethnicity.extension:text
+- Patient.extension:ethnicity.extension:text.url
+- Patient.extension:ethnicity.extension:text.value[x]
+- Patient.extension:ethnicity.extension:dataAbsentReason.url
+- Patient.extension:ethnicity.extension:dataAbsentReason.value[x]
+- Patient.extension:ethnicity.url
 
 - Patient.identifier
 - Patient.identifier.system
@@ -178,6 +198,32 @@
 - Patient.identifier:MedicaidIdentifier.extension:dataAbsentReason.extension
 - Patient.identifier:MedicaidIdentifier.extension:dataAbsentReason.extension.url
 - Patient.identifier:MedicaidIdentifier.extension:dataAbsentReason.extension.value[x]
+- Patient.identifier.extension:dataAbsentReason.url
+- Patient.identifier.extension:dataAbsentReason.value[x]
+- Patient.identifier:MedicareIdentifier.extension:dataAbsentReason.url
+- Patient.identifier:MedicareIdentifier.extension:dataAbsentReason.value[x]
+- Patient.identifier:MedicareIdentifier.type
+- Patient.identifier:MedicareIdentifier.type.coding
+- Patient.identifier:MedicareIdentifier.type.coding.system
+- Patient.identifier:MedicareIdentifier.type.coding.code
+- Patient.identifier:MedicareIdentifier.system
+- Patient.identifier:MedicareIdentifier.value
+- Patient.identifier:MR.extension:dataAbsentReason.url
+- Patient.identifier:MR.extension:dataAbsentReason.value[x]
+- Patient.identifier:MR.type
+- Patient.identifier:MR.type.coding
+- Patient.identifier:MR.type.coding.system
+- Patient.identifier:MR.type.coding.code
+- Patient.identifier:MR.system
+- Patient.identifier:MR.value
+- Patient.identifier:SSNIdentifier.extension:dataAbsentReason.url
+- Patient.identifier:SSNIdentifier.extension:dataAbsentReason.value[x]
+- Patient.identifier:SSNIdentifier.type
+- Patient.identifier:SSNIdentifier.type.coding
+- Patient.identifier:SSNIdentifier.type.coding.system
+- Patient.identifier:SSNIdentifier.type.coding.code
+- Patient.identifier:SSNIdentifier.system
+- Patient.identifier:SSNIdentifier.value
 
 - Patient.name
 - Patient.name.family
@@ -185,6 +231,8 @@
 - Patient.name.family.extension:dataAbsentReason
 - Patient.name.family.extension:dataAbsentReason.url
 - Patient.name.family.extension:dataAbsentReason.value[x]
+- Patient.name.extension:dataAbsentReason.url
+- Patient.name.given
 
 - Patient.gender
 - Patient.gender.extension
@@ -215,6 +263,10 @@
 - Patient.telecom.extension:dataAbsentReason
 - Patient.telecom.extension:dataAbsentReason.url
 - Patient.telecom.extension:dataAbsentReason.value[x]
+- Patient.telecom:phone.system
+- Patient.telecom:phone.value
+- Patient.telecom:email.system
+- Patient.telecom:email.value
 
 - Patient.contact
 - Patient.contact.name
@@ -228,6 +280,10 @@
 - Patient.contact.telecom.extension:dataAbsentReason
 - Patient.contact.telecom.extension:dataAbsentReason.url
 - Patient.contact.telecom.extension:dataAbsentReason.value[x]
+- Patient.contact.name.extension:dataAbsentReason.url
+- Patient.contact.name.extension:dataAbsentReason.value[x]
+- Patient.contact.address.extension:dataAbsentReason.url
+- Patient.contact.address.extension:dataAbsentReason.value[x]
 
 - Patient.communication
 - Patient.communication.language
@@ -236,9 +292,9 @@
 - Patient.communication.language.extension:dataAbsentReason.url
 - Patient.communication.language.extension:dataAbsentReason.value[x]
 
-- Patient.managingOrganization
-- Patient.generalPractitioner
 - Patient.maritalStatus
+- Patient.link.other
+- Patient.link.type
 
 :tests:
 - :id: ccrr_v200_patient_must_support_test

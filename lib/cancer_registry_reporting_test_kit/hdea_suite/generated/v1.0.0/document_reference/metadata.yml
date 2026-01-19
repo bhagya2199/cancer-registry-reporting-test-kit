@@ -11,16 +11,7 @@
 :short_description: Verify support for the server capabilities required by the US Core DocumentReference Profile.
 :must_supports:
   :extensions: []
-  :slices:
-  - :slice_id: DocumentReference.category:us-core
-    :slice_name: us-core
-    :path: category
-    :discriminator:
-      :type: requiredBinding
-      :path: ''
-      :values:
-      - :system: http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category
-        :code: clinical-note
+  :slices: []
   :elements:
   - :path: identifier
   - :path: status

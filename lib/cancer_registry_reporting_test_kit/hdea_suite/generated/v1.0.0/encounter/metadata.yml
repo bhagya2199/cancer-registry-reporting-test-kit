@@ -93,11 +93,14 @@
   - Encounter.classHistory.class
   - Encounter.classHistory.period
   - Encounter.type
-  - Encounter.period.start
   - Encounter.subject
   - Encounter.diagnosis.condition
   - Encounter.location.location
   - Encounter.participant:sliceResponsibleProvider.type
+  - Encounter.participant:sliceResponsibleProvider.type.coding
+  - Encounter.participant:sliceResponsibleProvider.type.coding.system
+  - Encounter.participant:sliceResponsibleProvider.type.coding.code
+
 :tests:
   - :id: ccrr_v200_encounter_must_support_test
     :file_name: encounter_must_support_test.rb

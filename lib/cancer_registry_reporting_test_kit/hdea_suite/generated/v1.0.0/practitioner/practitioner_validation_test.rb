@@ -27,7 +27,7 @@ module CancerRegistryReportingTestKit
       run do
         perform_validation_test(scratch_resources[:all] || [],
                                 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner',
-                                '5.0.1',
+                                '6.1.0',
                                 skip_if_empty: true)
       end
     end

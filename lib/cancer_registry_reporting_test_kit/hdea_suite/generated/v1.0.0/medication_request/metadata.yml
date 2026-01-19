@@ -35,6 +35,7 @@
   - :path: statusReason
   - :path: intent
   - :path: category
+  - :path: extension
   - :path: reportedBoolean
     :original_path: reported[x]
   - :path: reportedReference
@@ -70,12 +71,21 @@
     - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|8.0.1
   - :path: dosageInstruction
   - :path: dosageInstruction.text
+  - :path: dosageInstruction.timing
+  - :path: doseAndRate
+  - :path: doseQuantity
+    :original_path: doseAndRate.dose[x]
+  - :path: dispenseRequest
+  - :path: numberOfRepeatsAllowed
+    :original_path: dispenseRequest
+  - :path: quantity
+    :original_path: dispenseRequest
+
 :mandatory_elements:
 - MedicationRequest.status
 - MedicationRequest.intent
 - MedicationRequest.medication[x]
 - MedicationRequest.subject
-- MedicationRequest.requester
 - MedicationRequest.substitution.allowed[x]
 :tests:
 - :id: ccrr_v200_medication_request_must_support_test

@@ -12,51 +12,64 @@
 :must_supports:
   :extensions: []
   :slices:
-    - :slice_id: Organization.identifier:NPI
-      :slice_name: NPI
-      :path: identifier
-      :discriminator:
-        :type: value
-        :values:
+  - :slice_id: Organization.identifier:NPI
+    :slice_name: NPI
+    :path: identifier
+    :discriminator:
+      :type: value
+      :values:
         - :path: system
           :value: http://hl7.org/fhir/sid/us-npi
-    - :slice_id: Organization.identifier:CLIA
-      :slice_name: CLIA
-      :path: identifier
-      :discriminator:
-        :type: value
-        :values:
+  - :slice_id: Organization.identifier:CLIA
+    :slice_name: CLIA
+    :path: identifier
+    :discriminator:
+      :type: value
+      :values:
         - :path: system
           :value: urn:oid:2.16.840.1.113883.4.7
-    - :slice_id: Organization.identifier:NAIC
-      :slice_name: NAIC
-      :path: identifier
-      :discriminator:
-        :type: value
-        :values:
+  - :slice_id: Organization.identifier:NAIC
+    :slice_name: NAIC
+    :path: identifier
+    :discriminator:
+      :type: value
+      :values:
         - :path: system
           :value: urn:oid:2.16.840.1.113883.6.300
+
   :elements:
-    - :path: identifier
-    - :path: identifier:NPI
-    - :path: identifier:CLIA
-    - :path: identifier:NAIC
-    - :path: active
-    - :path: name
-    - :path: telecom
-    - :path: telecom.system
-    - :path: telecom.value
-    - :path: address
-    - :path: address.line
-    - :path: address.city
-    - :path: address.state
-    - :path: address.postalCode
-    - :path: address.country
+  - :path: identifier
+  - :path: identifier:NPI
+  - :path: active
+  - :path: name
+  - :path: telecom
+  - :path: telecom.system
+  - :path: telecom.value
+  - :path: address
+  - :path: address.line
+  - :path: address.city
+  - :path: address.state
+  - :path: address.postalCode
+  - :path: address.country
+  - :path: identifier:CLIA
+  - :path: identifier:NAIC
+  - :path: identifier.system
+  - :path: identifier.value
+  - :path: identifier:NPI.system
+  - :path: identifier:NPI.value
+  - :path: identifier:CLIA.system
+  - :path: identifier:CLIA.value
+  - :path: identifier:NAIC.system
+  - :path: identifier:NAIC.value
+
 :mandatory_elements:
-  - Organization.identifier
-  - Organization.identifier:NPI
-  - Organization.active
-  - Organization.name
+- Organization.identifier
+- Organization.identifier:NPI
+- Organization.identifier:NPI.system
+- Organization.identifier:CLIA.system
+- Organization.identifier:NAIC.system
+- Organization.active
+- Organization.name
 :tests:
   - :id: ccrr_v200_central_cancer_registry_reporting_organization_must_support_test
     :file_name: organization_must_support_test.rb

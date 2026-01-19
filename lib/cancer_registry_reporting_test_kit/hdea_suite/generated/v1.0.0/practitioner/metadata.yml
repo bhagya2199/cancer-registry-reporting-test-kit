@@ -23,6 +23,8 @@
   - :path: identifier
   - :path: identifier.system
   - :path: identifier.value
+  - :path: identifier:NPI
+  - :path: identifier:NPI.system
   - :path: name
   - :path: name.family
   - :path: telecom
@@ -38,6 +40,7 @@
 - Practitioner.identifier
 - Practitioner.identifier.system
 - Practitioner.identifier.value
+- Practitioner.identifier:NPI.system
 - Practitioner.name
 - Practitioner.name.family
 - Practitioner.qualification.code
