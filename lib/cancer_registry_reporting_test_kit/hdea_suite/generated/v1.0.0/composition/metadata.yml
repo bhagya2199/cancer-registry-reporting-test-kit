@@ -21,7 +21,7 @@
         :type: value
         :values:
           - :path: code.coding.code
-            :value: 67781-5
+            :value: 46240-8
     - :slice_id: Composition.section:slicePrimaryCancerCondition
       :slice_name: slicePrimaryCancerCondition
       :path: section

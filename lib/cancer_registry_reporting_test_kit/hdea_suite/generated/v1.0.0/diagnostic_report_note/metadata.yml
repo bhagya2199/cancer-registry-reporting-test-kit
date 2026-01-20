@@ -17,8 +17,10 @@
       :slice_name: us-core
       :path: category
       :discriminator:
-        :type: value
-        :path: "$this"
+        :type: patternCoding
+        :path: coding
+        :code: LP29684-5
+        :system: http://loinc.org
   :elements:
     - :path: status
     - :path: category

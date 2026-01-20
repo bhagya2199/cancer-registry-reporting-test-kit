@@ -10,48 +10,23 @@
 :title: Radiotherapy Course Summary
 :short_description: Verify support for the server capabilities required by the Radiotherapy Course Summary Profile.
 :must_supports:
-  :extensions: []
-  :slices:
-    - :slice_id: Procedure.extension:treatmentIntent
-      :slice_name: treatmentIntent
+  :extensions:
+    - :id: Procedure.extension:treatmentIntent
       :path: extension
-      :discriminator:
-        :type: value
-        :path: url
-      :values:
-        - :system: ""
-          :code: http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-procedure-intent
-
-    - :slice_id: Procedure.extension:modalityAndTechnique
-      :slice_name: modalityAndTechnique
+      :url: http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-procedure-intent
+    - :id: Procedure.extension:terminationReason
       :path: extension
-      :discriminator:
-        :type: value
-        :path: url
-      :values:
-        - :system: ""
-          :code: http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-modality-and-technique
-
-    - :slice_id: Procedure.extension:actualNumberOfSessions
-      :slice_name: actualNumberOfSessions
+      :url: http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-treatment-termination-reason
+    - :id: Procedure.extension:modalityAndTechnique
       :path: extension
-      :discriminator:
-        :type: value
-        :path: url
-      :values:
-        - :system: ""
-          :code: http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-sessions
-
-    - :slice_id: Procedure.extension:doseDeliveredToVolume
-      :slice_name: doseDeliveredToVolume
+      :url: http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-modality-and-technique
+    - :id: Procedure.extension:actualNumberOfSessions
       :path: extension
-      :discriminator:
-        :type: value
-        :path: url
-      :values:
-        - :system: ""
-          :code: http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-dose-delivered-to-volume
-
+      :url: http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-sessions
+    - :id: Procedure.extension:doseDeliveredToVolume
+      :path: extension
+      :url: http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-dose-delivered-to-volume
+  :slices: []
   :elements:
     - :path: extension
     - :path: status

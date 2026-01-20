@@ -11,12 +11,17 @@
 :short_description: Verify support for the server capabilities required by the Base ServiceRequest.
 :must_supports:
   :slices:
-  - :slice_id: ServiceRequest.category:us-core
-    :slice_name: us-core
-    :path: category
-    :discriminator:
-      :type: patternCodeableConcept
-      :path: ""
+    - :slice_id: ServiceRequest.category:us-core
+      :slice_name: us-core
+      :path: category
+      :discriminator:
+        :type: requiredBinding
+        :path: coding
+        :values:
+        - :path: coding.system
+          :value: http://snomed.info/sct
+        - :path: coding.code
+          :value: 108252007
   :elements:
   - :path: status
   - :path: intent
