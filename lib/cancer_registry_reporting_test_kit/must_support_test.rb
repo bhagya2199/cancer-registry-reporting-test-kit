@@ -12,7 +12,16 @@ module CancerRegistryReportingTestKit
     def_delegators 'self.class', :metadata
 
     def all_scratch_resources
-      scratch_resources[:all]
+      base_resources = Array.wrap(scratch_resources[:all])
+
+      if respond_to?(:scratch) && scratch.is_a?(Hash) && scratch.key?(:ccrr_content_bundle_resources)
+        grouped_resources =
+          scratch.values.select { |group| group.is_a?(Hash) }.map { |group| Array.wrap(group[:all]) }.flatten
+
+        (base_resources + grouped_resources).uniq
+      else
+        base_resources
+      end
     end
 
     def perform_must_support_test(resources)
@@ -61,8 +70,42 @@ module CancerRegistryReportingTestKit
 
     def missing_must_support_strings
       missing_elements.map { |element_definition| missing_element_string(element_definition) } +
-        missing_slices.map { |slice_definition| sym_key(slice_definition, :slice_id) } +
+        missing_slices.map { |slice_definition| slice_definition[:slice_id] } +
         missing_extensions.map { |extension_definition| extension_definition[:id] }
+    end
+
+    def enforce_mandatory_elements(resources)
+      return if metadata.mandatory_elements.nil?
+
+      resources.each do |resource|
+        metadata.mandatory_elements.each do |full_path|
+          next unless full_path.start_with?("#{resource_type}.")
+
+          relative_path = full_path.delete_prefix("#{resource_type}.")
+          segments = relative_path.split('.')
+          leaf = segments.last
+          parent_path = segments[0...-1].join('.')
+
+          if parent_path.empty?
+            value_found = find_a_value_at(resource, leaf) do |value|
+              value.present? || value == false
+            end
+
+            assert value_found.present? || value_found == false,
+                   "#{full_path} is mandatory in every #{resource_type} instance"
+          else
+            parent_elements = resolve_path(resource, parent_path)
+            parent_elements.each do |parent|
+              value_found = find_a_value_at(parent, leaf) do |value|
+                value.present? || value == false
+              end
+
+              assert value_found.present? || value_found == false,
+                     "#{full_path} is mandatory when #{resource_type}.#{parent_path} is present"
+            end
+          end
+        end
+      end
     end
 
     def missing_element_string(element_definition)
@@ -78,11 +121,7 @@ module CancerRegistryReportingTestKit
     end
 
     def must_support_extensions
-      if exclude_uscdi_only_test?
-        metadata.must_supports[:extensions].reject { |extension| extension[:uscdi_only] }
-      else
-        metadata.must_supports[:extensions]
-      end
+      Array(metadata.must_supports&.dig(:extensions))
     end
 
     def missing_extensions(resources = [])
@@ -105,10 +144,12 @@ module CancerRegistryReportingTestKit
     end
 
     def must_support_elements
+      elements = Array(metadata.must_supports&.dig(:elements))
+
       if exclude_uscdi_only_test?
-        metadata.must_supports[:elements].reject { |element| element[:uscdi_only] }
+        elements.reject { |element| element[:uscdi_only] }
       else
-        metadata.must_supports[:elements]
+        elements
       end
     end
 
@@ -145,44 +186,11 @@ module CancerRegistryReportingTestKit
       end
     end
 
-    def normalize_hashish(obj)
-      return obj if obj.is_a?(Hash)
-      return obj unless obj.is_a?(Array)
-
-      # array-of-pairs: [[:a,1], [:b,2]]
-      if obj.all? { |e| e.is_a?(Array) && e.length == 2 }
-        return obj.to_h
-      end
-
-      # flat: [:a,1,:b,2]
-      if obj.length.even?
-        pairs = obj.each_slice(2).to_a
-        return pairs.to_h
-      end
-
-      obj
-    end
-
-    def sym_key(hash, key)
-      return nil unless hash.is_a?(Hash)
-      hash[key] || hash[key.to_s]
-    end
-
-    def symbolize_keys(hash)
-      return hash unless hash.is_a?(Hash)
-      hash.transform_keys { |k| k.is_a?(String) ? k.to_sym : k }
-    end
-
     def must_support_slices
-      slices = metadata.must_supports[:slices] || []
-
-      slices = slices.map do |s|
-        s = normalize_hashish(s)
-        symbolize_keys(s)
-      end
+      slices = Array(metadata.must_supports&.dig(:slices))
 
       if exclude_uscdi_only_test?
-        slices.reject { |slice| sym_key(slice, :uscdi_only) }
+        slices.reject { |slice| slice[:uscdi_only] }
       else
         slices
       end
@@ -191,21 +199,14 @@ module CancerRegistryReportingTestKit
     def missing_slices(resources = [])
       @missing_slices ||=
         must_support_slices.select do |slice|
-          slice = normalize_hashish(slice)
-          slice = symbolize_keys(slice)
-
           resources.none? do |resource|
-            path = sym_key(slice, :path)
-            discriminator = sym_key(slice, :discriminator)
-            discriminator = symbolize_keys(normalize_hashish(discriminator))
-
-            find_slice(resource, path, discriminator).present?
+            path = slice[:path] # .delete_suffix('[x]')
+            find_slice(resource, path, slice[:discriminator]).present?
           end
         end
     end
 
     def find_slice(resource, path, discriminator)
-      discriminator = normalize_hashish(discriminator)
       find_a_value_at(resource, path) do |element|
         case discriminator[:type]
         when 'patternCodeableConcept'
@@ -221,7 +222,10 @@ module CancerRegistryReportingTestKit
         when 'patternIdentifier'
           find_a_value_at(element, discriminator[:path]) { |identifier| identifier.system == discriminator[:system] }
         when 'value'
-          values = discriminator[:values].map { |value| value.merge(path: value[:path].split('.')) }
+          values_array = Array(discriminator[:values])
+          next false if values_array.blank?
+
+          values = values_array.map { |value| value.merge(path: value[:path].split('.')) }
           find_slice_by_values(element, values)
         when 'type'
           case discriminator[:code]
@@ -240,10 +244,13 @@ module CancerRegistryReportingTestKit
           when 'String'
             element.is_a? String
           else
-            if element.is_a? FHIR::Bundle::Entry
-              element.resource.is_a? FHIR.const_get(discriminator[:code])
+            klass = safe_const_get(FHIR, discriminator[:code])
+            next false if klass.nil?
+
+            if element.is_a?(FHIR::Bundle::Entry)
+              element.resource.is_a?(klass)
             else
-              element.is_a? FHIR.const_get(discriminator[:code])
+              element.is_a?(klass)
             end
           end
         when 'requiredBinding'
@@ -255,7 +262,7 @@ module CancerRegistryReportingTestKit
             get_slice_by_codesystem(element, discriminator)
           else
             find_a_value_at(element, coding_path) do |coding|
-              discriminator[:values].any? { |value| value[:system] == coding.system && value[:code] == coding.code }
+              Array(discriminator[:values]).any? { |value| value[:system] == coding.system && value[:code] == coding.code }
             end
           end
         when 'profile'
@@ -277,7 +284,7 @@ module CancerRegistryReportingTestKit
 
     def get_slice_by_codesystem(element, discriminator)
       find_a_value_at(element, '') do |coding|
-        discriminator[:values].any? { |value| coding.system.include? value[:system] }
+        Array(discriminator[:values]).any? { |value| coding.system.to_s.include?(value[:system].to_s) }
       end
     end
 
@@ -313,37 +320,18 @@ module CancerRegistryReportingTestKit
       end
     end
 
-    def collect_fhir_models(obj, acc = [])
-      case obj
-      when FHIR::Model
-        acc << obj
-      when FHIR::Bundle::Entry
-        acc << obj.resource
-      when Array
-        obj.each { |v| collect_fhir_models(v, acc) }
-      when Hash
-        obj.each_value { |v| collect_fhir_models(v, acc) }
-      end
-      acc
-    end
-
     def resolve_reference_from_scratch(reference)
       return nil if reference.blank?
 
-      ref_type, ref_id =
-        if reference.include?('://')
-          parts = reference.split('/')
-          [parts[-2], parts[-1]]
-        else
-          reference.split('/', 2)
-        end
+      parts = reference.to_s.split('/')
+      return nil if parts.length < 2
 
-      pool = []
-      pool.concat(all_scratch_resources) if respond_to?(:all_scratch_resources)
-      pool.concat(collect_fhir_models(scratch))
+      resource_type = parts[-2]
+      resource_id   = parts[-1]
 
-      pool.map { |r| r.is_a?(FHIR::Bundle::Entry) ? r.resource : r }
-          .find { |r| r.respond_to?(:resourceType) && r.respond_to?(:id) && r.resourceType.to_s == ref_type.to_s && r.id.to_s == ref_id.to_s }
+      Array.wrap(all_scratch_resources).find do |res|
+        res&.resourceType.to_s == resource_type && res&.id.to_s == resource_id
+      end
     end
   end
 end

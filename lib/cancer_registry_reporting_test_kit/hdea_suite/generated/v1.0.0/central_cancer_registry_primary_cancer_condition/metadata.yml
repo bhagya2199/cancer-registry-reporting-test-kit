@@ -32,27 +32,28 @@
     :slice_name: us-core
     :path: category
     :discriminator:
-      :type: requiredBinding
-      :path: ''
-      :values:
-      - :system: http://terminology.hl7.org/CodeSystem/condition-category
-        :code: encounter-diagnosis
+      :type: patternCoding
+      :path: coding
+      :code: problem-list-item
+      :system: http://terminology.hl7.org/CodeSystem/condition-category
   :elements:
   - :path: clinicalStatus
   - :path: verificationStatus
   - :path: category
   - :path: code
   - :path: bodySite
+  - :path: extension
+  - :path: bodySite.extension
   - :path: subject
     :types:
     - Reference
     :target_profiles:
-    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|8.0.1
+    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0
   - :path: encounter
     :types:
       - Reference
     :target_profiles:
-      - http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|8.0.1
+      - http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|6.1.0
   - :path: onsetDateTime
     :original_path: onset[x]
   - :path: recordedDate
@@ -69,6 +70,10 @@
 - Condition.extension:assertedDate
 - Condition.extension:histologyMorphologyBehavior
 - Condition.category
+- Condition.category:us-core
+- Condition.category:us-core.coding
+- Condition.category:us-core.coding.system
+- Condition.category:us-core.coding.code
 - Condition.code
 - Condition.bodySite
 - Condition.subject

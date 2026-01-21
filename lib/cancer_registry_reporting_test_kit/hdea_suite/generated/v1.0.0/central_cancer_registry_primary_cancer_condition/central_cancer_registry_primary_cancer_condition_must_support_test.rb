@@ -42,7 +42,15 @@ module CancerRegistryReportingTestKit
         perform_must_support_test(all_scratch_resources)
 
         # Conditional MS logic for bodySite data-absent-reason
-        conditions = all_scratch_resources || []
+        conditions =
+          Array(all_scratch_resources).select do |resource|
+            resource.is_a?(FHIR::Condition) &&
+              Array(resource.meta&.profile).any? do |profile|
+                profile.to_s.start_with?(
+                  'http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/central-cancer-registry-primary-cancer-condition'
+                )
+              end
+          end
         skip_if conditions.empty?, 'No Primary Cancer Condition resources were found'
 
         conditions.each do |condition|
@@ -57,7 +65,9 @@ module CancerRegistryReportingTestKit
       private
 
       def bodiesite_has_extension?(condition, url)
-        Array(condition&.bodySite).any? do |bs|
+        return false unless condition.respond_to?(:bodySite)
+
+        Array(condition.bodySite).any? do |bs|
           Array(bs&.extension).any? { |ext| ext&.url == url }
         end
       end

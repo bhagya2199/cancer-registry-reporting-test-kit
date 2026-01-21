@@ -20,7 +20,6 @@
     :path: category
     :discriminator:
       :type: requiredBinding
-      :path: ''
       :values:
       - :system: http://terminology.hl7.org/CodeSystem/medicationrequest-category
         :code: inpatient
@@ -35,6 +34,7 @@
   - :path: statusReason
   - :path: intent
   - :path: category
+  - :path: extension
   - :path: reportedBoolean
     :original_path: reported[x]
   - :path: reportedReference
@@ -42,7 +42,7 @@
     :types:
     - Reference
     :target_profiles:
-    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|8.0.1
+    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0
   - :path: medication[x]
     :types:
     - Reference
@@ -55,13 +55,13 @@
     :types:
     - Reference
     :target_profiles:
-    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|8.0.1
+    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|6.1.0
   - :path: authoredOn
   - :path: requester
     :types:
     - Reference
     :target_profiles:
-    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|8.0.1
+    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0
   - :path: reasonCode
   - :path: reasonReference
     :types:
@@ -70,12 +70,19 @@
     - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|8.0.1
   - :path: dosageInstruction
   - :path: dosageInstruction.text
+  - :path: dosageInstruction.timing
+  - :path: dosageInstruction.doseAndRate
+  - :path: dosageInstruction.doseAndRate.dose[x]
+  - :path: dosageInstruction.doseAndRate.doseQuantity
+  - :path: dispenseRequest
+  - :path: dispenseRequest.numberOfRepeatsAllowed
+  - :path: dispenseRequest.quantity
+
 :mandatory_elements:
 - MedicationRequest.status
 - MedicationRequest.intent
 - MedicationRequest.medication[x]
 - MedicationRequest.subject
-- MedicationRequest.requester
 - MedicationRequest.substitution.allowed[x]
 :tests:
 - :id: ccrr_v200_medication_request_must_support_test

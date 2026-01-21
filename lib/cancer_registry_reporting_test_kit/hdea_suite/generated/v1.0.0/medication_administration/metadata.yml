@@ -28,6 +28,7 @@
     - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-patient|8.0.1
   - :path: effective[x]
   - :path: reasonCode
+  - :path: extension
   - :path: reasonReference
     :types:
     - Reference

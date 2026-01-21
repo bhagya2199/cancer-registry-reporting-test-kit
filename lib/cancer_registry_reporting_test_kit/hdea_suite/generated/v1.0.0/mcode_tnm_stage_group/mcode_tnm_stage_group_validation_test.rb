@@ -25,7 +25,14 @@ module CancerRegistryReportingTestKit
       end
 
       run do
-        perform_validation_test(scratch_resources[:all] || [],
+        resources = Array.wrap(scratch_resources[:all])
+        stage_group_resources = resources.select do |resource|
+          Array(resource.meta&.profile).any? do |profile|
+            profile.to_s.start_with?('http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-stage-group')
+          end
+        end
+
+        perform_validation_test(stage_group_resources,
                                 'http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-stage-group',
                                 '4.0.0',
                                 skip_if_empty: true)

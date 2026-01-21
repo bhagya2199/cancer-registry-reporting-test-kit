@@ -28,26 +28,24 @@
       :url: http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-dose-delivered-to-volume
   :slices: []
   :elements:
+    - :path: extension
     - :path: status
-    - :path: code.coding.code
-      :fixed_value: "1217123003"
+    - :path: statusReason
+    - :path: code
     - :path: subject
-      :types:
-        - Reference
-      :target_profiles:
-        - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-patient|8.0.1
     - :path: performed[x]
     - :path: reasonCode
     - :path: reasonReference
-      :types:
-        - Reference
-      :target_profiles:
-        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|8.0.1
     - :path: bodySite
 :mandatory_elements:
   - Procedure.status
   - Procedure.code
+  - Procedure.code.coding
+  - Procedure.code.coding.system
+  - Procedure.code.coding.code
   - Procedure.subject
+  - Procedure.performer.actor
+  - Procedure.focalDevice.manipulated
 :tests:
   - :id: ccrr_v200_mcode_radiotherapy_course_summary_must_support_test
     :file_name: mcode_radiotherapy_course_summary_must_support_test.rb

@@ -21,10 +21,20 @@
       :code: Composition
   :elements:
   - :path: entry
+  - :path: entry:composition
   - :path: entry:composition.resource
 :mandatory_elements:
 - Bundle.type
 - Bundle.entry
+- Bundle.entry:composition
+- Bundle.entry:composition.request.method
+- Bundle.entry:composition.request.url
+- Bundle.entry:composition.response.status
+- Bundle.link.relation
+- Bundle.link.url
+- Bundle.entry.request.method
+- Bundle.entry.request.url
+- Bundle.entry.response.status
 :tests:
 - :id: ccrr_v200_ccrr_content_bundle_must_support_test
   :file_name: ccrr_content_bundle_must_support_test.rb

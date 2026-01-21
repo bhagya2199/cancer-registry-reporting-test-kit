@@ -4,7 +4,7 @@
 :version: v2.0.0-ballot
 :reformatted_version: v200
 :resource: DiagnosticReport
-:profile_url: http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/central-cancer-registry-reporting-diagnostic-report
+:profile_url: http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab
 :profile_name: Central Cancer Registry Reporting DiagnosticReport
 :profile_version: 2.0.0-ballot
 :title: Central Cancer Registry Reporting DiagnosticReport
@@ -17,19 +17,24 @@
       :slice_name: LaboratorySlice
       :path: category
       :discriminator:
-        :type: patternCodeableConcept
-        :path: ""
-        :code: LAB
-        :system: http://terminology.hl7.org/CodeSystem/v2-0074
+        :type: value
+        :values:
+          - :path: coding.system
+            :value: http://terminology.hl7.org/CodeSystem/v2-0074
+          - :path: coding.code
+            :value: LAB
+
   :elements:
     - :path: status
     - :path: category
+    - :path: category:LaboratorySlice
     - :path: code
     - :path: subject
       :types:
         - Reference
       :target_profiles:
-        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|8.0.1
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0
+    - :path: effective[x]
     - :path: effectiveDateTime
       :original_path: effective[x]
     - :path: issued
@@ -37,15 +42,19 @@
       :types:
         - Reference
       :target_profiles:
-        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|8.0.1
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0
     - :path: result
       :types:
         - Reference
       :target_profiles:
-        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|8.0.1
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|6.1.0
 :mandatory_elements:
   - DiagnosticReport.status
   - DiagnosticReport.category
+  - DiagnosticReport.category:LaboratorySlice
+  - DiagnosticReport.category:LaboratorySlice.coding
+  - DiagnosticReport.category:LaboratorySlice.coding.system
+  - DiagnosticReport.category:LaboratorySlice.coding.code
   - DiagnosticReport.code
   - DiagnosticReport.subject
   - DiagnosticReport.media.link

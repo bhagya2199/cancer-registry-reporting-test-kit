@@ -130,10 +130,11 @@ module CancerRegistryReportingTestKit
             when 'String'
               slice.is_a? String
             else
-              if slice.is_a? FHIR::Bundle::Entry
-                slice.resource.is_a? FHIR.const_get(discriminator[:code])
+              klass = safe_const_get(FHIR, discriminator[:code])
+              if slice.is_a?(FHIR::Bundle::Entry)
+                klass.present? && slice.resource.is_a?(klass)
               else
-                slice.is_a? FHIR.const_get(discriminator[:code])
+                klass.present? && slice.is_a?(klass)
               end
             end
           when 'requiredBinding'
@@ -169,6 +170,14 @@ module CancerRegistryReportingTestKit
           current_element_values_match && child_element_values_match
         end
       end
+    end
+
+    def safe_const_get(mod, const_name)
+      return nil if const_name.nil? || const_name.to_s.strip.empty?
+
+      mod.const_get(const_name.to_s)
+    rescue NameError
+      nil
     end
   end
 end

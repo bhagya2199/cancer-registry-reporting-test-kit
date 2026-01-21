@@ -12,7 +12,7 @@ module CancerRegistryReportingTestKit
       description %(
         This test verifies that Observation instances
         found in the Vital Signs sections of the provided reports conform to the
-        [Base Observation profile](http://hl7.org/fhir/StructureDefinition/Observation|4.0.1).
+        [Base Observation profile](http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs|6.1.0).
       )
       
 
@@ -26,8 +26,8 @@ module CancerRegistryReportingTestKit
 
       run do
         perform_validation_test(scratch_resources[:all] || [],
-                                'http://hl7.org/fhir/StructureDefinition/Observation',
-                                '4.0.1',
+                                'http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs',
+                                '6.1.0',
                                 skip_if_empty: true)
       end
     end
