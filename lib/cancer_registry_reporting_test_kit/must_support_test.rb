@@ -329,9 +329,23 @@ module CancerRegistryReportingTestKit
       resource_type = parts[-2]
       resource_id   = parts[-1]
 
-      Array.wrap(all_scratch_resources).find do |res|
+      direct_match = Array.wrap(all_scratch_resources).find do |res|
         res&.resourceType.to_s == resource_type && res&.id.to_s == resource_id
       end
+
+      return direct_match if direct_match
+
+      Array.wrap(all_scratch_resources).each do |res|
+        next unless res&.resourceType.to_s == 'Bundle'
+
+        bundle_match = Array.wrap(res.entry).map(&:resource).find do |entry_resource|
+          entry_resource&.resourceType.to_s == resource_type && entry_resource&.id.to_s == resource_id
+        end
+
+        return bundle_match if bundle_match
+      end
+
+      nil
     end
   end
 end

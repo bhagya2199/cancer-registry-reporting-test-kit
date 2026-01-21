@@ -27,6 +27,10 @@
     :discriminator:
       :type: profile
       :path: "$this.resolve()"
+      :values:
+      - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-primary-tumor-category|4.0.0
+      - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-regional-nodes-category|4.0.0
+      - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-distant-metastases-category|4.0.0
   :elements:
     - :path: status
     - :path: category
