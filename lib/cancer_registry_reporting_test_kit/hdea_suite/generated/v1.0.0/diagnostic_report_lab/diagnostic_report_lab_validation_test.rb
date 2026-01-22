@@ -12,7 +12,7 @@ module CancerRegistryReportingTestKit
       description %(
         This test verifies that DiagnosticReport instances
         found in the Results sections of the provided reports conform to the
-        [US Core DiagnosticReport Profile for Laboratory Results Reporting profile](http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab|5.0.1).
+        [US Core DiagnosticReport Profile for Laboratory Results Reporting profile](http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab|6.1.0).
       )
       
 

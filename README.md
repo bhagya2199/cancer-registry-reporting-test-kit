@@ -2,14 +2,16 @@
       
 The Central Cancer Registry Reporting (CCRR) Test Kit is a testing tool for Health IT systems
 seeking to meet the requirements of the STU 1.0.0 version of the HL7® FHIR®
-[Central Cancer Registry Reporting IG](https://hl7.org/fhir/us/central-cancer-registry-reporting/STU1/).
+[Central Cancer Registry Reporting IG](https://build.fhir.org/ig/HL7/fhir-central-cancer-registry-reporting-ig/index).
 
 
 This test kit currently contains suites that verify the conformance of systems playing the following roles:
 - **Health Data Exchange App (HDEA) Report Generator**: Verifies that the Health IT system can generate
-  conformant and complete reports to send to a cancer registry.
+  conformant and complete reports to send to a cancer registry. The report content tests validate Bundles
+  against the CCRR IG 2.0.0-ballot, which in turn references US Core 6.1.0 and mCODE 4.0.0 profiles.
 - **Electronic Health Record (EHR) Data Source**: Verifies that the Health IT system can respond to queries
-  for the data needed to create a cancer registry report.
+  for the data needed to create a cancer registry report in alignment with the CCRR IG STU 1.0.0 EHR
+  requirements, including US Core 3.1.1 and mCODE 3.0.0 where referenced by that specification.
 
 ## Status
 

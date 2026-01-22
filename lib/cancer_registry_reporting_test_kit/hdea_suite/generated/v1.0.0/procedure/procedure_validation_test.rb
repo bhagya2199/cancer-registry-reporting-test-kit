@@ -12,7 +12,7 @@ module CancerRegistryReportingTestKit
       description %(
         This test verifies that Procedure instances
         found in the Procedures sections of the provided reports conform to the
-        [US Core Procedure profile](http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure|5.0.1).
+        [US Core Procedure profile](http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure|6.1.0).
       )
       
 

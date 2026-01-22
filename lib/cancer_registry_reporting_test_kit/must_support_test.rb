@@ -25,11 +25,16 @@ module CancerRegistryReportingTestKit
     end
 
     def perform_must_support_test(resources)
-      skip_if resources.blank?, "No #{resource_type} resources were found"
+      typed_resources =
+        Array.wrap(resources).select do |resource|
+          resource.respond_to?(:resourceType) && resource.resourceType == resource_type
+        end
 
-      missing_elements(resources)
-      missing_slices(resources)
-      missing_extensions(resources)
+      skip_if typed_resources.blank?, "No #{resource_type} resources were found"
+
+      missing_elements(typed_resources)
+      missing_slices(typed_resources)
+      missing_extensions(typed_resources)
 
       handle_must_support_choices if metadata.must_supports[:choices].present?
 

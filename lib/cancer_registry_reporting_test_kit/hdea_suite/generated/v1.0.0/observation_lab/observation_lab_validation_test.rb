@@ -12,7 +12,7 @@ module CancerRegistryReportingTestKit
       description %(
         This test verifies that Observation instances
         found in the Results sections of the provided reports conform to the
-        [US Core Laboratory Result Observation profile](http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|5.0.1).
+        [US Core Laboratory Result Observation profile](http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|6.1.0).
       )
       
 

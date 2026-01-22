@@ -12,7 +12,7 @@ module CancerRegistryReportingTestKit
       description %(
         This test verifies that DiagnosticReport instances
         found in the Notes sections of the provided reports conform to the
-        [US Core DiagnosticReport Profile for Report and Note Exchange profile](http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note|5.0.1).
+        [US Core DiagnosticReport Profile for Report and Note Exchange profile](http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note|6.1.0).
       )
       
 

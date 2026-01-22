@@ -43,8 +43,9 @@
     :original_path: value[x]
   - :path: valueCodeableConcept
     :original_path: value[x]
-  - path: valueString
+  - :path: valueString
     :original_path: value[x]
+  - :path: dataAbsentReason
   - :path: specimen
 :mandatory_elements:
 - Observation.status

@@ -12,7 +12,7 @@ module CancerRegistryReportingTestKit
       description %(
         This test verifies that CarePlan instances
         found in the Plan of Treatment sections of the provided reports conform to the
-        [US Core CarePlan profile](http://hl7.org/fhir/us/core/StructureDefinition/us-core-careplan|5.0.1).
+        [US Core CarePlan profile](http://hl7.org/fhir/us/core/StructureDefinition/us-core-careplan|6.1.0).
       )
       
 

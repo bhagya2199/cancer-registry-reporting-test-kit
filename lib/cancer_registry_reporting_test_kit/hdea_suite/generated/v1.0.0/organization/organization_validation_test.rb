@@ -12,7 +12,7 @@ module CancerRegistryReportingTestKit
       description %(
         This test verifies that Organization instances
         referenced in the `author` elements of the provided reports conform to the
-        [US Core Organization profile](http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|5.0.1).
+        [US Core Organization profile](http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|6.1.0).
       )
       
 

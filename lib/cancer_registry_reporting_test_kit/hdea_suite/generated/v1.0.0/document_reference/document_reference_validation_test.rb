@@ -12,7 +12,7 @@ module CancerRegistryReportingTestKit
       description %(
         This test verifies that DocumentReference instances
         found in the Notes sections of the provided reports conform to the
-        [US Core DocumentReference profile](http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|5.0.1).
+        [US Core DocumentReference profile](http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|6.1.0).
       )
       
 

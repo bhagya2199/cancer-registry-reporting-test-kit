@@ -12,7 +12,7 @@ module CancerRegistryReportingTestKit
       description %(
         This test verifies that Procedure instances
         found in the Radiotherapy Course Summary sections of the provided reports conform to the
-        [Radiotherapy Course Summary profile](http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-course-summary|3.0.0).
+        [Radiotherapy Course Summary profile](http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-course-summary|4.0.0).
       )
       
 

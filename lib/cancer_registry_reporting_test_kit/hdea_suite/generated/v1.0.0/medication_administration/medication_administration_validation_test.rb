@@ -12,7 +12,7 @@ module CancerRegistryReportingTestKit
       description %(
         This test verifies that MedicationAdministration instances
         found in the Medications and Medications Administered sections of the provided reports conform to the
-        [Cancer-Related Medication Administration profile](http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-administration|3.0.0).
+        [Cancer-Related Medication Administration profile](http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-administration|4.0.0).
       )
       
 

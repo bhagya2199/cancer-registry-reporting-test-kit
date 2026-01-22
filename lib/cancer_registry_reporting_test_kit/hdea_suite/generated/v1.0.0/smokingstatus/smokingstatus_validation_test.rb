@@ -12,7 +12,7 @@ module CancerRegistryReportingTestKit
       description %(
         This test verifies that Observation instances
         found in the Social History sections of the provided reports conform to the
-        [US Core Smoking Status Observation profile](http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus|5.0.1).
+        [US Core Smoking Status Observation profile](http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus|6.1.0).
       )
       
 

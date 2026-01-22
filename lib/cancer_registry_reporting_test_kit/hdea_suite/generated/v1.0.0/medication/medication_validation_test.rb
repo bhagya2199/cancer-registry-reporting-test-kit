@@ -12,7 +12,7 @@ module CancerRegistryReportingTestKit
       description %(
         This test verifies that Medication instances
         found in the Medications and Medications Administered sections of the provided reports conform to the
-        [US Core Medication profile](http://hl7.org/fhir/us/core/StructureDefinition/us-core-medication|5.0.1).
+        [US Core Medication profile](http://hl7.org/fhir/us/core/StructureDefinition/us-core-medication|6.1.0).
       )
       
 
