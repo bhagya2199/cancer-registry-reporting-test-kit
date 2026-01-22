@@ -293,6 +293,102 @@
       :target_profiles:
         - http://hl7.org/fhir/us/core/StructureDefinition/us-core-careplan|6.1.0
 
+    - :slice_id: Composition.section.entry:slicePrimaryCancerCondition
+      :slice_name: slicePrimaryCancerCondition
+      :path: section.entry
+      :discriminator:
+        :type: profile
+        :values:
+        - http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/central-cancer-registry-primary-cancer-condition|2.0.0-ballot
+      :type:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/central-cancer-registry-primary-cancer-condition|2.0.0-ballot
+
+    - :slice_id: Composition.section.entry:sliceSecondaryCancerCondition
+      :slice_name: sliceSecondaryCancerCondition
+      :path: section.entry
+      :discriminator:
+        :type: profile
+        :values:
+        - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-secondary-cancer-condition|4.0.0
+      :type:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-secondary-cancer-condition|4.0.0
+
+    - :slice_id: Composition.section.entry:sliceRadioTherapyCourseSummary
+      :slice_name: sliceRadioTherapyCourseSummary
+      :path: section.entry
+      :discriminator:
+        :type: profile
+        :values:
+        - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-course-summary|4.0.0
+      :type:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-course-summary|4.0.0
+
+    - :slice_id: Composition.section.entry:sliceProblemSection
+      :slice_name: sliceProblemSection
+      :path: section.entry
+      :discriminator:
+        :type: profile
+        :values:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|6.1.0
+      :type:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|6.1.0
+
+    - :slice_id: Composition.section.entry:sliceODHSection
+      :slice_name: sliceODHSection
+      :path: section.entry
+      :discriminator:
+        :type: profile
+        :values:
+        - http://hl7.org/fhir/us/odh/StructureDefinition/odh-UsualWork|1.3.0
+      :type:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/odh/StructureDefinition/odh-UsualWork|1.3.0
+
+    - :slice_id: Composition.section.entry:sliceProceduresSection
+      :slice_name: sliceProceduresSection
+      :path: section.entry
+      :discriminator:
+        :type: profile
+        :values:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure|6.1.0
+      :type:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure|6.1.0
+
+    - :slice_id: Composition.section.entry:sliceVitalSignsSection
+      :slice_name: sliceVitalSignsSection
+      :path: section.entry
+      :discriminator:
+        :type: profile
+        :values:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs|6.1.0
+      :type:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs|6.1.0
+
+    - :slice_id: Composition.section.entry:sliceSocialHistorySection
+      :slice_name: sliceSocialHistorySection
+      :path: section.entry
+      :discriminator:
+        :type: profile
+        :values:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus|6.1.0
+      :type:
+        - Reference
+      :target_profiles:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus|6.1.0
+
   :elements:
     - :path: identifier
     - :path: status

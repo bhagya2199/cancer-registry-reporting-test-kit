@@ -18,49 +18,64 @@
   - :id: Condition.extension:histologyMorphologyBehavior
     :path: extension
     :url: http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-histology-morphology-behavior
+  - :id: Condition.extension:cancer-status-evidence-type
+    :path: extension
+    :url: http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/cancer-status-evidence-type
   - :id: Condition.bodySite.extension:locationQualifier
     :path: bodySite.extension
     :url: http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-body-location-qualifier
   - :id: Condition.bodySite.extension:lateralityQualifier
     :path: bodySite.extension
     :url: http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-laterality-qualifier
-  - :id: Condition.extension:cancerStatusEvidenceType
-    :path: extension
-    :url: http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/cancer-status-evidence-type
-  - :id: Condition.bodySite.extension:dataAbsentReason
-    :path: bodySite.extension
-    :url: http://hl7.org/fhir/StructureDefinition/data-absent-reason
   :slices:
   - :slice_id: Condition.category:us-core
     :slice_name: us-core
     :path: category
     :discriminator:
-      :type: requiredBinding
-      :path: ''
-      :values:
-      - :system: http://terminology.hl7.org/CodeSystem/condition-category
-        :code: problem-list-item
-      - :system: http://terminology.hl7.org/CodeSystem/condition-category
-        :code: encounter-diagnosis
+      :type: patternCoding
+      :path: coding
+      :code: problem-list-item
+      :system: http://terminology.hl7.org/CodeSystem/condition-category
   :elements:
   - :path: clinicalStatus
   - :path: verificationStatus
   - :path: category
   - :path: code
   - :path: bodySite
+  - :path: extension
+  - :path: bodySite.extension
   - :path: subject
     :types:
     - Reference
     :target_profiles:
-    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient
-  - :path: stage.assessment
+    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0
+  - :path: encounter
     :types:
       - Reference
     :target_profiles:
-      - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-stage
+      - http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|6.1.0
+  - :path: onsetDateTime
+    :original_path: onset[x]
+  - :path: recordedDate
+  - :path: abatementDateTime
+    :original_path: abatement[x]
+  - :path: stage.assessment
+    :types:
+    - Reference
+    :target_profiles:
+    - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-stage|4.0.0
+    - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-stage-group|4.0.0
 :mandatory_elements:
+- Condition.extension
+- Condition.extension:assertedDate
+- Condition.extension:histologyMorphologyBehavior
 - Condition.category
+- Condition.category:us-core
+- Condition.category:us-core.coding
+- Condition.category:us-core.coding.system
+- Condition.category:us-core.coding.code
 - Condition.code
+- Condition.bodySite
 - Condition.subject
 :tests: []
 :id: ccrr_v100_mcode_primary_cancer_condition

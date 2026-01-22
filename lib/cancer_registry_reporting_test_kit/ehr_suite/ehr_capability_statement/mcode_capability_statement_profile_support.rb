@@ -5,7 +5,7 @@ module CancerRegistryReportingTestKit
     title 'Capability Statement lists support for required mCODE Profiles'
     description <<~DESCRIPTION
       This test verifies that the list of implemented profiles in the server's CapabilityStatement
-      includes the [required mCODE profiles](https://hl7.org/fhir/us/central-cancer-registry-reporting/STU1/spec.html#mcode-fhir-ig-usage).
+      includes the [required mCODE profiles](https://build.fhir.org/ig/HL7/fhir-central-cancer-registry-reporting-ig/index.html#mcode-fhir-ig-usage).
     DESCRIPTION
     id :ccrr_mcode_capability_statement_profile_support
 
