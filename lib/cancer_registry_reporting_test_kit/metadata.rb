@@ -17,8 +17,8 @@ module CancerRegistryReportingTestKit
         conformant and complete reports to send to a cancer registry. The report content tests validate Bundles
         against the CCRR IG 2.0.0-ballot, which in turn references US Core 6.1.0 and mCODE 4.0.0 profiles.
       - **Electronic Health Record (EHR) Data Source**: Verifies that the Health IT system can respond to queries
-        for the data needed to create a cancer registry report in alignment with the CCRR IG STU 1.0.0 EHR
-        requirements, including US Core 3.1.1 and mCODE 3.0.0 where referenced by that specification.
+        for the data needed to create a cancer registry report in alignment with the CCRR IG 2.0.0-ballot EHR
+        requirements, including US Core 6.1.0 and mCODE 4.0.0 where referenced by that specification.
 
       ## Status
 
