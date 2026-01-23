@@ -12,9 +12,6 @@
   Medication Administration Profile.
 :must_supports:
   :extensions:
-  - :id: MedicationAdministration.extension
-    :path: extension
-    :url: 
   - :id: MedicationAdministration.extension:treatmentIntent
     :path: extension
     :url: http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-procedure-intent
@@ -32,11 +29,12 @@
     - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-patient
   - :path: effective[x]
   - :path: reasonCode
+  - :path: extension
   - :path: reasonReference
     :types:
     - Reference
     :target_profiles:
-    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns
+    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|6.1.0
 :mandatory_elements:
 - MedicationAdministration.status
 - MedicationAdministration.medication[x]
