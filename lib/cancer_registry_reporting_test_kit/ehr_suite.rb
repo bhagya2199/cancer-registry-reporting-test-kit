@@ -30,7 +30,7 @@ module CancerRegistryReportingTestKit
       %r{Sub-extension url 'introspect' is not defined by the Extension http://fhir-registry\.smarthealthit\.org/StructureDefinition/oauth-uris},
       %r{Sub-extension url 'revoke' is not defined by the Extension http://fhir-registry\.smarthealthit\.org/StructureDefinition/oauth-uris},
       /Observation\.effective\.ofType\(Period\): .*vs-1:/, # Invalid invariant in FHIR v4.0.1
-      /Observation\.effective\.ofType\(Period\): .*us-core-1:/, # Invalid invariant in US Core v3.1.1
+      /Observation\.effective\.ofType\(Period\): .*us-core-1:/, # Invalid invariant in US Core v6.1.0
       /Provenance.agent\[\d*\]: Constraint failed: provenance-1/, # Invalid invariant in US Core v5.0.1
       %r{Unknown Code System 'http://hl7.org/fhir/us/core/CodeSystem/us-core-tags'}, # Validator has an issue
       # with this US Core 5 code system in US Core 6 resource
@@ -52,7 +52,8 @@ module CancerRegistryReportingTestKit
     end
 
     fhir_resource_validator do
-      igs 'hl7.fhir.us.central-cancer-registry-reporting#2.0.0-ballot'
+      igs 'hl7.fhir.us.central-cancer-registry-reporting#2.0.0-ballot',
+          'hl7.fhir.us.core#6.1.0'
       message_filters = VALIDATION_MESSAGE_FILTERS
 
       exclude_message do |message|

@@ -17,7 +17,7 @@ These tests support that role by verifying that the EHR can support the specifie
 APIs and serve up the data needed to create [central cancer registry reports](https://hl7.org/fhir/us/central-cancer-registry-reporting/STU1/StructureDefinition-ccrr-content-bundle.html)
 that contain the full scope of must support profiles and elements.
 Per the [EHR Capability Statement](https://hl7.org/fhir/us/central-cancer-registry-reporting/STU1/CapabilityStatement-central-cancer-registry-reporting-ehr.html), this includes FHIR read and search APIs for:
-- US Core STU 3.1.1 profiles indicated in the [Server CapabilityStatement](https://hl7.org/fhir/us/core/STU3.1.1/CapabilityStatement-us-core-server.html)
+- US Core STU 6.1.0 profiles indicated in the [Server CapabilityStatement](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html)
 - A subset of mCODE profiles, including
   - [mCODE Primary Cancer Condition Profile](http://hl7.org/fhir/us/mcode/STU3/StructureDefinition-mcode-primary-cancer-condition.html)
   - [mCODE Secondary Cancer Condition Profile](http://hl7.org/fhir/us/mcode/STU3/StructureDefinition-mcode-secondary-cancer-condition.html)
@@ -62,7 +62,7 @@ only instances that are intended to conform to the target profile. Inferno will 
 with the **Patient IDs** input to create search queries used by the tests. With the exception of the 
 **Implantable Device Type Code** input, missing values will result in these inputs will cause the corresponding
 tests to skip.
-- [US Core Implantable Device Profile](https://www.hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-implantable-device.html) (optional): a list of codes unqiue to this profile in input **Implantable Device Type Code**.
+- [US Core Implantable Device Profile](https://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-implantable-device.html) (optional): a list of codes unqiue to this profile in input **Implantable Device Type Code**.
 - [mCODE Primary Cancer Condition Profile](http://hl7.org/fhir/us/mcode/STU3/StructureDefinition-mcode-primary-cancer-condition.html): a `category` code unique to primary cancer conditions in input **Primary Cancer Condition category**, such as the one suggested in the mCODE query `GET [base]/Condition?category=http://snomed.info/sct|372087000`
 - [mCODE Secondary Cancer Condition Profile](http://hl7.org/fhir/us/mcode/STU3/StructureDefinition-mcode-secondary-cancer-condition.html): a `category` code unique to primary cancer conditions in input **Secondary Cancer Condition category**, such as the one suggested in the mCODE query `GET [base]/Condition?category=http://snomed.info/sct|128462008`
 - [mCODE TNM Distant Metastases Category Profile](http://hl7.org/fhir/us/mcode/STU3/StructureDefinition-mcode-tnm-distant-metastases-category.html): a `code` value unique to this profile in input **TNM Distant Metastases Category code**.
@@ -76,7 +76,7 @@ tests to skip.
 
 The CCRR IG includes several inconsistencies between its specification of EHR capabilities and HDEA
 capabilities, including:
-- The EHR Capability Statement points to the [US Core 3.1.1 Server Capability Statement](https://hl7.org/fhir/us/core/STU3.1.1/CapabilityStatement-us-core-server.html),
+- The EHR Capability Statement points to the [US Core 6.1.0 Server Capability Statement](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html),
   while the [CCRR Composition](https://hl7.org/fhir/us/central-cancer-registry-reporting/STU1/StructureDefinition-ccrr-content-bundle.html)
   created by the HDEA uses [US Core 5.0.1](https://hl7.org/fhir/us/core/STU5.0.1/)
   profiles, except for Condition which uses the US Core 3.1.1 profile.

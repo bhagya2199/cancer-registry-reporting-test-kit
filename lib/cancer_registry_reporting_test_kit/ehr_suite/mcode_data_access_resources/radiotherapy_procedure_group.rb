@@ -21,7 +21,7 @@ module CancerRegistryReportingTestKit
       * patient + code
 
       Note that US Core requires support for the patient search parameter
-      for the [Procedure resource](https://www.hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-procedure.html#quick-start).
+      for the [Procedure resource](https://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-procedure.html#quick-start).
       Since mCODE requires support for the code parameter for [Radiotherapy treatment searches](https://hl7.org/fhir/us/mcode/STU3/conformance-general.html#support-querying-mcode-conforming-resources),
       the patient + code combination is required by these tests.
 

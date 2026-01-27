@@ -48,13 +48,13 @@
     :types:
     - Reference
     :target_profiles:
-    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner
+    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0
   - :path: reasonCode
   - :path: reasonReference
     :types:
     - Reference
     :target_profiles:
-    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns
+    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|6.1.0
 :mandatory_elements:
 - MedicationRequest.status
 - MedicationRequest.intent
