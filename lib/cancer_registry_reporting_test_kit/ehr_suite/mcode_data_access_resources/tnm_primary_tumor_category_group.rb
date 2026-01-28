@@ -12,7 +12,7 @@ module CancerRegistryReportingTestKit
       The mCODE TNM Primary Tumor Category group verifies that the system under test is
       able to provide correct responses for TNM Primary Tumor Category Observation queries. These queries
       return resources conforming to the [mCODE TNM Primary Tumor Category Profile](https://hl7.org/fhir/us/mcode/STU3/StructureDefinition-mcode-tnm-primary-tumor-category.html)
-      as specified in the mCODE v3.0.0 Implementation Guide.
+      as specified in the mCODE v4.0.0 Implementation Guide.
 
       # Testing Methodology
       ## Searching

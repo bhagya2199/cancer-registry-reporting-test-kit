@@ -138,7 +138,7 @@ module CancerRegistryReportingTestKit
       def title
         title = profile.title.gsub(/\s*Profile/, '').strip
 
-        if Naming.resources_with_multiple_profiles.include?(resource) && !title.start_with?(resource) && version != 'v3.1.1'
+        if Naming.resources_with_multiple_profiles.include?(resource) && !title.start_with?(resource) && version != 'v6.1.0'
           title = "#{resource} #{title.split(resource).map(&:strip).join(' ')}"
         end
 

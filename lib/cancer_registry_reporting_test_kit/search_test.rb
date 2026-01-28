@@ -683,7 +683,7 @@ module CancerRegistryReportingTestKit
           when CancerRegistryReportingTestKit::PrimitiveType
             element.value
           else
-            if metadata.version != 'v3.1.1' &&
+            if metadata.version != 'v6.1.0' &&
                metadata.search_definitions[name.to_sym][:type] == 'date' &&
                params_with_comparators&.include?(name)
               # convert date search to greath-than comparator search with correct precision

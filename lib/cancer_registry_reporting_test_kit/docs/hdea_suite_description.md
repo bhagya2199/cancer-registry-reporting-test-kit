@@ -51,10 +51,10 @@ Not all of the tests are expected to pass when run against the demo report.
 
 The CCRR IG includes several inconsistencies between its specification of EHR capabilities and HDEA
 capabilities, including:
-- The EHR Capability Statement points to the [US Core 3.1.1 Server Capability Statement](https://hl7.org/fhir/us/core/STU3.1.1/CapabilityStatement-us-core-server.html),
+- The EHR Capability Statement points to the [US Core 6.1.0 Server Capability Statement](https://hl7.org/fhir/us/core/STU6.1/CapabilityStatement-us-core-server.html),
   while the [CCRR Composition](https://hl7.org/fhir/us/central-cancer-registry-reporting/STU1/StructureDefinition-ccrr-content-bundle.html)
   created by the HDEA uses [US Core 5.0.1](https://hl7.org/fhir/us/core/STU5.0.1/)
-  profiles, except for Condition which uses the US Core 3.1.1 profile.
+  profiles, except for Condition which uses the US Core 6.1.0 profile.
 - The EHR Capability Statement requires support for US Core APIs on resource types that are not
   required to be in the [CCRR Composition](https://hl7.org/fhir/us/central-cancer-registry-reporting/STU1/StructureDefinition-ccrr-content-bundle.html),
   either through a direct reference or through a reference from a must support element, e.g., the

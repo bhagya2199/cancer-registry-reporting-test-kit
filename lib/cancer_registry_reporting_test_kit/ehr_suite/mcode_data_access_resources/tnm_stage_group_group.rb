@@ -12,7 +12,7 @@ module CancerRegistryReportingTestKit
       The mCODE TNM Stage Group Profile group verifies that the system under test is
       able to provide correct responses for TNM Stage Group Observation queries. These queries
       return resources conforming to the [mCODE TNM Stage Group Profile](https://hl7.org/fhir/us/mcode/STU3/StructureDefinition-mcode-tnm-stage-group.html)
-      as specified in the mCODE v3.0.0 Implementation Guide.
+      as specified in the mCODE v4.0.0 Implementation Guide.
 
       # Testing Methodology
       ## Searching

@@ -6,16 +6,25 @@
 :resource: Observation
 :profile_url: http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-distant-metastases-category
 :profile_name: TNM Distant Metastases Category Profile
-:profile_version: 3.0.0
+:profile_version: 4.0.0
 :title: Observation TNM Distant Metastases Category
 :short_description: Verify support for the server capabilities required by the TNM
   Distant Metastases Category Profile.
 :must_supports:
   :extensions: []
-  :slices: []
+  :slices: 
+  - :slice_id: Observation.category:us-core
+    :slice_name: us-core
+    :path: category
+    :discriminator:
+      :type: patternCodeableConcept
+      :path: ''
+      :code: laboratory
+      :system: http://terminology.hl7.org/CodeSystem/observation-category
   :elements:
   - :path: status
   - :path: code
+  - :path: category
   - :path: subject
     :types:
     - Reference
@@ -26,12 +35,17 @@
     - Reference
     :target_profiles:
     - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-primary-cancer-condition
-  - :path: effective[x]
-  - :path: value[x]
+  - :path: effectiveDateTime
+    :original_path: effective[x]
+  - :path: performer
+  - :path: valueCodeableConcept
+    :original_path: value[x]
   - :path: method
 :mandatory_elements:
 - Observation.status
+- Observation.category
 - Observation.code
+- Observation.subject
 - Observation.method
 - Observation.component.code
 :tests: []

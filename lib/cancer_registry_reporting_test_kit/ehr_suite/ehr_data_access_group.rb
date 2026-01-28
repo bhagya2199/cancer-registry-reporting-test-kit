@@ -23,7 +23,7 @@ module CancerRegistryReportingTestKit
     description %(
         During these tests, Inferno will simulate a FHIR client and verify that it can use the EHR's FHIR APIs
         to access patient data including both the [US Core](http://hl7.org/fhir/us/core/STU6.1/index.html)
-        as well as [mCODE](https://hl7.org/fhir/us/mcode/STU3/index.html) data as specified by the
+        as well as [mCODE](https://hl7.org/fhir/us/mcode/STU4/index.html) data as specified by the
         [Central Cancer Registry IG v2.0.0-ballot](https://build.fhir.org/ig/HL7/fhir-central-cancer-registry-reporting-ig/index.html).
     )
 
@@ -60,10 +60,12 @@ module CancerRegistryReportingTestKit
     verifies_requirements 'hl7.fhir.us.central-cancer-registry-reporting_1.0.0@1',
                           'hl7.fhir.us.central-cancer-registry-reporting_1.0.0@31',
                           'hl7.fhir.us.central-cancer-registry-reporting_1.0.0@54',
-                          'hl7.fhir.us.mcode_3.0.0@107',
-                          'hl7.fhir.us.mcode_3.0.0@108',
-                          'hl7.fhir.us.mcode_3.0.0@109',
-                          'hl7.fhir.us.mcode_3.0.0@110'
+                          'hl7.fhir.us.central-cancer-registry-reporting_2.0.0@68',
+                          'hl7.fhir.us.central-cancer-registry-reporting_2.0.0@102',
+                          'hl7.fhir.us.mcode_4.0.0@107',
+                          'hl7.fhir.us.mcode_4.0.0@108',
+                          'hl7.fhir.us.mcode_4.0.0@109',
+                          'hl7.fhir.us.mcode_4.0.0@110'
 
     group from: :us_core_v311_capability_statement do
       test from: :ccrr_mcode_capability_statement_profile_support do
@@ -78,7 +80,9 @@ module CancerRegistryReportingTestKit
       id :ccrr_us_core_fhir_api
 
       verifies_requirements 'hl7.fhir.us.central-cancer-registry-reporting_1.0.0@34',
-                            'hl7.fhir.us.central-cancer-registry-reporting_1.0.0@43'
+                          'hl7.fhir.us.central-cancer-registry-reporting_1.0.0@43',
+                          'hl7.fhir.us.central-cancer-registry-reporting_2.0.0@68',
+                          'hl7.fhir.us.central-cancer-registry-reporting_2.0.0@102'
       group from: :us_core_v610_patient, title: 'Patient'
       group from: :us_core_v610_allergy_intolerance, title: 'AllergyIntolerance'
       group from: :us_core_v610_care_plan, title: 'CarePlan'

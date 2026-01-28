@@ -6,7 +6,7 @@
 :resource: MedicationRequest
 :profile_url: http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-request
 :profile_name: Cancer-Related Medication Request Profile
-:profile_version: 3.0.0
+:profile_version: 4.0.0
 :title: Cancer-Related Medication Request
 :short_description: Verify support for the server capabilities required by the Cancer-Related
   Medication Request Profile.
@@ -21,7 +21,6 @@
     :path: category
     :discriminator:
       :type: requiredBinding
-      :path: ''
       :values:
       - :system: http://terminology.hl7.org/CodeSystem/medicationrequest-category
         :code: inpatient
@@ -36,6 +35,15 @@
   - :path: statusReason
   - :path: intent
   - :path: category
+  - :path: extension
+  - :path: reportedBoolean
+    :original_path: reported[x]
+  - :path: reportedReference
+    :original_path: reported[x]
+    :types:
+    - Reference
+    :target_profiles:
+    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0
   - :path: medication[x]
     :types:
     - Reference
@@ -44,6 +52,12 @@
     - Reference
     :target_profiles:
     - http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-patient
+  - :path: encounter
+    :types:
+    - Reference
+    :target_profiles:
+    - http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|6.1.0
+  - :path: authoredOn
   - :path: requester
     :types:
     - Reference
@@ -55,12 +69,21 @@
     - Reference
     :target_profiles:
     - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|6.1.0
+  - :path: dosageInstruction
+  - :path: dosageInstruction.text
+  - :path: dosageInstruction.timing
+  - :path: dosageInstruction.doseAndRate
+  - :path: dosageInstruction.doseAndRate.dose[x]
+  - :path: dosageInstruction.doseAndRate.doseQuantity
+  - :path: dispenseRequest
+  - :path: dispenseRequest.numberOfRepeatsAllowed
+  - :path: dispenseRequest.quantity
+
 :mandatory_elements:
 - MedicationRequest.status
 - MedicationRequest.intent
 - MedicationRequest.medication[x]
 - MedicationRequest.subject
-- MedicationRequest.requester
 - MedicationRequest.substitution.allowed[x]
 :tests: []
 :id: ccrr_v100_medication_request

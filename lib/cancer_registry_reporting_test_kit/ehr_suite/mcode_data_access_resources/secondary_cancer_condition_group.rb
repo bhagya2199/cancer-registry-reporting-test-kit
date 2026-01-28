@@ -10,7 +10,7 @@ module CancerRegistryReportingTestKit
       The mCODE Secondary Cancer Condition group verifies that the system under test is
       able to provide correct responses for Secondary Cancer Condition queries. These queries
       return resources conforming to the [mCODE Secondary Cancer Condition Profile](https://hl7.org/fhir/us/mcode/STU3/StructureDefinition-mcode-secondary-cancer-condition.html)
-      as specified in the mCODE v3.0.0 Implementation Guide.
+      as specified in the mCODE v4.0.0 Implementation Guide.
 
       # Testing Methodology
       ## Searching
