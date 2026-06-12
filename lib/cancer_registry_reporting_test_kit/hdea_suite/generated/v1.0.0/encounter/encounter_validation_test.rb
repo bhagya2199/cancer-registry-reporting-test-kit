@@ -12,7 +12,7 @@ module CancerRegistryReportingTestKit
       description %(
         This test verifies that Encounter instances
         referenced in the `encounter` elements of the provided reports conform to the
-        [CCRR Encounter Profile v2.0.0](http://build.fhir.org/ig/HL7/fhir-central-cancer-registry-reporting-ig/StructureDefinition-central-cancer-registry-reporting-encounter.html).
+        [US Core Encounter Profile v6.1.0](http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter).
       )
       
 

@@ -8,11 +8,11 @@ module CancerRegistryReportingTestKit
       include CancerRegistryReportingTestKit::ValidationTest
 
       id :ccrr_v200_patient_validation_test
-      title 'CCRR Patient Profile conformance'
+      title 'US Core Patient Profile conformance'
       description %(
         This test verifies that Patient instances
         referenced in the `patient` elements of the provided reports conform to the
-        [CCRR Patient Profile v2.0.0](http://build.fhir.org/ig/HL7/fhir-central-cancer-registry-reporting-ig/StructureDefinition-central-cancer-registry-reporting-patient.html).
+        [US Core Patient Profile v6.1.0](http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient).
       )
       
       def resource_type
