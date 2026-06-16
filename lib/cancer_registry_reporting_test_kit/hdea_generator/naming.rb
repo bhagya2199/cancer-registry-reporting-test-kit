@@ -7,6 +7,8 @@ module CancerRegistryReportingTestKit
       USCORE_CARE_PLAN = 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-careplan'
       USCORE_CARE_TEAM = 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-careteam'
       USCORE_CONDITION = 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition'
+      USCORE_CONDITION_ENCOUNTER_DIAGNOSIS =
+        'http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis'
       USCORE_IMPLANTABLE_DEVICE = 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device'
       USCORE_DIAGNOSTIC_REPORT_NOTE = 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note'
       USCORE_DIAGNOSTIC_REPORT_LAB = 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab'
@@ -31,6 +33,9 @@ module CancerRegistryReportingTestKit
       USCORE_PROVENANCE = 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-provenance'
       BASE_SERVICE_REQUEST = 'http://hl7.org/fhir/StructureDefinition/ServiceRequest'
       BASE_MEDICATION_STATEMENT = 'http://hl7.org/fhir/StructureDefinition/MedicationStatement'
+
+      US_PATHOLOGY_DIAGNOSTIC_REPORT =
+        'http://hl7.org/fhir/us/cancer-reporting/StructureDefinition/us-pathology-diagnostic-report'
 
       ## FOR HDEA
       CCRR_COMPOSITION = 'http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/ccrr-composition'
@@ -72,6 +77,7 @@ module CancerRegistryReportingTestKit
         MCODE_TNM_STAGE_GROUP => 'Cancer Stage Group section',
         MCODE_RADIOTHERAPY_COURSE_SUMMARY => 'Radiotherapy Course Summary section',
         USCORE_CONDITION => 'Problems section',
+        USCORE_CONDITION_ENCOUNTER_DIAGNOSIS => 'Encounter Diagnosis section',
         USCORE_ALLERGY_INTOLERANCE => 'Allergies section',
         MCODE_MEDICATION_ADMINISTRATION => 'Medications and Medications Administered sections',
         USCORE_MEDICATION => 'Medications and Medications Administered sections',
@@ -109,10 +115,12 @@ module CancerRegistryReportingTestKit
       USCORE_SMOKINGSTATUS => :smokingstatus_resources,
       BASE_SERVICE_REQUEST => :service_request_resources,
       USCORE_CONDITION => :condition_resources,
+      USCORE_CONDITION_ENCOUNTER_DIAGNOSIS => :condition_encounter_diagnosis_resources,
       BASE_MEDICATION_STATEMENT => :medication_statement_resources,
       USCORE_OBSERVATION_LAB => :observation_lab_resources,
       USCORE_DIAGNOSTIC_REPORT_NOTE => :diagnostic_report_note_resources,
       USCORE_DIAGNOSTIC_REPORT_LAB => :diagnostic_report_lab_resources,
+      US_PATHOLOGY_DIAGNOSTIC_REPORT => :us_pathology_diagnostic_report_resources,
       CCRR_COMPOSITION => :composition_resources,
       MCODE_MEDICATION_REQUEST => :medication_request_resources,
       BASE_OBSERVATION => :observation_resources,

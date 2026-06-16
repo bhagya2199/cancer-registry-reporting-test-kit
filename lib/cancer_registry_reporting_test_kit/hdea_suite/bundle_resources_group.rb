@@ -10,8 +10,10 @@ require_relative 'generated/v1.0.0/allergy_intolerance/allergy_intolerance_valid
 require_relative 'generated/v1.0.0/care_plan/care_plan_validation_test'
 require_relative 'generated/v1.0.0/central_cancer_registry_primary_cancer_condition/central_cancer_registry_primary_cancer_condition_validation_test'
 require_relative 'generated/v1.0.0/condition/condition_validation_test'
+require_relative 'generated/v1.0.0/condition_encounter_diagnosis/condition_encounter_diagnosis_validation_test'
 require_relative 'generated/v1.0.0/diagnostic_report_lab/diagnostic_report_lab_validation_test'
 require_relative 'generated/v1.0.0/diagnostic_report_note/diagnostic_report_note_validation_test'
+require_relative 'generated/v1.0.0/us_pathology_diagnostic_report/us_pathology_diagnostic_report_validation_test'
 require_relative 'generated/v1.0.0/document_reference/document_reference_validation_test'
 require_relative 'generated/v1.0.0/encounter/encounter_validation_test'
 require_relative 'generated/v1.0.0/mcode_radiotherapy_course_summary/mcode_radiotherapy_course_summary_validation_test'
@@ -36,8 +38,10 @@ require_relative 'generated/v1.0.0/allergy_intolerance/allergy_intolerance_must_
 require_relative 'generated/v1.0.0/care_plan/care_plan_must_support_test'
 require_relative 'generated/v1.0.0/central_cancer_registry_primary_cancer_condition/central_cancer_registry_primary_cancer_condition_must_support_test' # rubocop:disable Layout/LineLength
 require_relative 'generated/v1.0.0/condition/condition_must_support_test'
+require_relative 'generated/v1.0.0/condition_encounter_diagnosis/condition_encounter_diagnosis_must_support_test'
 require_relative 'generated/v1.0.0/diagnostic_report_lab/diagnostic_report_lab_must_support_test'
 require_relative 'generated/v1.0.0/diagnostic_report_note/diagnostic_report_note_must_support_test'
+require_relative 'generated/v1.0.0/us_pathology_diagnostic_report/us_pathology_diagnostic_report_must_support_test'
 require_relative 'generated/v1.0.0/document_reference/document_reference_must_support_test'
 require_relative 'generated/v1.0.0/encounter/encounter_must_support_test'
 require_relative 'generated/v1.0.0/mcode_radiotherapy_course_summary/mcode_radiotherapy_course_summary_must_support_test'
@@ -152,6 +156,12 @@ module CancerRegistryReportingTestKit
     end
 
     group do
+      title 'Encounter Diagnosis Section'
+      test from: :ccrr_v200_condition_encounter_diagnosis_validation_test
+      test from: :ccrr_v200_condition_encounter_diagnosis_must_support_test
+    end
+
+    group do
       title 'Allergies Section'
       test from: :ccrr_v100_allergy_intolerance_validation_test
       test from: :ccrr_v100_allergy_intolerance_must_support_test
@@ -179,6 +189,8 @@ module CancerRegistryReportingTestKit
       test from: :ccrr_v200_observation_lab_must_support_test
       test from: :ccrr_v200_diagnostic_report_lab_validation_test
       test from: :ccrr_v200_diagnostic_report_lab_must_support_test
+      test from: :ccrr_v200_us_pathology_diagnostic_report_validation_test
+      test from: :ccrr_v200_us_pathology_diagnostic_report_must_support_test
     end
 
     group do

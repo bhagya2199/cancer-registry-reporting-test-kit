@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'fhir_resource_navigation'
+require_relative 'hdea_generator/naming'
 
 module CancerRegistryReportingTestKit
   module HDEABundleParse
@@ -29,6 +30,7 @@ module CancerRegistryReportingTestKit
       '21908-9' => 'http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-stage-group',
       '1217123003' => 'http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-course-summary',
       '11450-4' => 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition',
+      '46241-6' => 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis',
       '48765-2' => 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-allergyintolerance',
       '74165-2' => 'http://hl7.org/fhir/us/odh/StructureDefinition/odh-UsualWork',
       '47519-4' => 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure',
@@ -120,24 +122,26 @@ module CancerRegistryReportingTestKit
           sec.entry.each do |ref|
             referenced_resource = find_resource_in_bundle(ref.reference, bundle)
             if referenced_resource
-              hash[profile_from_resource_type(code, referenced_resource.resourceType)] ||= []
-              unless hash[profile_from_resource_type(code,
-                                                     referenced_resource.resourceType)].include?(referenced_resource)
-                hash[profile_from_resource_type(code, referenced_resource.resourceType)] << referenced_resource
+              profile_url = profile_url_from_meta(referenced_resource) ||
+                            profile_from_resource_type(code, referenced_resource.resourceType)
+
+              hash[profile_url] ||= []
+              unless hash[profile_url].include?(referenced_resource)
+                hash[profile_url] << referenced_resource
               end
             else
               unresolved_references << ref.reference
             end
           end
         else
-          resource_key = CODE_TO_URL_MAP[code]
-          hash[resource_key] ||= []
           sec.entry.each do |ref|
             referenced_resource = find_resource_in_bundle(ref.reference, bundle)
             unresolved_references << ref.reference unless referenced_resource
-            if !hash[resource_key].include?(referenced_resource) && referenced_resource
-              hash[resource_key] << referenced_resource
-            end
+            next unless referenced_resource
+
+            resource_key = profile_url_from_meta(referenced_resource) || CODE_TO_URL_MAP[code]
+            hash[resource_key] ||= []
+            hash[resource_key] << referenced_resource unless hash[resource_key].include?(referenced_resource)
           end
         end
       end
@@ -149,6 +153,18 @@ module CancerRegistryReportingTestKit
 
     def profile_from_resource_type(code, resource_type)
       CODE_TO_MULTIPLE_ENTRY_RESOURCE_MAP[code][resource_type]
+    end
+
+    def profile_url_from_meta(resource)
+      profiles = Array(resource&.meta&.profile)
+      supported = CancerRegistryReportingTestKit::HdeaGenerator::Naming::PROFILE_TO_RESOURCE_KEY_MAP.keys
+
+      candidates = profiles.filter_map do |profile_url|
+        base_url = profile_url.to_s.split('|').first
+        base_url if supported.include?(base_url)
+      end
+
+      candidates.find { |url| !url.start_with?('http://hl7.org/fhir/StructureDefinition/') } || candidates.first
     end
 
     ## TODO: we may have to be more comprehensive with checks for references - TBD

@@ -54,7 +54,9 @@ module CancerRegistryReportingTestKit
       end
 
       fhir_resource_validator do
-        igs 'hl7.fhir.us.central-cancer-registry-reporting#2.0.0-ballot'
+        igs 'hl7.fhir.us.central-cancer-registry-reporting#2.0.0-ballot',
+            'hl7.fhir.us.core#6.1.0',
+            'hl7.fhir.us.cancer-reporting#2.0.0'
         message_filters = VALIDATION_MESSAGE_FILTERS
 
         exclude_message do |message|

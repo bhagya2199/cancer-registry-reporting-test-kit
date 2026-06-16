@@ -14,7 +14,7 @@
   :extensions:
   - :id: Condition.extension:assertedDate
     :path: extension
-    :url: http://hl7.org/fhir/StructureDefinition/condition-assertedDate|5.2.0
+    :url: http://hl7.org/fhir/StructureDefinition/condition-assertedDate
   - :id: Condition.extension:histologyMorphologyBehavior
     :path: extension
     :url: http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-histology-morphology-behavior
