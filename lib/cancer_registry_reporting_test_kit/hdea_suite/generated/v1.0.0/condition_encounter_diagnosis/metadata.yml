@@ -74,6 +74,9 @@
 :mandatory_elements:
 - Condition.category
 - Condition.category:us-core
+- Condition.category:us-core.coding
+- Condition.category:us-core.coding.system
+- Condition.category:us-core.coding.code
 - Condition.code
 - Condition.subject
 :tests:
