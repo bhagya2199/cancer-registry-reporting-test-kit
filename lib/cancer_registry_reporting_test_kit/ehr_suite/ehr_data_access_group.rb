@@ -88,6 +88,7 @@ module CancerRegistryReportingTestKit
       group from: :us_core_v610_care_plan, title: 'CarePlan'
       group from: :us_core_v610_care_team, title: 'CareTeam'
       group from: :us_core_v610_condition_problems_health_concerns, title: 'Condition'
+      group from: :us_core_v610_condition_encounter_diagnosis, title: 'Condition Encounter Diagnosis'
       group from: :us_core_v610_device, title: 'Device'
       group from: :us_core_v610_diagnostic_report_note, title: 'DiagnosticReport for Report and Note Exchange'
       group from: :us_core_v610_diagnostic_report_lab, title: 'DiagnosticReport for Laboratory Results Reporting'
