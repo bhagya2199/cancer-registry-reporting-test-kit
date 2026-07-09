@@ -79,40 +79,6 @@ module CancerRegistryReportingTestKit
         missing_extensions.map { |extension_definition| extension_definition[:id] }
     end
 
-    def enforce_mandatory_elements(resources)
-      return if metadata.mandatory_elements.nil?
-
-      resources.each do |resource|
-        metadata.mandatory_elements.each do |full_path|
-          next unless full_path.start_with?("#{resource_type}.")
-
-          relative_path = full_path.delete_prefix("#{resource_type}.")
-          segments = relative_path.split('.')
-          leaf = segments.last
-          parent_path = segments[0...-1].join('.')
-
-          if parent_path.empty?
-            value_found = find_a_value_at(resource, leaf) do |value|
-              value.present? || value == false
-            end
-
-            assert value_found.present? || value_found == false,
-                   "#{full_path} is mandatory in every #{resource_type} instance"
-          else
-            parent_elements = resolve_path(resource, parent_path)
-            parent_elements.each do |parent|
-              value_found = find_a_value_at(parent, leaf) do |value|
-                value.present? || value == false
-              end
-
-              assert value_found.present? || value_found == false,
-                     "#{full_path} is mandatory when #{resource_type}.#{parent_path} is present"
-            end
-          end
-        end
-      end
-    end
-
     def missing_element_string(element_definition)
       if element_definition[:fixed_value].present?
         "#{element_definition[:path]}:#{element_definition[:fixed_value]}"
